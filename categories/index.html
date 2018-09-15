@@ -84,7 +84,7 @@
 <meta name="description" content="命运给你一个比别人低的起点，是想告诉你，让你用一生的努力去奋斗出一个绝地反击的故事。这个故事关于独立，关于梦想，关于坚忍，关于勇气！">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:url" content="https://mrlichangming.github.io/categories/index.html">
 <meta property="og:site_name" content="常明vs博客">
 <meta property="og:description" content="命运给你一个比别人低的起点，是想告诉你，让你用一生的努力去奋斗出一个绝地反击的故事。这个故事关于独立，关于梦想，关于坚忍，关于勇气！">
 <meta property="og:locale" content="zh-Hans">
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="https://mrlichangming.github.io/categories/"/>
 
 
 
@@ -321,6 +321,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -663,6 +670,43 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'MrLichangming',
+            repo: 'MrLichangming.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '2a395462b3645ea0ac2153a89b9581d74cdb41d2',
+            
+                client_id: '5f4f531264c0df7d1009'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
