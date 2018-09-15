@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="常明vs博客">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-15T19:23:17.697Z">
+<meta property="og:updated_time" content="2018-09-15T19:49:12.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  99
+                  101
                 </span>
               
 
@@ -425,8 +425,8 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: '', // 可选。默认为 location.href
-  owner: '29295178',
+  id: 'hello-world', // 可选。默认为 location.href
+  owner: 'MrLichangming',
   repo: 'MrLichangming.github.io',
   oauth: {
     client_id: '5f4f531264c0df7d1009',
@@ -483,7 +483,8 @@ gitment.render('container')
   
     <div class="comments" id="comments">
       
-        <div id="gitment-container"></div>
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
       
     </div>
 
@@ -673,7 +674,7 @@ gitment.render('container')
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 99 字</span>
+  <span class="post-count">博客全站共 101 字</span>
 </div>
 
         
@@ -886,7 +887,11 @@ gitment.render('container')
       }
 
       
-      renderGitment();
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
       
       </script>
     
