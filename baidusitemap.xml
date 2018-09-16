@@ -4,17 +4,20 @@
 
     
   <url>
-    <loc>https://mrlichangming.github.io/2018/09/15/hello-world/</loc>
-    <lastmod>2018-09-16T08:55:20.333Z</lastmod>
+    <loc>https://mrlichangming.github.io/2018/09/16/hexo-%E9%83%A8%E7%BD%B2-%E4%B8%80/</loc>
+    <lastmod>2018-09-16T14:42:09.448Z</lastmod>
     <data>
         <display>
-        <title>hello-world</title>
-        <pubTime>2018-09-15T14:43:41.282Z</pubTime>
+        <title>hexo 部署(一)</title>
+        <pubTime>2018-09-16T10:01:26.000Z</pubTime>
         
-        <tag>test</tag>
+        <tag>hexo部署配置</tag>
          
          
            
+             
+              <breadCrumb title="博客搭建" url="https://mrlichangming.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+          
         </display>
     </data>
     </url>

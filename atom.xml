@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrlichangming.github.io/"/>
-  <updated>2018-09-16T08:55:20.333Z</updated>
+  <updated>2018-09-16T14:42:09.448Z</updated>
   <id>https://mrlichangming.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hello-world</title>
-    <link href="https://mrlichangming.github.io/2018/09/15/hello-world/"/>
-    <id>https://mrlichangming.github.io/2018/09/15/hello-world/</id>
-    <published>2018-09-15T14:43:41.282Z</published>
-    <updated>2018-09-16T08:55:20.333Z</updated>
+    <title>hexo 部署(一)</title>
+    <link href="https://mrlichangming.github.io/2018/09/16/hexo-%E9%83%A8%E7%BD%B2-%E4%B8%80/"/>
+    <id>https://mrlichangming.github.io/2018/09/16/hexo-部署-一/</id>
+    <published>2018-09-16T10:01:26.000Z</published>
+    <updated>2018-09-16T14:42:09.448Z</updated>
     
     <summary type="html">
     
@@ -29,14 +29,16 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;h1 id=&quot;hexo博客搭建&quot;&gt;&lt;a href=&quot;#hexo博客搭建&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
+      <category term="博客搭建" scheme="https://mrlichangming.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
-      <category term="test" scheme="https://mrlichangming.github.io/tags/test/"/>
+    
+      <category term="hexo部署配置" scheme="https://mrlichangming.github.io/tags/hexo%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
