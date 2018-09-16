@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>常明vs博客</title>
+  <title>Changming&#39;s blogs</title>
   <icon>https://www.gravatar.com/avatar/36c309fdff17de6c9f100c2fcf0473ab</icon>
   <subtitle>坚持是一种美德</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrlichangming.github.io/"/>
-  <updated>2018-09-15T19:49:12.739Z</updated>
+  <updated>2018-09-16T08:55:20.333Z</updated>
   <id>https://mrlichangming.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
+    <title>hello-world</title>
     <link href="https://mrlichangming.github.io/2018/09/15/hello-world/"/>
     <id>https://mrlichangming.github.io/2018/09/15/hello-world/</id>
     <published>2018-09-15T14:43:41.282Z</published>
-    <updated>2018-09-15T19:49:12.739Z</updated>
+    <updated>2018-09-16T08:55:20.333Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,8 @@
     
     </summary>
     
+    
+      <category term="test" scheme="https://mrlichangming.github.io/tags/test/"/>
     
   </entry>
   
