@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrlichangming.github.io/"/>
-  <updated>2018-09-16T16:30:23.608Z</updated>
+  <updated>2018-09-17T15:18:51.705Z</updated>
   <id>https://mrlichangming.github.io/</id>
   
   <author>
@@ -21,17 +21,14 @@
     <link href="https://mrlichangming.github.io/2018/09/16/hexo-Next%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
     <id>https://mrlichangming.github.io/2018/09/16/hexo-Next主题使用配置/</id>
     <published>2018-09-16T15:15:46.000Z</published>
-    <updated>2018-09-16T16:30:23.608Z</updated>
+    <updated>2018-09-17T15:18:51.705Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;hexo站点使用配置&quot;&gt;&lt;a href=&quot;#hexo站点使用配置&quot; class=&quot;headerlink&quot; title=&quot;hexo站点使用配置&quot;&gt;&lt;/a&gt;hexo站点使用配置&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;本文设置内容匹配 &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Next Version: v6.0.0&lt;br&gt;Hexo Version: v5.1&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;博客的title&quot;&gt;&lt;a href=&quot;#博客的title&quot; class=&quot;headerlink&quot; title=&quot;博客的title&quot;&gt;&lt;/a&gt;博客的title&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/title.png&quot; alt=&quot;博客title配置&quot;&gt;&lt;br&gt;打开站点配置文件&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Site&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;title: Changming&lt;span class=&quot;string&quot;&gt;&#39;s blogs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;subtitle: 坚持是一种美德&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;description: 命运给你一个比别人低的起点，是想告诉你，让你用一生的努力去奋斗出一个绝地反击的故事。这个故事关于独立，关于梦想，关于坚忍，关于勇气！&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;keywords:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;author: 李常明&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;language: zh-Hans&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;timezone:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;email: 15116973831@163.com&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+      &lt;ul&gt;
+&lt;li&gt;当前主题采用版本信息&lt;br&gt;  Next Version: v6.0.0&lt;br&gt;  Hexo Version: v5.1&lt;br&gt;记录初次使用hexo的基本配置，做个笔记文档！&lt;br&gt;所有的记录，都是在hexo的官网，和别人的博客中找到的，感谢分享的这些文档，让我可以参照部署出自己的博客。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;hexo站点使用配置&quot;&gt;&lt;a href=&quot;#hexo站点使用配置&quot; class=&quot;headerlink&quot; title=&quot;hexo站点使用配置&quot;&gt;&lt;/a&gt;hexo站点使用配置&lt;/h1&gt;&lt;h2 id=&quot;博客的title&quot;&gt;&lt;a href=&quot;#博客的title&quot; class=&quot;headerlink&quot; title=&quot;博客的title&quot;&gt;&lt;/a&gt;博客的title&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/title.png&quot; alt=&quot;博客title配置&quot;&gt;&lt;br&gt;打开站点配置文件&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Site&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;title: Changming&lt;span class=&quot;string&quot;&gt;&#39;s blogs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;subtitle: 坚持是一种美德&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;description: 命运给你一个比别人低的起点，是想告诉你，让你用一生的努力去奋斗出一个绝地反击的故事。这个故事关于独立，关于梦想，关于坚忍，关于勇气！&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;keywords:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;author: 李常明&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;language: zh-Hans&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;timezone:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;email: 15116973831@163.com&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
