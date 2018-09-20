@@ -4,6 +4,165 @@
 
     
   <url>
+    <loc>https://mrlichangming.github.io/2018/09/20/docker%E4%BB%93%E5%BA%93Harbor%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-09-20T14:10:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>docker仓库Harbor的配置与使用</title>
+        <pubTime>2018-09-20T09:21:36.000Z</pubTime>
+        
+        <tag>docker Harbor仓库</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/20/docker-swarm-%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-09-20T09:19:14.000Z</lastmod>
+    <data>
+        <display>
+        <title>docker swarm 一些常用命令</title>
+        <pubTime>2018-09-20T08:46:47.000Z</pubTime>
+        
+        <tag>docker swarm</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/20/docker%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E9%98%B2%E7%81%AB%E5%A2%99%E5%85%B3%E7%B3%BB/</loc>
+    <lastmod>2018-09-20T09:17:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>docker与系统软件防火墙关系</title>
+        <pubTime>2018-09-20T09:05:33.000Z</pubTime>
+        
+        <tag>docker与系统防火墙</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/20/docker%E4%B8%AD%E4%BD%BF%E7%94%A8supervisor%E7%AE%A1%E7%90%86%E8%BF%9B%E7%A8%8B/</loc>
+    <lastmod>2018-09-20T08:45:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>docker中使用supervisor管理进程</title>
+        <pubTime>2018-09-20T08:37:03.000Z</pubTime>
+        
+        <tag>docker file</tag>
+         
+        <tag>ENTRYPOINT</tag>
+         
+        <tag>CMD</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/Markdown%E8%AF%AD%E6%B3%95%E7%A7%AF%E7%B4%AF/</loc>
+    <lastmod>2018-09-19T05:21:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown语法积累</title>
+        <pubTime>2018-09-19T00:47:45.000Z</pubTime>
+        
+        <tag>Markdown语法</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="https://mrlichangming.github.io/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/centos7%E7%BB%91%E5%AE%9A%E5%8F%8C%E7%BD%91%E5%8D%A1/</loc>
+    <lastmod>2018-09-19T05:15:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>centos7绑定双网卡</title>
+        <pubTime>2018-09-19T05:12:59.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/nginx%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-09-19T05:11:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>nginx日志检索常用命令</title>
+        <pubTime>2018-09-19T01:33:27.000Z</pubTime>
+        
+        <tag>nginx日志检索</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-09-19T05:04:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>linux高阶命令使用</title>
+        <pubTime>2018-09-19T04:35:18.000Z</pubTime>
+        
+        <tag>awk getopts</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux高阶命令" url="https://mrlichangming.github.io/categories/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://mrlichangming.github.io/2018/09/18/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E4%B8%80/</loc>
     <lastmod>2018-09-18T15:44:21.551Z</lastmod>
     <data>
@@ -17,6 +176,68 @@
            
              
               <breadCrumb title="英语学习" url="https://mrlichangming.github.io/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/18/ansible%E7%9A%84playbook%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2018-09-18T12:16:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>ansible的playbook文件的语法</title>
+        <pubTime>2018-09-18T08:41:26.000Z</pubTime>
+        
+        <tag>ansible的playbook语法</tag>
+         
+         
+           
+             
+              <breadCrumb title="自动化运维工具" url="https://mrlichangming.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/18/ansible%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-09-18T08:40:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>ansible命令与模块的使用</title>
+        <pubTime>2018-09-18T05:25:29.000Z</pubTime>
+        
+        <tag>ansible命令</tag>
+         
+        <tag>ansible模块</tag>
+         
+         
+           
+             
+              <breadCrumb title="自动化运维工具" url="https://mrlichangming.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/18/firewalld%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/</loc>
+    <lastmod>2018-09-18T01:04:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>firewalld自定义服务开放端口</title>
+        <pubTime>2018-09-18T00:44:28.000Z</pubTime>
+        
+        <tag>firewalld</tag>
+         
+         
+           
+             
+              <breadCrumb title="Centos7防火墙" url="https://mrlichangming.github.io/categories/Centos7%E9%98%B2%E7%81%AB%E5%A2%99/"/>
           
         </display>
     </data>
