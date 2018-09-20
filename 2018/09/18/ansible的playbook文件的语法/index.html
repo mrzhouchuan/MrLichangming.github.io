@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ansible的playbook语法," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Changming's blogs" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="记录工作中使用到的编写playbook文件的一些语法  ansible中编写playbook文件，通过不同的角色执行操作首先看一份playbook文件, 文件名 testInstallDocker.yml12345678#入口playbook文件---- hosts: &apos;test-1&apos;  sudo: yes  roles:    - docker    - yum 执行命令12ansible-p">
+<meta name="keywords" content="ansible的playbook语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ansible的playbook文件的语法">
+<meta property="og:url" content="https://mrlichangming.github.io/2018/09/18/ansible的playbook文件的语法/index.html">
+<meta property="og:site_name" content="Changming&#39;s blogs">
+<meta property="og:description" content="记录工作中使用到的编写playbook文件的一些语法  ansible中编写playbook文件，通过不同的角色执行操作首先看一份playbook文件, 文件名 testInstallDocker.yml12345678#入口playbook文件---- hosts: &apos;test-1&apos;  sudo: yes  roles:    - docker    - yum 执行命令12ansible-p">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://mrlichangming.github.io/images/ansible-systemd.png">
+<meta property="og:image" content="https://mrlichangming.github.io/images/ansible-user.png">
+<meta property="og:image" content="https://mrlichangming.github.io/images/ansible-users.png">
+<meta property="og:image" content="https://mrlichangming.github.io/images/ansible-group.png">
+<meta property="og:image" content="https://mrlichangming.github.io/images/ansible-link.png">
+<meta property="og:image" content="https://mrlichangming.github.io/images/ansible-mode.png">
+<meta property="og:image" content="https://mrlichangming.github.io/images/ansible-yum.png">
+<meta property="og:image" content="https://mrlichangming.github.io/images/ansible-handlers.png">
+<meta property="og:image" content="https://mrlichangming.github.io/images/ansible-notify.png">
+<meta property="og:updated_time" content="2018-09-18T12:16:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ansible的playbook文件的语法">
+<meta name="twitter:description" content="记录工作中使用到的编写playbook文件的一些语法  ansible中编写playbook文件，通过不同的角色执行操作首先看一份playbook文件, 文件名 testInstallDocker.yml12345678#入口playbook文件---- hosts: &apos;test-1&apos;  sudo: yes  roles:    - docker    - yum 执行命令12ansible-p">
+<meta name="twitter:image" content="https://mrlichangming.github.io/images/ansible-systemd.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://mrlichangming.github.io/2018/09/18/ansible的playbook文件的语法/"/>
+
+
+
+
+
+  <title>ansible的playbook文件的语法 | Changming's blogs</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<!-- 添加fork me to github -->
+	<a href="https://github.com/MrLichangming"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Changming's blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">技术的本质就是解决问题的能力</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/个人简介/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/标签/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/分类/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/归档/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mrlichangming.github.io/2018/09/18/ansible的playbook文件的语法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李常明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myself1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Changming's blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ansible的playbook文件的语法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-18T16:41:26+08:00">
+                2018-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/自动化运维工具/" itemprop="url" rel="index">
+                    <span itemprop="name">自动化运维工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+		  
+			<span class="post-meta-divider">|</span>
+			<span id="busuanzi_value_page_pv"></span>次阅读
+		  
+		  
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>记录工作中使用到的编写playbook文件的一些语法</p>
+<hr>
+<h1 id="ansible中编写playbook文件，通过不同的角色执行操作"><a href="#ansible中编写playbook文件，通过不同的角色执行操作" class="headerlink" title="ansible中编写playbook文件，通过不同的角色执行操作"></a>ansible中编写playbook文件，通过不同的角色执行操作</h1><p>首先看一份playbook文件, 文件名 testInstallDocker.yml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#入口playbook文件</span></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">- hosts: <span class="string">'test-1'</span></span><br><span class="line">  sudo: yes</span><br><span class="line">  roles:</span><br><span class="line">    - docker</span><br><span class="line">    - yum</span><br></pre></td></tr></table></figure></p>
+<h1 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ansible-playbook testInstallDocker.yml</span><br><span class="line"><span class="comment">#这条命令执行，接下来，会发生什么呢？</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>首先会找到testInstalldocker.yml文件中定义的内容，  — 代表注释， - hosts: test-1 指定要操作的主机是test-1</li>
+<li>sudo: yes 表示允许普通用户执行sudo权限</li>
+<li>roles:  roles 会默认去ansible的默认/etc/ansible/roles目录下找 docker  yum, 当然此目录也可以通过ansible.cfg文件修改</li>
+<li>进入/etc/ansible/roles目录<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">以下可以看到/etc/ansible/roles/&#123;docker,yum&#125;  目录下创建的文件</span><br><span class="line">[sun@<span class="built_in">test</span>-host roles]$ tree -L  2 docker</span><br><span class="line">docker  </span><br><span class="line">├── files     <span class="comment">#在playbook语法中，指定源文件，从此目录中查找</span></span><br><span class="line">│   ├── daemon.json</span><br><span class="line">│   └── docker-ce.repo</span><br><span class="line">├── handlers  <span class="comment">#定义触发操作，在playbook中通过notify定义</span></span><br><span class="line">│   └── main.yml</span><br><span class="line">├── meta      <span class="comment">#定义当前角色的依赖关系</span></span><br><span class="line">│   └── main.yml</span><br><span class="line">└── tasks    <span class="comment">#入口文件</span></span><br><span class="line">    └── main.yml</span><br><span class="line"></span><br><span class="line">4 directories, 5 files</span><br><span class="line">[sun@<span class="built_in">test</span>-host roles]$ tree -L 2 yum</span><br><span class="line">yum</span><br><span class="line">├── Readme.txt</span><br><span class="line">├── tasks</span><br><span class="line">│   └── main.yml</span><br><span class="line">└── vars</span><br><span class="line">    └── main.yml</span><br><span class="line"></span><br><span class="line">2 directories, 3 files</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>以上两个目录docker yum，就可以称之为角色， 通过刚才的入口文件，调用角色</p>
+<p>看一下角色中创建的各文件都是什么意思？</p>
+<blockquote>
+<p>files/：存放由copy或script模块等调用的文件；<br>templates/:template模块查找所需要模板文件的目录；<br>tasks/：至少应该包含一个名为main.yml的文件；其它的文件需要在此文件中通过include进行包含；<br>handlers/：至少应该包含一个名为main.yml的文件；其它的文件需要在此文件中通过include进行包含；<br>vars/：至少应该包含一个名为main.yml的文件；其它的文件需要在此文件中通过include进行包含；<br>meta/：至少应该包含一个名为main.yml的文件，定义当前角色的特殊设定及其依赖关系；其它的文件需要在此文件中;<br>default/：设定默认变量时使用此目录中的main.yml文件；</p>
+</blockquote>
+<p>在角色中的入口文件，就是tasks目录，查看docker角色的tasks目录下的main.yml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">[sun@<span class="built_in">test</span>-host /etc/ansible/roles/docker/tasks]  cat main.yml</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除旧版本</span></span><br><span class="line">- name: Ensure old versions of Docker are not installed. </span><br><span class="line">  package:     			 <span class="comment">#调用ansible的package模块，安装rpm包</span></span><br><span class="line">    name: <span class="string">'&#123;&#123; item &#125;&#125;'</span>   <span class="comment">#&#123;&#123; item &#125;&#125; 使用模板变量语法，item可以迭代执行元素， 就是with_items中定义的元素</span></span><br><span class="line">    state: absent        <span class="comment"># package安装包的几种状态  absent代表删除软件包  present 监测是否安装，否，则安装</span></span><br><span class="line">  with_items:</span><br><span class="line">    - lxc-docker</span><br><span class="line">    - docker-engine</span><br><span class="line">    - docker</span><br><span class="line">    - docker-common</span><br><span class="line">    - docker.io</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装存储库</span></span><br><span class="line">- name: Ensure depend package is installed</span><br><span class="line">  package:</span><br><span class="line">    name: <span class="string">'&#123;&#123; item &#125;&#125;'</span></span><br><span class="line">    state: present</span><br><span class="line">  with_items:</span><br><span class="line">    - yum-utils</span><br><span class="line">    - device-mapper-persistent-data</span><br><span class="line">    - lvm2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 repo</span></span><br><span class="line">- name: Add Docker repository.</span><br><span class="line">  copy:	      				<span class="comment"># 调用copy模块，拷贝文件</span></span><br><span class="line">    src: docker-ce.repo     <span class="comment"># src指定的文件路径，就是docker角色中files 目录中的文件</span></span><br><span class="line">    dest: /etc/yum.repos.d/docker-ce.repo  <span class="comment">#目标主机的路径</span></span><br><span class="line">    owner: root</span><br><span class="line">    group: root</span><br><span class="line">    mode: 0644</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装指定版本</span></span><br><span class="line">- name: Install docker</span><br><span class="line">  package:</span><br><span class="line">    name: <span class="string">"docker-ce-17.09.1.ce-1.el7.centos"</span></span><br><span class="line">    state: present</span><br><span class="line">    enablerepo: docker-ce-stable</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加 /etc/docker/</span></span><br><span class="line">- name: Ensure /etc/docker/ exist</span><br><span class="line">  file: path=/etc/docker/ mode=0600 state=directory  <span class="comment">#调用file模块， state=directory，表示path指定的路径是一个目录，不存在则创建</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务器</span></span><br><span class="line">- name: Ensure Docker is started and enabled at boot.</span><br><span class="line">  systemd:           <span class="comment">#调用systemd控制服务状态</span></span><br><span class="line">    name: docker</span><br><span class="line">    state: started   <span class="comment">#启动docker服务</span></span><br><span class="line">    enabled: yes     <span class="comment">#开机自启动</span></span><br></pre></td></tr></table></figure></p>
+<p>查看yum角色中的tasks目录下的main.yml文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">- name: Install epel repo</span><br><span class="line">  yum:   <span class="comment">#调用yum模块</span></span><br><span class="line">    name: <span class="string">'epel-release.noarch'</span></span><br><span class="line">    state: latest</span><br><span class="line"></span><br><span class="line">- name: install the <span class="string">'Development tools'</span> package group</span><br><span class="line">  yum:</span><br><span class="line">    name: <span class="string">"@Development tools"</span></span><br><span class="line">    state: present</span><br><span class="line"></span><br><span class="line">- name: Install packages</span><br><span class="line">  yum:  <span class="comment">#调用yum模块</span></span><br><span class="line">    name: <span class="string">"&#123;&#123; pkg_list &#125;&#125;"</span>   <span class="comment">#这里的pkg_list 变量会从 当前角色的vars目录下的main.yml中获取</span></span><br><span class="line">    state: latest  		  <span class="comment">#更新到最新版本</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[sun@<span class="built_in">test</span>-host /etc/ansible/roles/yum/vars]$ cat main.yml </span><br><span class="line">pkg_list:</span><br><span class="line">  - bash-completion</span><br><span class="line">  - bash-completion-extras</span><br></pre></td></tr></table></figure>
+<p>在playbook中，yum模块和package的区别：  </p>
+<blockquote>
+<ol>
+<li>yum是centos 和redhat系列系统的默认安装rpm包命令</li>
+<li>如果是ubuntu系统或者opensuse系统，那么就得使用package的模块了，该模块会为每个系统调用相关的包模块（apt，yum等）</li>
+</ol>
+</blockquote>
+<p>最开始的那条命令，ansible-playbook testInstallDocker.yml ，就会找到docker角色，yum角色，并且根据角色中的入口文件执行相应操作！<br>理解ansible-playbook的路由关系后，就可以熟练编写playbook文件，定义不同模块的角色执行。</p>
+<h1 id="ansible-playbook命令使用"><a href="#ansible-playbook命令使用" class="headerlink" title="ansible-playbook命令使用"></a>ansible-playbook命令使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ansible-playbook --syntax-check  /path/to/playbook.yml  <span class="comment">#测试playbook文件中定义的语法是否正确</span></span><br><span class="line">ansible-playbook -C /path/to/playbook.yml  <span class="comment">#只测试运行，并无真正执行</span></span><br><span class="line">ansible-playbook  /path/to/playbook.yml    <span class="comment">#执行playbook文件</span></span><br></pre></td></tr></table></figure>
+<h1 id="playbook文件中各模块的语法"><a href="#playbook文件中各模块的语法" class="headerlink" title="playbook文件中各模块的语法"></a>playbook文件中各模块的语法</h1><h2 id="systemd服务"><a href="#systemd服务" class="headerlink" title="systemd服务"></a>systemd服务</h2><p>systemd控制服务运行状态<br><img src="/images/ansible-systemd.png" alt="systemd模块"></p>
+<h2 id="service服务"><a href="#service服务" class="headerlink" title="service服务"></a>service服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- name: Enable firewalld</span><br><span class="line">  service: name=firewalld  state=started  enabled=yes</span><br></pre></td></tr></table></figure>
+<h2 id="user模块"><a href="#user模块" class="headerlink" title="user模块"></a>user模块</h2><p>user模块的用法:</p>
+<p>添加或者删除用户，根据state 指定<br>state: present    用户存在，不执行操作，不存在，添加<br>state:absent:   删除用户</p>
+<p><img src="/images/ansible-user.png" alt="user模块"></p>
+<p>with_items,对于元素迭代使用</p>
+<p>如果是多个元素呢？</p>
+<p>多个元素迭代使用方法：<br><img src="/images/ansible-users.png" alt="with_items"></p>
+<h2 id="gourp模块"><a href="#gourp模块" class="headerlink" title="gourp模块"></a>gourp模块</h2><p>goup模块的用法  </p>
+<p><img src="/images/ansible-group.png" alt="group模块"></p>
+<h2 id="file模块"><a href="#file模块" class="headerlink" title="file模块"></a>file模块</h2><p>file模块创建目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">- name: <span class="string">"创建目录"</span></span><br><span class="line">  file: path=&#123;&#123; item &#125;&#125; state=directory</span><br><span class="line">  with_items:</span><br><span class="line">    - /usr/<span class="built_in">local</span>/nginx</span><br><span class="line">    - /usr/<span class="built_in">local</span>/src/nginx</span><br></pre></td></tr></table></figure></p>
+<p>file模块创建软连接, 将/usr/local/python3/bin/python3 软连接到/usr/bin/python3<br><img src="/images/ansible-link.png" alt="link"></p>
+<p>file模块设置权限<br><img src="/images/ansible-mode.png" alt="file-permission"></p>
+<h2 id="unarchive解压模块"><a href="#unarchive解压模块" class="headerlink" title="unarchive解压模块"></a>unarchive解压模块</h2><p>用于解压文件，模块包含如下选项：<br>    copy：在解压文件之前，是否先将文件复制到远程主机，默认为yes。若为no，则要求目标主机上压缩包必须存在。<br>    creates：指定一个文件名，当该文件存在时，则解压指令不执行<br>    dest：远程主机上的一个路径，即文件解压的路径<br>    grop：解压后的目录或文件的属组<br>    list_files：如果为yes，则会列出压缩包里的文件，默认为no，2.0版本新增的选项<br>    mode：解决后文件的权限<br>    src：如果copy为yes，则需要指定压缩文件的源路径<br>owner：解压后文件或目录的属主<br>示例如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   - unarchive: src=foo.tgz dest=/var/lib/foo</span><br><span class="line">   - unarchive: src=/tmp/foo.zip dest=/usr/<span class="built_in">local</span>/bin copy=no</span><br><span class="line">- unarchive: src=https://example.com/example.zip dest=/usr/<span class="built_in">local</span>/bin copy=no</span><br></pre></td></tr></table></figure></p>
+<h2 id="根据条件判断是否执行"><a href="#根据条件判断是否执行" class="headerlink" title="根据条件判断是否执行"></a>根据条件判断是否执行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">- name: <span class="string">"查看python3是否安装，忽略提示"</span></span><br><span class="line">  shell: python3  <span class="comment">#执行一条命令，将结果赋值给register定义的result</span></span><br><span class="line">  register: result</span><br><span class="line">  ignore_errors: True  <span class="comment">#忽略错误提示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#拷贝Python-3.6.5</span></span><br><span class="line">- name: <span class="string">"copy Python3-6.5 to dest"</span></span><br><span class="line">  copy: src=Python-3.6.5.tgz  dest=/usr/<span class="built_in">local</span>/src/Python-3.6.5.tgz</span><br><span class="line">  when: result is failed  <span class="comment">#当result返回的是个错误的时候，执行此tasks</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#编译安装python3.6.5</span></span><br><span class="line">- name: <span class="string">"compile install"</span></span><br><span class="line">  shell: pip install --upgrade supervisor requests;<span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src/;tar zxf Python-3.6.5.tgz; <span class="built_in">cd</span> Python-3.6.5;./configure --prefix=/usr/<span class="built_in">local</span>/python3 --with-ssl;make;make install</span><br><span class="line">  when: result is failed</span><br><span class="line"></span><br><span class="line"><span class="comment">#软连接python3</span></span><br><span class="line">- name: <span class="string">"ln -s python3"</span></span><br><span class="line">  file: src=/usr/<span class="built_in">local</span>/python3/bin/python3  dest=/usr/bin/python3 state=link</span><br><span class="line">  when: result is failed</span><br></pre></td></tr></table></figure>
+<h2 id="yum模块"><a href="#yum模块" class="headerlink" title="yum模块"></a>yum模块</h2><p>yum 模块使用<br><img src="/images/ansible-yum.png" alt="yum模块使用"></p>
+<h2 id="copy模块触发handlers的操作"><a href="#copy模块触发handlers的操作" class="headerlink" title="copy模块触发handlers的操作"></a>copy模块触发handlers的操作</h2><p>copy触发handlers的操作<br><img src="/images/ansible-handlers.png" alt="handlers"></p>
+<p>handlers/main.yml文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- name: reload crond</span><br><span class="line">  <span class="built_in">command</span>: systemctl restart crond</span><br></pre></td></tr></table></figure></p>
+<h2 id="rsync模块"><a href="#rsync模块" class="headerlink" title="rsync模块"></a>rsync模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- synchronize:</span><br><span class="line">    src: /usr/<span class="built_in">local</span>/src/uploadfile/</span><br><span class="line">    dest: /usr/<span class="built_in">local</span>/src/uploadfile/</span><br><span class="line">    delete: yes</span><br><span class="line">    rsync_opts:</span><br><span class="line">      - <span class="string">"--exclude=logs"</span></span><br><span class="line">      - <span class="string">"-avz"</span></span><br></pre></td></tr></table></figure>
+<h2 id="notify触发handlers的用法"><a href="#notify触发handlers的用法" class="headerlink" title="notify触发handlers的用法"></a>notify触发handlers的用法</h2><p>注意: notify后的名字，必须和handlers中定义的名字相同<br><img src="/images/ansible-notify.png" alt="notify-handlers"></p>
+<p>handlers/main.yml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- name: restart supervisor</span><br><span class="line">  systemd: name=supervisord state=restarted</span><br></pre></td></tr></table></figure></p>
+<h2 id="角色中的meta定义依赖关系"><a href="#角色中的meta定义依赖关系" class="headerlink" title="角色中的meta定义依赖关系"></a>角色中的meta定义依赖关系</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">meta/main.yml</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">dependencies:</span><br><span class="line">  - &#123; role: docker &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="playbook中变量的定义"><a href="#playbook中变量的定义" class="headerlink" title="playbook中变量的定义"></a>playbook中变量的定义</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">- hosts: <span class="built_in">test</span>-host</span><br><span class="line">  vars:</span><br><span class="line">    http_port: 80</span><br><span class="line">  remote_user: root</span><br><span class="line">  tasks:</span><br><span class="line">  - name: firewalld <span class="built_in">set</span></span><br><span class="line">    firewalld: port=&#123;&#123; http_port &#125;&#125;/tcp permanent=<span class="literal">true</span> state=enabled immediate=yes</span><br></pre></td></tr></table></figure>
+<h2 id="ansible关闭selinux，并等待重启完成，继续执行task"><a href="#ansible关闭selinux，并等待重启完成，继续执行task" class="headerlink" title="ansible关闭selinux，并等待重启完成，继续执行task"></a>ansible关闭selinux，并等待重启完成，继续执行task</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">- name: install libselinux-python</span><br><span class="line">  yum:</span><br><span class="line">    name: libselinux-python</span><br><span class="line">    state: present</span><br><span class="line">  tags:</span><br><span class="line">    - optimize</span><br><span class="line">    - selinux</span><br><span class="line"></span><br><span class="line">- name: turn off selinux</span><br><span class="line">  selinux:</span><br><span class="line">    state: disabled</span><br><span class="line">  register: se</span><br><span class="line">  tags:</span><br><span class="line">    - optimize</span><br><span class="line">    - selinux</span><br><span class="line">  </span><br><span class="line">- name: reboot host and <span class="built_in">wait</span> <span class="keyword">for</span> it to <span class="built_in">return</span></span><br><span class="line">  shell: sleep 5 &amp;&amp; shutdown -r now <span class="string">"reboot for disable selinux"</span></span><br><span class="line">  async: 1</span><br><span class="line">  poll: 0</span><br><span class="line">  ignore_errors: <span class="literal">true</span></span><br><span class="line">  when:</span><br><span class="line">    se.reboot_required == True</span><br><span class="line"></span><br><span class="line">- name: Wait <span class="keyword">for</span> the server to finish rebooting</span><br><span class="line">  wait_for_connection:</span><br><span class="line">    delay: 5</span><br></pre></td></tr></table></figure>
+<h1 id="ansible执行策略优化"><a href="#ansible执行策略优化" class="headerlink" title="ansible执行策略优化"></a>ansible执行策略优化</h1><ol>
+<li>ansible并发程序执行的等待优化<br>ansible的任务执行，是并发操作，默认开启5个进程执行，可以执行-f 定义并发进程数<br>ansible默认5个并发进程，如果控制主机比较多，例如20个主机，那么会并行执行5台主机，只有这5台主机全部执行完一次任务，再继续下一批的5台执行任务，如果其中一台执行完任务，那么它默认也会等待那四台主机完成，然后再5台并行执行任务，这样的话，就会影响执行效率；</li>
+</ol>
+<p>如果目标主机的网络稳定性不好，开启的进程就会一直等待最后一个任务执行完成，才继续下一个任务</p>
+<p>在使用playbook文件中，可以指定 strategy: free 表示异步执行，尽快切换到下一台主机，默认为linear</p>
+<h1 id="ansible的清单文件中的参数"><a href="#ansible的清单文件中的参数" class="headerlink" title="ansible的清单文件中的参数"></a>ansible的清单文件中的参数</h1><table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ansible_ssh_host</td>
+<td>执行的主机</td>
+</tr>
+<tr>
+<td>ansible_ssh_user</td>
+<td>ssh连接的用户名</td>
+</tr>
+<tr>
+<td>ansible_ssh_port</td>
+<td>ssh目标主机的端口号</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>以上也是工作中常用到的，没有写的太详细，就是忘记语法的时候，翻出来看看！</p>
+<hr>
+
+      
+    </div>
+    
+    
+    
+	
+	<div>
+		
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+		
+	</div>
+	
+	<div>
+      
+        
+      
+	</div>
+	
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ansible的playbook语法/" rel="tag"><i class="fa fa-tag"></i> ansible的playbook语法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/18/ansible命令与模块的使用/" rel="next" title="ansible命令与模块的使用">
+                <i class="fa fa-chevron-left"></i> ansible命令与模块的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/18/英语学习一/" rel="prev" title="英语学习一">
+                英语学习一 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTc1Ni8xNjI4Mw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myself1.jpg"
+                alt="李常明" />
+            
+              <p class="site-author-name" itemprop="name">李常明</p>
+              <p class="site-description motion-element" itemprop="description">命运给你一个比别人低的起点，是想告诉你，让你用一生的努力去奋斗出一个绝地反击的故事。这个故事关于独立，关于梦想，关于坚忍，关于勇气！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/归档/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/分类/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/标签/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/MrLichangming" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:15116973831@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情连接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhuimar.com/" title="追马" target="_blank">追马</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://jkzhao.github.io/" title="jkzhao" target="_blank">jkzhao</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ansible中编写playbook文件，通过不同的角色执行操作"><span class="nav-number">1.</span> <span class="nav-text">ansible中编写playbook文件，通过不同的角色执行操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#执行命令"><span class="nav-number">2.</span> <span class="nav-text">执行命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ansible-playbook命令使用"><span class="nav-number">3.</span> <span class="nav-text">ansible-playbook命令使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#playbook文件中各模块的语法"><span class="nav-number">4.</span> <span class="nav-text">playbook文件中各模块的语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#systemd服务"><span class="nav-number">4.1.</span> <span class="nav-text">systemd服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#service服务"><span class="nav-number">4.2.</span> <span class="nav-text">service服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#user模块"><span class="nav-number">4.3.</span> <span class="nav-text">user模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gourp模块"><span class="nav-number">4.4.</span> <span class="nav-text">gourp模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#file模块"><span class="nav-number">4.5.</span> <span class="nav-text">file模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unarchive解压模块"><span class="nav-number">4.6.</span> <span class="nav-text">unarchive解压模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据条件判断是否执行"><span class="nav-number">4.7.</span> <span class="nav-text">根据条件判断是否执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum模块"><span class="nav-number">4.8.</span> <span class="nav-text">yum模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#copy模块触发handlers的操作"><span class="nav-number">4.9.</span> <span class="nav-text">copy模块触发handlers的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rsync模块"><span class="nav-number">4.10.</span> <span class="nav-text">rsync模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notify触发handlers的用法"><span class="nav-number">4.11.</span> <span class="nav-text">notify触发handlers的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#角色中的meta定义依赖关系"><span class="nav-number">4.12.</span> <span class="nav-text">角色中的meta定义依赖关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#playbook中变量的定义"><span class="nav-number">4.13.</span> <span class="nav-text">playbook中变量的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ansible关闭selinux，并等待重启完成，继续执行task"><span class="nav-number">4.14.</span> <span class="nav-text">ansible关闭selinux，并等待重启完成，继续执行task</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ansible执行策略优化"><span class="nav-number">5.</span> <span class="nav-text">ansible执行策略优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ansible的清单文件中的参数"><span class="nav-number">6.</span> <span class="nav-text">ansible的清单文件中的参数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李常明</span>
+
+  
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+ -->
+
+<div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    博客访问人数<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共 8.4k 字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  
+</body>
+</html>

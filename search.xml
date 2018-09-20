@@ -1,6 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[docker仓库Harbor的配置与使用]]></title>
+    <url>%2F2018%2F09%2F20%2Fdocker%E4%BB%93%E5%BA%93Harbor%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[有一个私有仓库来管理镜像，还是非常方便的，特此记录下部署docker Harbor的笔记 参考链接 官方文档相关链接安装和配置指南用户指南 简介 Harbor的基本功能： VMware公司最近开源了企业级Registry项目Harbor，由VMware中国研发的团队负责开发 基于角色的访问控制 用户与Docker镜像仓库通过“项目”进行组织管理，一个用户可以对多个镜像仓库在同一命名空间（project）里有不同的权限。 镜像复制 – 镜像可以在多个Registry实例中复制（同步）。尤其适合于负载均衡，高可用，混合云和多云的场景。 图形化用户界面 – 用户可以通过浏览器来浏览，检索当前Docker镜像仓库，管理项目和命名空间。 AD/LDAP 支持 – Harbor可以集成企业内部已有的AD/LDAP，用于鉴权认证管理。 审计管理 – 所有针对镜像仓库的操作都可以被记录追溯，用于审计管理。 国际化 – 已拥有英文、中文、德文、日文和俄文的本地化版本。更多的语言将会添加进来。 RESTful API – RESTful API 提供给管理员对于Harbor更多的操控, 使得与其它管理软件集成变得更容易。 部署简单 – 提供在线（online）和离线（offline）两种安装工具， 也可以安装到vSphere平台(OVA方式)虚拟设备。 官方提供的架构图 环境描述 OS : Centos7本机已经安装docker docker-compose 安装部署下载离线安装包安装包链接地址 解压包1tar xf harbor-offline-installer-v1.5.1.tgz 修改配置文件123456789101112131415# 主配置文件harbor.cfg以下修改的参数中，仓库启用了https，满足docker仓库默认pull push需要使用https，要不然需要修改docker参数添加 –insecure-register修改hostname = hub.com #这个配置，是指定docker 仓库的url地址，也就是在客户端执行 docker pull 时，需要指定的仓库地址 修改ui_url_protocol = https #指定url访问为https，默认是http， 如果这里修改成https，如果使用http访问仓库，会自动跳转到https上；修改customize_crt: on #打开表示，创建私钥和根证书，用于https链接，官方介绍:打开或关闭，默认打开）打开此属性时，准备脚本创建私钥和根证书，用于生成/验证注册表令牌。当由外部来源提供密钥和根证书时，将此属性设置为off。 ssl_cert = /data/cert/hub.com.bundle.crt #ssl证书路径，ssl_cert_key = /data/cert/hub.com.key.pem #ssl私钥文件路径 这两项，在nginx的配置中使用；会加载到nginx的配置文件中注释： https生成证书，我使用的是github上的一个生成自签名证书的脚本生成；这个脚本，使用openssl注册自签名证书，只不过把所有的操作封装成了脚本，可以生成多域名证书，泛域名证书，表示很好用，也可以参考官网提供的openssl 生成 github链接地址：https://github.com/Fishdrowned/ssl 修改self_registration = off #禁止普通用户可以注册用户选项 修改project_creation_restriction = adminonly #只允许管理员创建项目 配置截图： 当然，harbor支持邮件发送，用户忘记密码，通过邮件来更改密码；这里我没有使用邮件服务； harbor也可以支持ldap认证；修改完配置文件，接下来就是制作证书了： 制作证书：创建目录：（此目录，容器会挂载此目录下的证书文件，也就是配置文件中指定的证书路径），当然也可以自定义此路径mkdir /data/cert使用openssl命令生成证书（本文我使用的是脚本生成）openssl生成证书主要分几个步骤： 创建CA证书 生成证书签名请求 生成服务器证书 介绍脚本使用： 脚本路径： /root/ssl 脚本执行: ./gen.cert.sh hub.com 脚本输出路径： /root/ssl/out/hub.com/ 证书生成成功后，就可以执行脚本安装了！修改docker-compose.yml,指定端口访问主要修改，proxy映射到宿主机的默认端口，80改为5000，https默认使用443； 执行以下命令，运行容器：1./install.sh 安装完成后，可以使用docker-compose ps 查看运行的容器；安装成功后，就可以使用浏览器进行访问了！注意： 生成证书时，使用的是hub.com，hub.com是一个虚假的域名，需要在本机添加hosts文件， 192.168.0.154 hub.com 访问UI界面https://hub.com 介绍几个命令如果在容器运行后，修改配置文件，使用以下命令，重新加载容器 停止容器：(注意需要在harbor目录中执行，因为要依赖docker-compose.yml文件) docker-compose down重新加载配置文件修改harbor.cfg配置文件后，执行以下命令，重新生成文件 ./prepare #如果语法错误，会提示错误启动容器： docker-compose up -d]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker Harbor仓库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[docker与系统软件防火墙关系]]></title>
+    <url>%2F2018%2F09%2F20%2Fdocker%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E9%98%B2%E7%81%AB%E5%A2%99%E5%85%B3%E7%B3%BB%2F</url>
+    <content type="text"><![CDATA[在使用docker的过程中，经常遇到要改动防火墙，要注意的问题 以下笔记总结参考此链接: Docker网络与防火墙 QAQ: 在docker运行的过程中，重启了firewalld或者iptables A:会触发，在宿主机无法转发请求到容器，这是因为 docker 在默认启动的时候，会修改iptables规则，如果重启了iptables，或者firewalld，则docker默认启动服务设置的规则就会丢失，所以会影响容器访问 Q: 启动一个新的docker容器，映射了端口，需不需要在系统防火墙开放端口 A: 不需要，因为docker 容器如果映射了端口，在没有指定网络模式的情况下，默认使用docker0网络，也就是容器的网关，容器访问外部数据，到达docker0，也就是网关后，会查询主机的路由表，确定数据包从哪个网卡发出，iptables负责对数据包进行snat转换，将源地址转换为对应网卡的地址，因此容器对外是不可见的。 A: 外部想要访问容器内的数据，首先需要将容器的端口映射到宿主机上。这时候docker会在iptables添加转发规则，把接收到的数据转发给容器。 注意:如果在启动docker服务的情况下，需要动态添加防火墙规则。]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker与系统防火墙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[docker swarm 一些常用命令]]></title>
+    <url>%2F2018%2F09%2F20%2Fdocker-swarm-%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[记录工作中常用的一些docker swarm的命令 docker swarm命令docker swarm创建集群1docker swarm init --advertise-addr 192.168.1.10 node节点加入集群1234567891011docker swarm join --token "创建集群的tocken值" 192.168.1.10:2377#如果忘记了加入集群的命令，可以在管理节点执行以下命令获取[1::root@sun-host::~]# &gt;&gt;&gt;docker swarm join-token manager #查看加入管理节点的tockenTo add a manager to this swarm, run the following command: docker swarm join --token SWMTKN-1-5n0yqdoirvjroddv4tk4q352rjg5ywqo0gur2a5ibaw517y9ed-6bwuuocgw1lx3anqsiy373uyn 192.168.1.10:2377[1::root@sun-host::~]# &gt;&gt;&gt;docker swarm join-token worker #查看加入工作节点的tockenTo add a worker to this swarm, run the following command: docker swarm join --token SWMTKN-1-5n0yqdoirvjroddv4tk4q352rjg5ywqo0gur2a5ibaw517y9ed-5lo62wh31nrt439b679s2ulim 192.168.1.10:2377 查看集群中的服务12docker service ls docker service ls ps 服务名 修改服务实例数1docker service scale nginx=3 删除节点1docker node rm node2 删除shutdown的容器,和无用数据清理1docker system prune -f docker node常用命令12345678docker node ls #查看所有集群节点docker node rm #删除某个节点（-f强制删除）docker node inspect ##查看节点详情,标签 --pretty 显示信息比较规整docker node demote #节点降级，由管理节点降级为工作节点docker node promote #节点升级，由工作节点升级为管理节点# docker node promote node1 node2 # 提升node1 node2节点为管理节点docker node update #更新节点docker node ps #查看节点中的 Task 任务 docker service 常用命令1234567docker service create #创建服务, 如果编写compose文件，可以使用docker stack命令部署docker service inspect #查看服务的详细信息docker service logs #查看某个服务的日志信息docker service rm #删除服务docker service ls #列出集群中所有服务docker service update #更新服务docker service update --image hub.com/image service_name #更新服务的镜像 批量删除所有服务12docker service ls -1 # 获取所有service的IDdocker service ls -q | xargs docker service rm Docker Stack 部署多个集群服务docker stack使用文件docker-compose.yml批量部署服务创建编排文件docker-compose.yml12345678910111213141516version: '3'services: mynginx: image: hub.test.com:5000/almi/nginx:0.1 ports: - "8081:80" deploy: replicas: 3 busybox: image: hub.test.com:5000/busybox:latest volumes: - "/var/run/docker.sock:/var/run/docker.sock" deploy: replicas: 2 使用docker-stack批量创建服务123docker stack deploy -c docker-compose.yml deploy-testdocker stack ps deploy-tes# docker stack部署的容器名称 deploy-test_&lt;service名称&gt;.随机后缀 docker stack 常用命令123456docker stack deploy #部署新的堆栈或更新现有堆栈docker stack ls #列出现有堆栈docker stack ps #列出堆栈中的任务docker stack rm #删除堆栈 （docker stack deploy部署的时候指定的服务名字）docker stack services #列出堆栈中的服务docker stack down #移除某个堆栈（不删数据） docker stack deploy 显示服务的状态accepted: 任务已经被分配到某一个节点执行preparing: 准备资源，一般是从网络拉取iamgerunning: 副本运行成功shutdown: 报错，终止，当一个任务被终止（stoped or killed），任务不能被重启，但是一个替代的任务会被重启 查看swarm中服务的ip1docker service inspect --format='&#123;&#123; json.Endpoint.VirtualIPs &#125;&#125;' 服务名]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker swarm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[docker中使用supervisor管理进程]]></title>
+    <url>%2F2018%2F09%2F20%2Fdocker%E4%B8%AD%E4%BD%BF%E7%94%A8supervisor%E7%AE%A1%E7%90%86%E8%BF%9B%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[docker file 中 ENTRYPOINT 和CMD的用法 ENTRYPOINT &amp;&amp; CMD在docker file中，如果同时指定了ENTRYPOINT和CMD，例如： CMD 的指令将作为参数传递给ENTRYPOINTENTRYPOINT 指定 /usr/bin/tini – /usr/bin/entrypoint.sh /usr/bin/tini 是转发信号，防止僵尸进程， /usr/bin/entrypoint.sh脚本指定了exec $@接受所有的参数，也就是会接受CMD传递过来的参数，启动supervisord服务 为何这样用呢？ 如果有些操作，需要在docker 容器运行前需要指定的操作，就可以通过shell写在ENTRYPOINT.sh脚本中，控制容器执行操作！]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker file</tag>
+        <tag>ENTRYPOINT</tag>
+        <tag>CMD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos7绑定双网卡]]></title>
+    <url>%2F2018%2F09%2F19%2Fcentos7%E7%BB%91%E5%AE%9A%E5%8F%8C%E7%BD%91%E5%8D%A1%2F</url>
+    <content type="text"><![CDATA[Centos7绑定双网卡： #安装必需的包：1yum install teamd -y #停止NetworkManager123systemctl stop NetworkManagersystemctl disable NetworkManager #Creating a Network Team Using ifcfg Files12345678910111213cd /etc/sysconfig/network-scripts/vi ifcfg-team0DEVICE=team0DEVICETYPE=TeamONBOOT=yesBOOTPROTO=noneIPADDR=192.168.10.110PREFIX=24GATEWAY=192.168.10.254TEAM_CONFIG='&#123;"runner": &#123;"name": "activebackup"&#125;, "link_watch": &#123;"name": "ethtool"&#125;&#125;'#做好备份继续编辑需要绑定的网卡信息，调整prio优先级 1234567# cat ifcfg-eno1DEVICETYPE=TeamPortTEAM_MASTER=team0TEAM_PORT_CONFIG='&#123;"prio":100&#125;'NAME=eno1DEVICE=eno1ONBOOT=yes 12345678# cat ifcfg-eno2DEVICETYPE=TeamPortTEAM_MASTER=team0TEAM_PORT_CONFIG='&#123;"prio":99&#125;'NAME=eno2DEVICE=eno2ONBOOT=yes 123#重启网络systemctl restart network #检查端口状态12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697teamnl team0 ports1: eth0: up 1000Mbit FD2: eth1: up 1000Mbit FD#检查teaming状态teamdctl team0 statesetup: runner: activebackupports: eno1 link watches: link summary: up instance[link_watch_0]: name: ethtool link: up eno2 link watches: link summary: up instance[link_watch_0]: name: ethtool link: uprunner: active port: eno1#手动断开其中一条链路验证主备模式切换是否正常ip link set eno1 downteamdctl team0 statesetup: runner: activebackupports: eno1 link watches: link summary: up instance[link_watch_0]: name: ethtool link: up eno2 link watches: link summary: up instance[link_watch_0]: name: ethtool link: uprunner: active port: eno2]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[linux高阶命令使用]]></title>
+    <url>%2F2018%2F09%2F19%2Flinux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[编写shell脚本中，常用的一些awk grep getops 语法 awk1234567tailf access.log | awk 'substr($3,1,3)&gt;200'# 查看访问日志中，过滤非200状态码的日志请求# substr是一个内置函数substr($4,20) # 表示从第四个字段里的第20个字符开始，一直到设定的分隔符 结束substr($4,1,3) # 表示从第四个字段里的第1个字符开始，截取3个字符结束substr($4,3,6) # 表示从第四个字段里的第3个字符开始，截取6个字符结束 getopsgetops指定参数，获取值 1234567891011121314151617181920[root@test-host tmp]# cat test.shwhile getopts “:h:p:” optname;do case “$optname” in “h”) echo “ -h选项的值是 $OPTARG” ;; “p”) echo “-p 选项的值是 $OPTARG” ;; “?” ) echo “不知道此选项” ；； “:”) echo “此选项没有值” ;; “*”) echo “错误信息” ；； esacdone 1234Usage: ./test.sh -h 192.168.1.18 -p 22"-h 选项的值是 192.168.1.18""-p 选项的值是 22" fgrep12fgrep -c "hello" test.txt #匹配hello字符在test.txt文件中匹配行的数目fgrep -l "hello" test.txt #显示匹配hello的文件名 du命令统计目录大小1du -h --max-depth=1 &#123;path&#125; #只显示目录的层级是一级，但是列出的大小，是属于整个文件夹的 pkill12#提出当前登录用户的终端sudo pkill -kill -t pts/15 脚本执行，获取当前路径1cur_dir="$(cd "$(dirname "$[BASH_SOURCE[0]]")"; pwd)" echo输出颜色1echo -e "\e[31m 我要输入的内容 \e[0m" #输出内容为红色 sed获取域名解析的ip地址1nslookup www.baidu.com | sed -n -e '4,$p' | awk '/Address/&#123;print $2&#125;' tr分割符123456789testinfo="python,java,php"for i in $testinfo;do echo $testinfo | tr ',' '\n' #将逗号隔开，\n换行 , \n也可以使用别的字符替换done#结果输出:pythonjavaphp 123# 使用-- 拼接[42::root@test-host:: test]# &gt;&gt;&gt; for i in $testinfo;do echo $testinfo | tr ',' '--'; donepython-java-php eval命令12eval ls $pipe wc -l# shell第1次扫描命令行时，它替换出pipe的值｜，接着eval使它再次扫描命令行，这时shell把｜作为管道符号了。]]></content>
+      <categories>
+        <category>linux高阶命令</category>
+      </categories>
+      <tags>
+        <tag>awk getopts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[nginx日志检索常用命令]]></title>
+    <url>%2F2018%2F09%2F19%2Fnginx%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[查找特定时间点的日志1cat access.log | awk '$1 &gt;="[21/Jul/2014:14:37:50" &amp;&amp; $1 &lt;="[21/Jul/2014:14:38:00"' 禁止特定ip访问12封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP解封命令： iptables -t mangle -D PREROUTING -s 192.168.1.53 -j DROP 获取IP前101awk '&#123;print $7&#125;' access.log | sort | uniq -c | sort -n | tail 计算文件中列的和12345678[root@test-host /tmp]# cat test.txt12345#求列的和awk 'BEGIN&#123;sum=0&#125;&#123;sum+=$1&#125;END&#123;print sum&#125;' test.txt]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>nginx日志检索</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown语法积累]]></title>
+    <url>%2F2018%2F09%2F19%2FMarkdown%E8%AF%AD%E6%B3%95%E7%A7%AF%E7%B4%AF%2F</url>
+    <content type="text"><![CDATA[markdwon语法积累图片加载显示图片1![加载图片](/images/custome.png) 引用1&gt; 代表引用 标题1234# 一级标题## 二级标题### 三级标题......... 依次类推 表格单元格和表头使用 | 来分割不同的单元格 name description ansible_ssh_host 执行的主机 ansible_ssh_user ssh连接的用户名 ansible_ssh_port ssh目标主机的端口号 name description ansible_ssh_host 执行的主机 ansible_ssh_user ssh连接的用户名 ansible_ssh_port ssh目标主机的端口号 对齐 :— 代表左对齐 :–: 代表居中对齐 —: 代表右对齐]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[英语学习一]]></title>
+    <url>%2F2018%2F09%2F18%2F%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E4%B8%80%2F</url>
+    <content type="text"><![CDATA[英语爱好者的词汇积累 Bus No.38 has a regular schedule.第38路车有一个固定的时间表regular: [/‘rɛgjəlɚ/] 定期的，有规律的schedule: [/ˈskedʒʊl; skɛdʒʊl/] vt.安排，计划 It comes every 15 minutes.每15分钟就有一次 3.Bus No.47 comes less often.第47路公共汽车很少 It comes at 8:20,8:45,and 9:25.它是在8:20,8:45和9:25 Bus No.60 is the earliest bus.第60路公共汽车是最早的。earliest： [ /‘ɝlɪɪst/] 早的，初期的 It comes at 8:05,8:30,and 9:00时间是8:05,8:30和9:00 Bus No.38 has stops at the main train station and the airport.38路公共汽车停在火车总站和机场 Bus No.60 stops at the main train station,but doesn’t go to the airport.第60路公共汽车停在火车站，但不去机场 Bus No.47 doesn’t go to either the main train station or the airport.第47路公共汽车即不去火车站也不去机场either：[/‘iðɚ/] adj.两者之中任一的 prep. 任何一个 The last bus to the airport left 15 minutes ago,at 8:55.最后一班去机场的巴士15分钟前，8点55分 Here is a bus scheduel at a bus stop.这是公共汽车站的公交时刻表 It has the schedule for 3 buses between 8:00 and 9:30 in the morning.有3辆公共汽车的时间表在早上8:00到9:30之间]]></content>
+      <categories>
+        <category>英语学习</category>
+      </categories>
+      <tags>
+        <tag>常明学英语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ansible的playbook文件的语法]]></title>
+    <url>%2F2018%2F09%2F18%2Fansible%E7%9A%84playbook%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[记录工作中使用到的编写playbook文件的一些语法 ansible中编写playbook文件，通过不同的角色执行操作首先看一份playbook文件, 文件名 testInstallDocker.yml12345678#入口playbook文件---- hosts: 'test-1' sudo: yes roles: - docker - yum 执行命令12ansible-playbook testInstallDocker.yml#这条命令执行，接下来，会发生什么呢？ 首先会找到testInstalldocker.yml文件中定义的内容， — 代表注释， - hosts: test-1 指定要操作的主机是test-1 sudo: yes 表示允许普通用户执行sudo权限 roles: roles 会默认去ansible的默认/etc/ansible/roles目录下找 docker yum, 当然此目录也可以通过ansible.cfg文件修改 进入/etc/ansible/roles目录1234567891011121314151617181920212223以下可以看到/etc/ansible/roles/&#123;docker,yum&#125; 目录下创建的文件[sun@test-host roles]$ tree -L 2 dockerdocker ├── files #在playbook语法中，指定源文件，从此目录中查找│ ├── daemon.json│ └── docker-ce.repo├── handlers #定义触发操作，在playbook中通过notify定义│ └── main.yml├── meta #定义当前角色的依赖关系│ └── main.yml└── tasks #入口文件 └── main.yml4 directories, 5 files[sun@test-host roles]$ tree -L 2 yumyum├── Readme.txt├── tasks│ └── main.yml└── vars └── main.yml2 directories, 3 files 以上两个目录docker yum，就可以称之为角色， 通过刚才的入口文件，调用角色 看一下角色中创建的各文件都是什么意思？ files/：存放由copy或script模块等调用的文件；templates/:template模块查找所需要模板文件的目录；tasks/：至少应该包含一个名为main.yml的文件；其它的文件需要在此文件中通过include进行包含；handlers/：至少应该包含一个名为main.yml的文件；其它的文件需要在此文件中通过include进行包含；vars/：至少应该包含一个名为main.yml的文件；其它的文件需要在此文件中通过include进行包含；meta/：至少应该包含一个名为main.yml的文件，定义当前角色的特殊设定及其依赖关系；其它的文件需要在此文件中;default/：设定默认变量时使用此目录中的main.yml文件； 在角色中的入口文件，就是tasks目录，查看docker角色的tasks目录下的main.yml123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051[sun@test-host /etc/ansible/roles/docker/tasks] cat main.yml---# 删除旧版本- name: Ensure old versions of Docker are not installed. package: #调用ansible的package模块，安装rpm包 name: '&#123;&#123; item &#125;&#125;' #&#123;&#123; item &#125;&#125; 使用模板变量语法，item可以迭代执行元素， 就是with_items中定义的元素 state: absent # package安装包的几种状态 absent代表删除软件包 present 监测是否安装，否，则安装 with_items: - lxc-docker - docker-engine - docker - docker-common - docker.io#安装存储库- name: Ensure depend package is installed package: name: '&#123;&#123; item &#125;&#125;' state: present with_items: - yum-utils - device-mapper-persistent-data - lvm2# 添加 repo- name: Add Docker repository. copy: # 调用copy模块，拷贝文件 src: docker-ce.repo # src指定的文件路径，就是docker角色中files 目录中的文件 dest: /etc/yum.repos.d/docker-ce.repo #目标主机的路径 owner: root group: root mode: 0644# 安装指定版本- name: Install docker package: name: "docker-ce-17.09.1.ce-1.el7.centos" state: present enablerepo: docker-ce-stable# 添加 /etc/docker/- name: Ensure /etc/docker/ exist file: path=/etc/docker/ mode=0600 state=directory #调用file模块， state=directory，表示path指定的路径是一个目录，不存在则创建# 启动服务器- name: Ensure Docker is started and enabled at boot. systemd: #调用systemd控制服务状态 name: docker state: started #启动docker服务 enabled: yes #开机自启动 查看yum角色中的tasks目录下的main.yml文件12345678910111213141516---- name: Install epel repo yum: #调用yum模块 name: 'epel-release.noarch' state: latest- name: install the 'Development tools' package group yum: name: "@Development tools" state: present- name: Install packages yum: #调用yum模块 name: "&#123;&#123; pkg_list &#125;&#125;" #这里的pkg_list 变量会从 当前角色的vars目录下的main.yml中获取 state: latest #更新到最新版本 1234[sun@test-host /etc/ansible/roles/yum/vars]$ cat main.yml pkg_list: - bash-completion - bash-completion-extras 在playbook中，yum模块和package的区别： yum是centos 和redhat系列系统的默认安装rpm包命令 如果是ubuntu系统或者opensuse系统，那么就得使用package的模块了，该模块会为每个系统调用相关的包模块（apt，yum等） 最开始的那条命令，ansible-playbook testInstallDocker.yml ，就会找到docker角色，yum角色，并且根据角色中的入口文件执行相应操作！理解ansible-playbook的路由关系后，就可以熟练编写playbook文件，定义不同模块的角色执行。 ansible-playbook命令使用123ansible-playbook --syntax-check /path/to/playbook.yml #测试playbook文件中定义的语法是否正确ansible-playbook -C /path/to/playbook.yml #只测试运行，并无真正执行ansible-playbook /path/to/playbook.yml #执行playbook文件 playbook文件中各模块的语法systemd服务systemd控制服务运行状态 service服务12- name: Enable firewalld service: name=firewalld state=started enabled=yes user模块user模块的用法: 添加或者删除用户，根据state 指定state: present 用户存在，不执行操作，不存在，添加state:absent: 删除用户 with_items,对于元素迭代使用 如果是多个元素呢？ 多个元素迭代使用方法： gourp模块goup模块的用法 file模块file模块创建目录1234567---- name: "创建目录" file: path=&#123;&#123; item &#125;&#125; state=directory with_items: - /usr/local/nginx - /usr/local/src/nginx file模块创建软连接, 将/usr/local/python3/bin/python3 软连接到/usr/bin/python3 file模块设置权限 unarchive解压模块用于解压文件，模块包含如下选项： copy：在解压文件之前，是否先将文件复制到远程主机，默认为yes。若为no，则要求目标主机上压缩包必须存在。 creates：指定一个文件名，当该文件存在时，则解压指令不执行 dest：远程主机上的一个路径，即文件解压的路径 grop：解压后的目录或文件的属组 list_files：如果为yes，则会列出压缩包里的文件，默认为no，2.0版本新增的选项 mode：解决后文件的权限 src：如果copy为yes，则需要指定压缩文件的源路径owner：解压后文件或目录的属主示例如下：123 - unarchive: src=foo.tgz dest=/var/lib/foo - unarchive: src=/tmp/foo.zip dest=/usr/local/bin copy=no- unarchive: src=https://example.com/example.zip dest=/usr/local/bin copy=no 根据条件判断是否执行12345678910111213141516171819- name: "查看python3是否安装，忽略提示" shell: python3 #执行一条命令，将结果赋值给register定义的result register: result ignore_errors: True #忽略错误提示#拷贝Python-3.6.5- name: "copy Python3-6.5 to dest" copy: src=Python-3.6.5.tgz dest=/usr/local/src/Python-3.6.5.tgz when: result is failed #当result返回的是个错误的时候，执行此tasks#编译安装python3.6.5- name: "compile install" shell: pip install --upgrade supervisor requests;cd /usr/local/src/;tar zxf Python-3.6.5.tgz; cd Python-3.6.5;./configure --prefix=/usr/local/python3 --with-ssl;make;make install when: result is failed#软连接python3- name: "ln -s python3" file: src=/usr/local/python3/bin/python3 dest=/usr/bin/python3 state=link when: result is failed yum模块yum 模块使用 copy模块触发handlers的操作copy触发handlers的操作 handlers/main.yml文件12- name: reload crond command: systemctl restart crond rsync模块1234567- synchronize: src: /usr/local/src/uploadfile/ dest: /usr/local/src/uploadfile/ delete: yes rsync_opts: - "--exclude=logs" - "-avz" notify触发handlers的用法注意: notify后的名字，必须和handlers中定义的名字相同 handlers/main.yml12- name: restart supervisor systemd: name=supervisord state=restarted 角色中的meta定义依赖关系123456meta/main.yml---dependencies: - &#123; role: docker &#125; playbook中变量的定义123456789---- hosts: test-host vars: http_port: 80 remote_user: root tasks: - name: firewalld set firewalld: port=&#123;&#123; http_port &#125;&#125;/tcp permanent=true state=enabled immediate=yes ansible关闭selinux，并等待重启完成，继续执行task123456789101112131415161718192021222324252627- name: install libselinux-python yum: name: libselinux-python state: present tags: - optimize - selinux- name: turn off selinux selinux: state: disabled register: se tags: - optimize - selinux - name: reboot host and wait for it to return shell: sleep 5 &amp;&amp; shutdown -r now "reboot for disable selinux" async: 1 poll: 0 ignore_errors: true when: se.reboot_required == True- name: Wait for the server to finish rebooting wait_for_connection: delay: 5 ansible执行策略优化 ansible并发程序执行的等待优化ansible的任务执行，是并发操作，默认开启5个进程执行，可以执行-f 定义并发进程数ansible默认5个并发进程，如果控制主机比较多，例如20个主机，那么会并行执行5台主机，只有这5台主机全部执行完一次任务，再继续下一批的5台执行任务，如果其中一台执行完任务，那么它默认也会等待那四台主机完成，然后再5台并行执行任务，这样的话，就会影响执行效率； 如果目标主机的网络稳定性不好，开启的进程就会一直等待最后一个任务执行完成，才继续下一个任务 在使用playbook文件中，可以指定 strategy: free 表示异步执行，尽快切换到下一台主机，默认为linear ansible的清单文件中的参数 name description ansible_ssh_host 执行的主机 ansible_ssh_user ssh连接的用户名 ansible_ssh_port ssh目标主机的端口号 以上也是工作中常用到的，没有写的太详细，就是忘记语法的时候，翻出来看看！]]></content>
+      <categories>
+        <category>自动化运维工具</category>
+      </categories>
+      <tags>
+        <tag>ansible的playbook语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ansible命令与模块的使用]]></title>
+    <url>%2F2018%2F09%2F18%2Fansible%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[主要记录一下，平常使用ansible的一些命令和模块的使用 ansible定义主机组清单文件默认路径: /etc/ansible/hosts 也可以在ansible.cfg中指定其他路径123[test] # 定义主机组test-1 #主机列表 这里的主机，使用了主机名定义，方便后续在playbook中设置主机hostname，获取清单的变量test-2 当然需要在宿主机的hosts文件指定ipansible的清单文件也可以调用脚本的方式 ansible的命令语法1ansible &#123;主机 | 主机组&#125; -m &#123;指定模块&#125; -a &#123;执行的命令&#125; ansible模块command模块12ansible test -m command -a 'hostname' #默认就是command，所以不需要执行-m commandansible test -a "hostname" shell模块12ansible test -m shell -a 'echo "root:testpassword" | chpasswd'#此命令，使用到了管道符号，就必须使用shell模块，command模块不支持管道操作 copy模块12ansible test -m copy -a 'src=/tmp/test.txt dest=/tmp/test.txt'# 将源主机的/tmp/test.txt文件推送到目标主机的/tmp/test.txt synchronize模块12ansible test -m synchronize -a 'src=/tmp/directory1/ dest=/tmp/directory1/'#将源主机的directory1目录推送到目标主机 ** 注意:同步目录的时候，源路径目录必须以/ 结尾，要不然同步过去会生成子目录 /tmp/directory1/directory1 script模块ansible test -m script -a '/tmp/test.sh' #ansible会把本地/tmp/test.sh脚本推送到目标主机，并执行脚本，执行完删除脚本，退出]]></content>
+      <categories>
+        <category>自动化运维工具</category>
+      </categories>
+      <tags>
+        <tag>ansible命令</tag>
+        <tag>ansible模块</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[firewalld自定义服务开放端口]]></title>
+    <url>%2F2018%2F09%2F18%2Ffirewalld%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3%2F</url>
+    <content type="text"><![CDATA[在使用docker swarm集群的时候，各工作节点需要开放通信的端口，手动一个一个加，又比较麻烦 索性写成firewalld的服务，然后直接添加此服务即可！ 自定义firewalld服务路径： /usr/lib/firewalld/services/ 新增docker-swarm.xml文件12345678910&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;service&gt;&lt;short&gt;docker-swarm&lt;/short&gt;&lt;description&gt;Default ports for docker swarm&lt;/description&gt;&lt;port protocol="tcp" port="2376"/&gt; &lt;!--For Docker Machine --&gt;&lt;port protocol="tcp" port="2377"/&gt; &lt;!--It only needs to be opened on manager nodes --&gt;&lt;port protocol="tcp" port="7946"/&gt; &lt;!--For container network discovery --&gt;&lt;port protocol="udp" port="7946"/&gt; &lt;!--For container network discovery --&gt;&lt;port protocol="udp" port="4789"/&gt; &lt;!--For container ingress networking --&gt;&lt;/service&gt; firewall-cmd添加自定义的服务12firewall-cmd --add-service=docker-swarm --permanentfirewall-cmd --reload 查看是否添加成功1firewall-cmd --list-all #列出默认区域的防火墙配置]]></content>
+      <categories>
+        <category>Centos7防火墙</category>
+      </categories>
+      <tags>
+        <tag>firewalld</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo Next主题使用配置]]></title>
     <url>%2F2018%2F09%2F16%2Fhexo-Next%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[当前主题采用版本信息 Next Version: v6.0.0 Hexo Version: v5.1记录初次使用hexo的基本配置，做个笔记文档！所有的记录，都是在hexo的官网，和别人的博客中找到的，感谢分享的这些文档，让我可以参照部署出自己的博客。 hexo站点使用配置博客的title打开站点配置文件123456789# Sitetitle: Changming's blogssubtitle: 坚持是一种美德description: 命运给你一个比别人低的起点，是想告诉你，让你用一生的努力去奋斗出一个绝地反击的故事。这个故事关于独立，关于梦想，关于坚忍，关于勇气！keywords:author: 李常明language: zh-Hanstimezone:email: 15116973831@163.com 博客左侧导航栏配置打开主题配置文件：D:\hexo\themes\next123456789menu: home: / || home about: /个人简介/ || user tags: /标签/ || tags categories: /分类/ || th archives: /归档/ || archive #schedule: /schedule/ || calendar #sitemap: /sitemap.xml || sitemap #commonweal: /404/ || heartbeat 上面为菜单的配置;在站点的使用逻辑关系home: 为站点中显示的命名/: 匹配的url|| home : 定义显示的图标 about: 站点中显示的名称/个人简介： 匹配的url ，需要hexo new page “个人简介” 创建与url匹配的页面user: 站点中显示的图标 博客左侧底部栏设置打开站点配置文件，site的区域配置123# Siteauthor: 李常明description: 描述信息 下面的日志 分类 标签，如果站点中，有文章，并添加分类，标签，会自动显示 分类 标签的使用分类 标签的关联关系分类： 文章属于哪一类标签： 文章的主题内容，根据标签判断文章的内容 使用，在hexo文件夹中执行以下命令12hexo new page "分类" #名称必须匹配在上述主题配置文件中Menu区域的匹配的urlhexo new page "标签" 以上页面创建完成后，会存在 D:\hexo\source{分类，标签}在分类，标签中，以上命令会默认创建index.md文件，分别编辑分类，标签中的index.md添加如下内容 标签12345---title: 标签date: 2018-09-16 16:07:36type: "tags" #添加tags--- 分类12345---title: 分类date: 2018-09-16 16:09:20type: "categories" #添加categories--- 新建一篇博客，查看分类和标签的使用1hexo new "hello_world" #新建博客的命令 上述命令执行完后，会生成D:\hexo\source_posts\hello_world.md文件 在hello_world.md文件添加分类和标签12345678---title: test 分类和标签使用date: 2018-09-16 16:09:20tags: - hexo部署配置categories: - 博客搭建--- 123hexo calenhexo generatehexo s #本地运行，访问查看分类和标签 在文章中，指定了标签和分类，那么文章就会归类到同名的标签和分类中，可以快速检索到文章 hexo站内搜索 进入hexo根目录，使用npm 安装插件1npm install hexo-generator-searchdb --save 打开站点配置文件，在Extensions下面添加123456# 搜索search: path: search.xml field: post format: html limit: 10000 打开主题配置文件，找到Local search，将enable设置为true123#站点内文章的搜索功能local_search: enable: true 友情链接添加打开主题配置文件,links区域123links: 追马: http://www.zhuimar.com/ jkzhao: http://jkzhao.github.io/ 设置文章只显示预览部分123auto_excerpt: enable: true #改为true，默认显示length设置的长度内容 length: 150 或者在文章中使用,会显示此标志之前的内容 基本上简约版的配置已经完成了，如果添加其它主题配置优化的，基本上网上也都有相似的文章 贴上几个笔者参考主题配置的urlhexo主题配置优化添加必力评论 后续更新markdown的语法，用于平常翻看！]]></content>
