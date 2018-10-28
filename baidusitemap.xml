@@ -3,15 +3,17 @@
 
 
     
+    
+    
   <url>
-    <loc>https://mrlichangming.github.io/2018/09/20/docker%E4%BB%93%E5%BA%93Harbor%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2018-09-20T14:10:56.000Z</lastmod>
+    <loc>https://mrlichangming.github.io/2018/10/14/%E8%8E%B7%E5%8F%96registry%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E4%BF%A1%E6%81%AF/</loc>
+    <lastmod>2018-10-28T00:55:02.482Z</lastmod>
     <data>
         <display>
-        <title>docker仓库Harbor的配置与使用</title>
-        <pubTime>2018-09-20T09:21:36.000Z</pubTime>
+        <title>获取registry私有仓库的镜像信息</title>
+        <pubTime>2018-10-14T11:34:36.000Z</pubTime>
         
-        <tag>docker Harbor仓库</tag>
+        <tag>registry</tag>
          
          
            
@@ -24,14 +26,874 @@
 
     
   <url>
+    <loc>https://mrlichangming.github.io/2018/10/24/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d/</loc>
+    <lastmod>2018-10-28T00:00:53.244Z</lastmod>
+    <data>
+        <display>
+        <title>hexo博客美化添加live2d</title>
+        <pubTime>2018-10-24T14:13:27.000Z</pubTime>
+        
+        <tag>hexo添加看板图片</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo美化" url="https://mrlichangming.github.io/categories/hexo%E7%BE%8E%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/28/nginx%E7%BC%93%E5%AD%98%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2018-10-27T23:57:36.011Z</lastmod>
+    <data>
+        <display>
+        <title>nginx缓存静态资源proxy_cache的一些指令的含义</title>
+        <pubTime>2018-09-27T23:56:58.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/28/nginx%E7%9A%84location%E9%85%8D%E7%BD%AE%E4%BC%98%E5%85%88%E7%BA%A7/</loc>
+    <lastmod>2018-10-27T23:57:30.315Z</lastmod>
+    <data>
+        <display>
+        <title>nginx的location配置优先级</title>
+        <pubTime>2018-09-27T23:33:08.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/nginx%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-10-27T23:57:26.137Z</lastmod>
+    <data>
+        <display>
+        <title>nginx日志检索常用命令</title>
+        <pubTime>2018-09-19T01:33:27.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/05/hexo-Next%E4%B8%BB%E9%A1%8C%E7%BB%99%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86/</loc>
+    <lastmod>2018-10-27T23:51:08.536Z</lastmod>
+    <data>
+        <display>
+        <title>hexo Next主題给文章加密</title>
+        <pubTime>2018-10-05T07:25:05.000Z</pubTime>
+        
+        <tag>hexo_Next主题文章加密</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo博客配置与优化" url="https://mrlichangming.github.io/categories/hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BC%98%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/18/ansible%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-10-27T23:50:57.543Z</lastmod>
+    <data>
+        <display>
+        <title>ansible命令与模块的使用</title>
+        <pubTime>2018-09-18T05:25:29.000Z</pubTime>
+        
+        <tag>ansible命令</tag>
+         
+        <tag>ansible模块</tag>
+         
+         
+           
+             
+              <breadCrumb title="自动化运维工具" url="https://mrlichangming.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/12/docker%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-10-27T23:50:49.255Z</lastmod>
+    <data>
+        <display>
+        <title>docker命令总结</title>
+        <pubTime>2018-10-12T05:55:40.000Z</pubTime>
+        
+        <tag>docker命令</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/12/docker%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-10-27T23:50:46.888Z</lastmod>
+    <data>
+        <display>
+        <title>docker遇到的问题总结</title>
+        <pubTime>2018-10-12T01:59:29.000Z</pubTime>
+        
+        <tag>docker问题总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/centos7%E7%BB%91%E5%AE%9A%E5%8F%8C%E7%BD%91%E5%8D%A1/</loc>
+    <lastmod>2018-10-27T23:44:53.558Z</lastmod>
+    <data>
+        <display>
+        <title>centos7绑定双网卡</title>
+        <pubTime>2018-09-19T05:12:59.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/16/hexo-Next%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-10-27T23:44:49.849Z</lastmod>
+    <data>
+        <display>
+        <title>hexo Next主题使用配置</title>
+        <pubTime>2018-09-16T15:15:46.000Z</pubTime>
+        
+        <tag>hexo站点配置</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo博客配置与优化" url="https://mrlichangming.github.io/categories/hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BC%98%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/16/hexo-%E9%83%A8%E7%BD%B2-%E4%B8%80/</loc>
+    <lastmod>2018-10-27T23:44:46.784Z</lastmod>
+    <data>
+        <display>
+        <title>hexo 部署(一)</title>
+        <pubTime>2018-09-16T10:01:26.000Z</pubTime>
+        
+        <tag>hexo部署配置</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客搭建" url="https://mrlichangming.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-10-27T23:44:45.005Z</lastmod>
+    <data>
+        <display>
+        <title>linux高阶命令使用</title>
+        <pubTime>2018-09-19T04:35:18.000Z</pubTime>
+        
+        <tag>awk getopts</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux高阶命令" url="https://mrlichangming.github.io/categories/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/18/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E4%B8%80/</loc>
+    <lastmod>2018-10-27T23:44:36.182Z</lastmod>
+    <data>
+        <display>
+        <title>英语学习一</title>
+        <pubTime>2018-09-18T14:39:39.000Z</pubTime>
+        
+        <tag>常明学英语</tag>
+         
+         
+           
+             
+              <breadCrumb title="英语学习" url="https://mrlichangming.github.io/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/27/openresty%E4%B8%ADlua%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97/</loc>
+    <lastmod>2018-10-26T16:42:01.182Z</lastmod>
+    <data>
+        <display>
+        <title>openresty中lua代码调试日志</title>
+        <pubTime>2018-10-26T16:39:39.000Z</pubTime>
+        
+        <tag>openresty</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/24/openresty%E7%9A%84lua%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%80/</loc>
+    <lastmod>2018-10-23T16:59:59.034Z</lastmod>
+    <data>
+        <display>
+        <title>openresty的lua语法学习一</title>
+        <pubTime>2018-10-23T16:50:58.000Z</pubTime>
+        
+        <tag>openresty</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/23/nginx%E7%9A%84server-name%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/</loc>
+    <lastmod>2018-10-23T12:17:21.627Z</lastmod>
+    <data>
+        <display>
+        <title>nginx的server_name正则表达式匹配</title>
+        <pubTime>2018-10-23T12:03:25.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://mrlichangming.github.io/2018/09/20/docker-swarm-%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2018-09-20T09:19:14.000Z</lastmod>
+    <lastmod>2018-10-22T15:45:23.489Z</lastmod>
     <data>
         <display>
         <title>docker swarm 一些常用命令</title>
         <pubTime>2018-09-20T08:46:47.000Z</pubTime>
         
         <tag>docker swarm</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/21/python%E7%9A%84json%E6%A8%A1%E5%9D%97/</loc>
+    <lastmod>2018-10-20T17:19:40.440Z</lastmod>
+    <data>
+        <display>
+        <title>python的json模块</title>
+        <pubTime>2018-10-20T17:17:07.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python的积累" url="https://mrlichangming.github.io/categories/python%E7%9A%84%E7%A7%AF%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/21/Git%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2018-10-18T01:51:05.432Z</lastmod>
+    <data>
+        <display>
+        <title>Git操作</title>
+        <pubTime>2018-09-21T01:07:11.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="Git基本操作技能" url="https://mrlichangming.github.io/categories/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/15/docker-compose%E6%96%87%E4%BB%B6%E5%AF%B9%E5%BA%94docker%E7%89%88%E6%9C%AC%E5%8F%B7/</loc>
+    <lastmod>2018-10-15T12:17:35.093Z</lastmod>
+    <data>
+        <display>
+        <title>docker-compose文件对应docker版本号</title>
+        <pubTime>2018-10-15T12:04:11.000Z</pubTime>
+        
+        <tag>docker-compose</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/Markdown%E8%AF%AD%E6%B3%95%E7%A7%AF%E7%B4%AF/</loc>
+    <lastmod>2018-10-15T12:10:37.853Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown语法积累</title>
+        <pubTime>2018-09-19T00:47:45.000Z</pubTime>
+        
+        <tag>Markdown语法</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="https://mrlichangming.github.io/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/15/shell%E5%8C%B9%E9%85%8D%E6%95%B0%E5%AD%97/</loc>
+    <lastmod>2018-10-15T08:51:05.470Z</lastmod>
+    <data>
+        <display>
+        <title>shell匹配数字</title>
+        <pubTime>2018-10-15T08:48:48.000Z</pubTime>
+        
+        <tag>shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/30/sshfs-%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-10-11T11:49:16.864Z</lastmod>
+    <data>
+        <display>
+        <title>sshfs 配置使用</title>
+        <pubTime>2018-09-29T22:53:55.000Z</pubTime>
+        
+        <tag>sshfs</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/11/%E6%9F%A5%E7%9C%8B%E8%AF%81%E4%B9%A6%E6%9C%89%E6%95%88%E6%9C%9Fbash%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2018-10-11T09:39:33.922Z</lastmod>
+    <data>
+        <display>
+        <title>查看证书有效期bash命令</title>
+        <pubTime>2018-10-11T08:51:39.000Z</pubTime>
+        
+        <tag>openssl</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/28/python-OS%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%A7%AF%E7%B4%AF/</loc>
+    <lastmod>2018-10-11T07:49:59.248Z</lastmod>
+    <data>
+        <display>
+        <title>python OS模块的学习积累</title>
+        <pubTime>2018-09-28T00:02:42.000Z</pubTime>
+        
+        <tag>OS模块</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://mrlichangming.github.io/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/11/Centos7%E7%9A%84mount%E6%8C%82%E8%BD%BDwindows%E7%9A%84%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</loc>
+    <lastmod>2018-10-11T06:00:11.975Z</lastmod>
+    <data>
+        <display>
+        <title>centos7挂载windows共享文件夹</title>
+        <pubTime>2018-10-11T01:47:48.000Z</pubTime>
+        
+        <tag>fstab</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/05/Centos7%E5%AE%89%E8%A3%9Dgoogle%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/</loc>
+    <lastmod>2018-10-11T02:03:10.909Z</lastmod>
+    <data>
+        <display>
+        <title>Centos7安裝google身份认证</title>
+        <pubTime>2018-10-05T01:16:16.000Z</pubTime>
+        
+        <tag>Google身份认证</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/09/centos7%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python3%EF%BC%8C%E8%BF%9B%E5%85%A5python%E7%BB%88%E7%AB%AF%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%E9%80%80%E6%A0%BC%E5%92%8C%E4%B8%8A%E4%B8%8B%E9%94%AE%E7%BF%BB%E5%8A%A8/</loc>
+    <lastmod>2018-10-11T02:00:09.762Z</lastmod>
+    <data>
+        <display>
+        <title>centos7编译安装python3，进入python终端不能使用退格和上下键翻动</title>
+        <pubTime>2018-10-09T11:57:29.000Z</pubTime>
+        
+        <tag>python3</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/09/supervisord%E6%8F%90%E7%A4%BArefused-connection/</loc>
+    <lastmod>2018-10-09T07:57:45.272Z</lastmod>
+    <data>
+        <display>
+        <title>supervisord提示refused connection</title>
+        <pubTime>2018-10-09T07:15:16.000Z</pubTime>
+        
+        <tag>supervisord</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/09/vsftpd%E4%B8%ADumask%E6%95%B0%E5%AD%97%E7%9A%84%E5%90%AB%E4%B9%89/</loc>
+    <lastmod>2018-10-09T07:37:13.151Z</lastmod>
+    <data>
+        <display>
+        <title>vsftpd中umask数字的含义</title>
+        <pubTime>2018-10-09T07:27:10.000Z</pubTime>
+        
+        <tag>vsftpd</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/08/%E6%9F%A5%E7%9C%8Blinux%E7%B3%BB%E7%BB%9FCPU%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/</loc>
+    <lastmod>2018-10-08T01:49:09.715Z</lastmod>
+    <data>
+        <display>
+        <title>查看linux系统CPU相关信息</title>
+        <pubTime>2018-10-08T01:34:06.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/04/python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <lastmod>2018-10-05T07:53:35.480Z</lastmod>
+    <data>
+        <display>
+        <title>python正则表达式</title>
+        <pubTime>2018-10-04T02:28:57.000Z</pubTime>
+        
+        <tag>pyton正则</tag>
+         
+         
+           
+             
+              <breadCrumb title="python的积累" url="https://mrlichangming.github.io/categories/python%E7%9A%84%E7%A7%AF%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/21/Centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2018-10-05T06:29:07.042Z</lastmod>
+    <data>
+        <display>
+        <title>Centos7部署ftp服务</title>
+        <pubTime>2018-09-21T00:37:50.000Z</pubTime>
+        
+        <tag>vsftpd配置与使用</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/05/linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2018-10-05T06:17:13.416Z</lastmod>
+    <data>
+        <display>
+        <title>linux用户管理</title>
+        <pubTime>2018-10-05T06:16:07.000Z</pubTime>
+        
+        <tag>linux用户</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/02/windows%E7%BC%96%E8%BE%91%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0linux%E6%98%BE%E7%A4%BA-M%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-10-02T12:04:41.871Z</lastmod>
+    <data>
+        <display>
+        <title>windows编辑的文件上传linux显示^M问题</title>
+        <pubTime>2018-10-02T11:43:11.000Z</pubTime>
+        
+        <tag>^M问题</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/27/GlusterFS%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4%E7%A7%AF%E7%B4%AF/</loc>
+    <lastmod>2018-10-01T01:56:14.443Z</lastmod>
+    <data>
+        <display>
+        <title>GlusterFS使用中的一些命令积累</title>
+        <pubTime>2018-10-27T12:32:59.914Z</pubTime>
+        
+        <tag>GlusterFS</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/29/grep%E6%A3%80%E7%B4%A2%E5%87%BAip%E5%9C%B0%E5%9D%80/</loc>
+    <lastmod>2018-09-29T09:02:19.370Z</lastmod>
+    <data>
+        <display>
+        <title>grep检索出ip地址</title>
+        <pubTime>2018-09-29T09:00:09.000Z</pubTime>
+        
+        <tag>grep</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/28/docker-compose%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/</loc>
+    <lastmod>2018-09-28T01:41:01.385Z</lastmod>
+    <data>
+        <display>
+        <title>docker-compose相关内容</title>
+        <pubTime>2018-09-28T01:39:41.000Z</pubTime>
+        
+        <tag>docker-compose</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/28/nginx%E9%85%8D%E7%BD%AE%E5%81%A5%E5%BA%B7%E7%9B%91%E6%B5%8B%E4%B8%AD%E6%8C%87%E4%BB%A4%E7%9A%84%E5%90%AB%E4%B9%89/</loc>
+    <lastmod>2018-09-27T23:51:56.780Z</lastmod>
+    <data>
+        <display>
+        <title>nginx配置健康监测中指令的含义</title>
+        <pubTime>2018-09-27T23:42:37.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/28/nginx%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8F%98%E9%87%8F/</loc>
+    <lastmod>2018-09-27T23:41:58.925Z</lastmod>
+    <data>
+        <display>
+        <title>nginx中常见的一些变量</title>
+        <pubTime>2018-09-27T23:39:58.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/26/lsyncd%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-09-26T09:48:25.079Z</lastmod>
+    <data>
+        <display>
+        <title>lsyncd的配置与使用</title>
+        <pubTime>2018-09-26T09:33:37.000Z</pubTime>
+        
+        <tag>lsyncd</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/24/jumpserver%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/</loc>
+    <lastmod>2018-09-24T09:48:02.868Z</lastmod>
+    <data>
+        <display>
+        <title>jumpserver部署文档</title>
+        <pubTime>2018-09-24T09:45:34.000Z</pubTime>
+        
+        <tag>jumpserver</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/24/http%E7%8A%B6%E6%80%81%E7%A0%81%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-09-24T09:12:29.721Z</lastmod>
+    <data>
+        <display>
+        <title>http状态码分析</title>
+        <pubTime>2018-09-24T09:05:31.000Z</pubTime>
+        
+        <tag>http状态码</tag>
+         
+         
+           
+             
+              <breadCrumb title="http状态码" url="https://mrlichangming.github.io/categories/http%E7%8A%B6%E6%80%81%E7%A0%81/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/20/docker%E4%BB%93%E5%BA%93Harbor%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-09-20T14:10:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>docker仓库Harbor的配置与使用</title>
+        <pubTime>2018-09-20T09:21:36.000Z</pubTime>
+        
+        <tag>docker Harbor仓库</tag>
          
          
            
@@ -88,101 +950,6 @@
 
     
   <url>
-    <loc>https://mrlichangming.github.io/2018/09/19/Markdown%E8%AF%AD%E6%B3%95%E7%A7%AF%E7%B4%AF/</loc>
-    <lastmod>2018-09-19T05:21:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>Markdown语法积累</title>
-        <pubTime>2018-09-19T00:47:45.000Z</pubTime>
-        
-        <tag>Markdown语法</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="https://mrlichangming.github.io/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/19/centos7%E7%BB%91%E5%AE%9A%E5%8F%8C%E7%BD%91%E5%8D%A1/</loc>
-    <lastmod>2018-09-19T05:15:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>centos7绑定双网卡</title>
-        <pubTime>2018-09-19T05:12:59.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/19/nginx%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2018-09-19T05:11:10.000Z</lastmod>
-    <data>
-        <display>
-        <title>nginx日志检索常用命令</title>
-        <pubTime>2018-09-19T01:33:27.000Z</pubTime>
-        
-        <tag>nginx日志检索</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/19/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2018-09-19T05:04:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>linux高阶命令使用</title>
-        <pubTime>2018-09-19T04:35:18.000Z</pubTime>
-        
-        <tag>awk getopts</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux高阶命令" url="https://mrlichangming.github.io/categories/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/18/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E4%B8%80/</loc>
-    <lastmod>2018-09-18T15:44:21.551Z</lastmod>
-    <data>
-        <display>
-        <title>英语学习一</title>
-        <pubTime>2018-09-18T14:39:39.000Z</pubTime>
-        
-        <tag>常明学英语</tag>
-         
-         
-           
-             
-              <breadCrumb title="英语学习" url="https://mrlichangming.github.io/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://mrlichangming.github.io/2018/09/18/ansible%E7%9A%84playbook%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2018-09-18T12:16:48.000Z</lastmod>
     <data>
@@ -191,28 +958,6 @@
         <pubTime>2018-09-18T08:41:26.000Z</pubTime>
         
         <tag>ansible的playbook语法</tag>
-         
-         
-           
-             
-              <breadCrumb title="自动化运维工具" url="https://mrlichangming.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/18/ansible%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2018-09-18T08:40:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>ansible命令与模块的使用</title>
-        <pubTime>2018-09-18T05:25:29.000Z</pubTime>
-        
-        <tag>ansible命令</tag>
-         
-        <tag>ansible模块</tag>
          
          
            
@@ -244,47 +989,5 @@
     </url>
 
     
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/16/hexo-Next%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-09-17T15:18:51.705Z</lastmod>
-    <data>
-        <display>
-        <title>hexo Next主题使用配置</title>
-        <pubTime>2018-09-16T15:15:46.000Z</pubTime>
-        
-        <tag>hexo站点配置</tag>
-         
-         
-           
-             
-              <breadCrumb title="博客搭建" url="https://mrlichangming.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/16/hexo-%E9%83%A8%E7%BD%B2-%E4%B8%80/</loc>
-    <lastmod>2018-09-16T14:42:09.448Z</lastmod>
-    <data>
-        <display>
-        <title>hexo 部署(一)</title>
-        <pubTime>2018-09-16T10:01:26.000Z</pubTime>
-        
-        <tag>hexo部署配置</tag>
-         
-         
-           
-             
-              <breadCrumb title="博客搭建" url="https://mrlichangming.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
 </urlset>

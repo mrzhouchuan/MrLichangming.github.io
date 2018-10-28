@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="编写shell脚本中，常用的一些awk grep getops 语法  awk1234567tailf access.log | awk &apos;substr($3,1,3)&amp;gt;200&apos;# 查看访问日志中，过滤非200状态码的日志请求# substr是一个内置函数substr($4,20)  # 表示从第四个字段里的第20个字符开始，一直到设定的分隔符 结束substr($4,1,3) # 表示从">
+<meta name="description" content="编写shell脚本中，常用的一些awk grep getops 语法">
 <meta name="keywords" content="awk getopts">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux高阶命令使用">
 <meta property="og:url" content="https://mrlichangming.github.io/2018/09/19/linux高阶命令使用/index.html">
 <meta property="og:site_name" content="Changming&#39;s blogs">
-<meta property="og:description" content="编写shell脚本中，常用的一些awk grep getops 语法  awk1234567tailf access.log | awk &apos;substr($3,1,3)&amp;gt;200&apos;# 查看访问日志中，过滤非200状态码的日志请求# substr是一个内置函数substr($4,20)  # 表示从第四个字段里的第20个字符开始，一直到设定的分隔符 结束substr($4,1,3) # 表示从">
+<meta property="og:description" content="编写shell脚本中，常用的一些awk grep getops 语法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T05:04:56.000Z">
+<meta property="og:updated_time" content="2018-10-27T23:44:45.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux高阶命令使用">
-<meta name="twitter:description" content="编写shell脚本中，常用的一些awk grep getops 语法  awk1234567tailf access.log | awk &apos;substr($3,1,3)&amp;gt;200&apos;# 查看访问日志中，过滤非200状态码的日志请求# substr是一个内置函数substr($4,20)  # 表示从第四个字段里的第20个字符开始，一直到设定的分隔符 结束substr($4,1,3) # 表示从">
+<meta name="twitter:description" content="编写shell脚本中，常用的一些awk grep getops 语法">
 
 
 
@@ -227,7 +227,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/归档/" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -430,6 +430,7 @@
         <hr>
 <p>编写shell脚本中，常用的一些awk grep getops 语法</p>
 <hr>
+<a id="more"></a>
 <h1 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tailf access.log | awk <span class="string">'substr($3,1,3)&gt;200'</span></span><br><span class="line"><span class="comment"># 查看访问日志中，过滤非200状态码的日志请求</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># substr是一个内置函数</span></span><br><span class="line">substr(<span class="variable">$4</span>,20)  <span class="comment"># 表示从第四个字段里的第20个字符开始，一直到设定的分隔符 结束</span></span><br><span class="line">substr(<span class="variable">$4</span>,1,3) <span class="comment"># 表示从第四个字段里的第1个字符开始，截取3个字符结束</span></span><br><span class="line">substr(<span class="variable">$4</span>,3,6) <span class="comment"># 表示从第四个字段里的第3个字符开始，截取6个字符结束</span></span><br></pre></td></tr></table></figure>
 <h1 id="getops"><a href="#getops" class="headerlink" title="getops"></a>getops</h1><p>getops指定参数，获取值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@<span class="built_in">test</span>-host tmp]<span class="comment"># cat  test.sh</span></span><br><span class="line"><span class="keyword">while</span>  <span class="built_in">getopts</span>  “:h:p:”  optname;<span class="keyword">do</span></span><br><span class="line">	<span class="keyword">case</span> “<span class="variable">$optname</span>”  <span class="keyword">in</span></span><br><span class="line">	“h”)</span><br><span class="line">	<span class="built_in">echo</span> “ -h选项的值是 <span class="variable">$OPTARG</span>”</span><br><span class="line">	;;</span><br><span class="line">	“p”)</span><br><span class="line">	<span class="built_in">echo</span> “-p 选项的值是 <span class="variable">$OPTARG</span>”</span><br><span class="line">	;;</span><br><span class="line">	 	“?” )</span><br><span class="line">	<span class="built_in">echo</span> “不知道此选项”</span><br><span class="line">	；；</span><br><span class="line">	“:”)</span><br><span class="line">	<span class="built_in">echo</span> “此选项没有值”</span><br><span class="line">	;;</span><br><span class="line">	“*”)</span><br><span class="line">	<span class="built_in">echo</span> “错误信息”</span><br><span class="line">	；；</span><br><span class="line">	<span class="keyword">esac</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
@@ -585,9 +586,9 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/归档/">
+                <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -598,7 +599,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/分类/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -609,7 +610,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -739,7 +740,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 8.4k 字</span>
+  <span class="post-count">博客全站共 15k 字</span>
 </div>
 
         
@@ -784,24 +785,15 @@
   
 
 
-  
 
 
 
-  
-  
 
 
-
-  
-  
 
 
 
   
-  
-
-
 
 
 
@@ -837,27 +829,7 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   
 
 
@@ -1274,10 +1246,12 @@
   
 
   
-  
-  
+
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/src/love.js"></script>
   
-</body>
+  <!-- 背景动态线条 -->
+  <script src="dist/canvas-nest.js"></script>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"log":false});</script></body>
 </html>

@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="Centos7绑定双网卡： #安装必需的包：1yum install  teamd  -y #停止NetworkManager123systemctl   stop  NetworkManagersystemctl   disable  NetworkManager #Creating a Network Team Using ifcfg Files12345678910111213cd /etc">
+<meta name="description" content="Centos7绑定双网卡：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos7绑定双网卡">
 <meta property="og:url" content="https://mrlichangming.github.io/2018/09/19/centos7绑定双网卡/index.html">
 <meta property="og:site_name" content="Changming&#39;s blogs">
-<meta property="og:description" content="Centos7绑定双网卡： #安装必需的包：1yum install  teamd  -y #停止NetworkManager123systemctl   stop  NetworkManagersystemctl   disable  NetworkManager #Creating a Network Team Using ifcfg Files12345678910111213cd /etc">
+<meta property="og:description" content="Centos7绑定双网卡：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T05:15:22.000Z">
+<meta property="og:updated_time" content="2018-10-27T23:44:53.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7绑定双网卡">
-<meta name="twitter:description" content="Centos7绑定双网卡： #安装必需的包：1yum install  teamd  -y #停止NetworkManager123systemctl   stop  NetworkManagersystemctl   disable  NetworkManager #Creating a Network Team Using ifcfg Files12345678910111213cd /etc">
+<meta name="twitter:description" content="Centos7绑定双网卡：">
 
 
 
@@ -226,7 +226,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/归档/" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -341,6 +341,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux运维基本技能/" itemprop="url" rel="index">
+                    <span itemprop="name">linux运维基本技能</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -405,6 +427,7 @@
 
       
         <p>Centos7绑定双网卡：</p>
+<a id="more"></a>
 <p>#安装必需的包：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install  teamd  -y</span><br></pre></td></tr></table></figure></p>
 <p>#停止NetworkManager<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl   stop  NetworkManager</span><br><span class="line"></span><br><span class="line">systemctl   <span class="built_in">disable</span>  NetworkManager</span><br></pre></td></tr></table></figure></p>
 <p>#Creating a Network Team Using ifcfg Files<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/sysconfig/network-scripts/</span><br><span class="line"></span><br><span class="line">vi ifcfg-team0</span><br><span class="line"></span><br><span class="line">DEVICE=team0</span><br><span class="line">DEVICETYPE=Team</span><br><span class="line">ONBOOT=yes</span><br><span class="line">BOOTPROTO=none</span><br><span class="line">IPADDR=192.168.10.110</span><br><span class="line">PREFIX=24</span><br><span class="line">GATEWAY=192.168.10.254</span><br><span class="line">TEAM_CONFIG=<span class="string">'&#123;"runner": &#123;"name": "activebackup"&#125;, "link_watch": &#123;"name": "ethtool"&#125;&#125;'</span></span><br><span class="line"><span class="comment">#做好备份继续编辑需要绑定的网卡信息，调整prio优先级</span></span><br></pre></td></tr></table></figure></p>
@@ -539,9 +562,9 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/归档/">
+                <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -552,7 +575,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/分类/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -563,7 +586,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -677,7 +700,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 8.4k 字</span>
+  <span class="post-count">博客全站共 15k 字</span>
 </div>
 
         
@@ -722,24 +745,15 @@
   
 
 
-  
 
 
 
-  
-  
 
 
-
-  
-  
 
 
 
   
-  
-
-
 
 
 
@@ -775,27 +789,7 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   
 
 
@@ -1212,10 +1206,12 @@
   
 
   
-  
-  
+
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/src/love.js"></script>
   
-</body>
+  <!-- 背景动态线条 -->
+  <script src="dist/canvas-nest.js"></script>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"log":false});</script></body>
 </html>

@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="记录工作中常用的一些docker swarm的命令  docker swarm命令docker swarm创建集群1docker swarm init --advertise-addr  192.168.1.10 node节点加入集群1234567891011docker swarm join --token &quot;创建集群的tocken值&quot; 192.168.1.10:2377#如果忘记了加入集群的">
+<meta name="description" content="记录工作中常用的一些docker swarm的命令">
 <meta name="keywords" content="docker swarm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker swarm 一些常用命令">
 <meta property="og:url" content="https://mrlichangming.github.io/2018/09/20/docker-swarm-一些常用命令/index.html">
 <meta property="og:site_name" content="Changming&#39;s blogs">
-<meta property="og:description" content="记录工作中常用的一些docker swarm的命令  docker swarm命令docker swarm创建集群1docker swarm init --advertise-addr  192.168.1.10 node节点加入集群1234567891011docker swarm join --token &quot;创建集群的tocken值&quot; 192.168.1.10:2377#如果忘记了加入集群的">
+<meta property="og:description" content="记录工作中常用的一些docker swarm的命令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-20T09:19:14.000Z">
+<meta property="og:updated_time" content="2018-10-22T15:45:23.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker swarm 一些常用命令">
-<meta name="twitter:description" content="记录工作中常用的一些docker swarm的命令  docker swarm命令docker swarm创建集群1docker swarm init --advertise-addr  192.168.1.10 node节点加入集群1234567891011docker swarm join --token &quot;创建集群的tocken值&quot; 192.168.1.10:2377#如果忘记了加入集群的">
+<meta name="twitter:description" content="记录工作中常用的一些docker swarm的命令">
 
 
 
@@ -227,7 +227,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/归档/" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -390,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  771
+                  945
                 </span>
               
 
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -430,18 +430,24 @@
         <hr>
 <p>记录工作中常用的一些docker swarm的命令</p>
 <hr>
+<a id="more"></a>
+<p><a href="https://docs.docker.com/engine/reference/commandline/service_update/#examples" target="_blank" rel="noopener">docker命令官网</a></p>
 <h1 id="docker-swarm命令"><a href="#docker-swarm命令" class="headerlink" title="docker swarm命令"></a>docker swarm命令</h1><h2 id="docker-swarm创建集群"><a href="#docker-swarm创建集群" class="headerlink" title="docker swarm创建集群"></a>docker swarm创建集群</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker swarm init --advertise-addr  192.168.1.10</span><br></pre></td></tr></table></figure>
 <h2 id="node节点加入集群"><a href="#node节点加入集群" class="headerlink" title="node节点加入集群"></a>node节点加入集群</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker swarm join --token <span class="string">"创建集群的tocken值"</span> 192.168.1.10:2377</span><br><span class="line"><span class="comment">#如果忘记了加入集群的命令，可以在管理节点执行以下命令获取</span></span><br><span class="line">[1::root@sun-host::~]<span class="comment"># &gt;&gt;&gt;docker swarm join-token manager  #查看加入管理节点的tocken</span></span><br><span class="line">To add a manager to this swarm, run the following <span class="built_in">command</span>:</span><br><span class="line"></span><br><span class="line">    docker swarm join --token SWMTKN-1-5n0yqdoirvjroddv4tk4q352rjg5ywqo0gur2a5ibaw517y9ed-6bwuuocgw1lx3anqsiy373uyn 192.168.1.10:2377</span><br><span class="line"></span><br><span class="line">[1::root@sun-host::~]<span class="comment"># &gt;&gt;&gt;docker swarm join-token  worker  #查看加入工作节点的tocken</span></span><br><span class="line">To add a worker to this swarm, run the following <span class="built_in">command</span>:</span><br><span class="line"></span><br><span class="line">    docker swarm join --token SWMTKN-1-5n0yqdoirvjroddv4tk4q352rjg5ywqo0gur2a5ibaw517y9ed-5lo62wh31nrt439b679s2ulim 192.168.1.10:2377</span><br></pre></td></tr></table></figure>
 <h2 id="查看集群中的服务"><a href="#查看集群中的服务" class="headerlink" title="查看集群中的服务"></a>查看集群中的服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker service ls </span><br><span class="line">docker service ls ps 服务名</span><br></pre></td></tr></table></figure>
+<h2 id="查看服务部署在哪个节点"><a href="#查看服务部署在哪个节点" class="headerlink" title="查看服务部署在哪个节点"></a>查看服务部署在哪个节点</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker service ps 服务名</span><br></pre></td></tr></table></figure>
 <h2 id="修改服务实例数"><a href="#修改服务实例数" class="headerlink" title="修改服务实例数"></a>修改服务实例数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker service scale nginx=3</span><br></pre></td></tr></table></figure>
 <h2 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker node rm node2</span><br></pre></td></tr></table></figure>
+<h2 id="排除节点"><a href="#排除节点" class="headerlink" title="排除节点"></a>排除节点</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker node update --availability drain &lt;NODE-ID&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="恢复排除的节点"><a href="#恢复排除的节点" class="headerlink" title="恢复排除的节点"></a>恢复排除的节点</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker node update --availability active &lt;NODE-ID&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="删除shutdown的容器-和无用数据清理"><a href="#删除shutdown的容器-和无用数据清理" class="headerlink" title="删除shutdown的容器,和无用数据清理"></a>删除shutdown的容器,和无用数据清理</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker  system prune -f</span><br></pre></td></tr></table></figure>
 <h1 id="docker-node常用命令"><a href="#docker-node常用命令" class="headerlink" title="docker node常用命令"></a>docker node常用命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker node ls      <span class="comment">#查看所有集群节点</span></span><br><span class="line">docker node rm      <span class="comment">#删除某个节点（-f强制删除）</span></span><br><span class="line">docker node inspect <span class="comment">##查看节点详情,标签   --pretty 显示信息比较规整</span></span><br><span class="line">docker node demote  <span class="comment">#节点降级，由管理节点降级为工作节点</span></span><br><span class="line">docker node promote <span class="comment">#节点升级，由工作节点升级为管理节点</span></span><br><span class="line"><span class="comment"># docker node promote node1 node2 # 提升node1 node2节点为管理节点</span></span><br><span class="line">docker node update  <span class="comment">#更新节点</span></span><br><span class="line">docker node ps      <span class="comment">#查看节点中的 Task 任务</span></span><br></pre></td></tr></table></figure>
-<h1 id="docker-service-常用命令"><a href="#docker-service-常用命令" class="headerlink" title="docker service 常用命令"></a>docker service 常用命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker service create    <span class="comment">#创建服务, 如果编写compose文件，可以使用docker stack命令部署</span></span><br><span class="line">docker service inspect   <span class="comment">#查看服务的详细信息</span></span><br><span class="line">docker service logs  	 <span class="comment">#查看某个服务的日志信息</span></span><br><span class="line">docker service rm 		 <span class="comment">#删除服务</span></span><br><span class="line">docker service ls        <span class="comment">#列出集群中所有服务</span></span><br><span class="line">docker service update    <span class="comment">#更新服务</span></span><br><span class="line">docker service update --image  hub.com/image  service_name  <span class="comment">#更新服务的镜像</span></span><br></pre></td></tr></table></figure>
+<h1 id="docker-service-常用命令"><a href="#docker-service-常用命令" class="headerlink" title="docker service 常用命令"></a>docker service 常用命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker service create    <span class="comment">#创建服务, 如果编写compose文件，可以使用docker stack命令部署</span></span><br><span class="line">docker service inspect   <span class="comment">#查看服务的详细信息</span></span><br><span class="line">docker service ps        <span class="comment">#查看服务运行的节点</span></span><br><span class="line">docker service logs  	   <span class="comment">#查看某个服务的日志信息</span></span><br><span class="line">docker service rm 		   <span class="comment">#删除服务</span></span><br><span class="line">docker service ls        <span class="comment">#列出集群中所有服务</span></span><br><span class="line">docker service update    <span class="comment">#更新服务</span></span><br><span class="line">docker service update --image  hub.com/image  service_name  <span class="comment">#更新服务的镜像</span></span><br></pre></td></tr></table></figure>
+<h1 id="docker-swarm服务的动态命令设置"><a href="#docker-swarm服务的动态命令设置" class="headerlink" title="docker swarm服务的动态命令设置"></a>docker swarm服务的动态命令设置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 命令格式 docker service [option] service</span></span><br><span class="line">docker service update --env-add</span><br><span class="line">docker service update --env-rm  </span><br><span class="line">docker service update --host-add </span><br><span class="line">docker service update --host-rm</span><br><span class="line">docker service update --hostname</span><br><span class="line">docker service update --mount-add <span class="built_in">type</span>=volume,<span class="built_in">source</span>=/data,target=/data</span><br><span class="line">docker service update --mount-rm  <span class="built_in">type</span>=volume,<span class="built_in">source</span>=/data,target=/data</span><br><span class="line">docker service update --network-add name=my-network,<span class="built_in">alias</span>=web1   <span class="comment"># Add a network</span></span><br><span class="line">docker service update --network-rm  name=my-network,<span class="built_in">alias</span>=web1</span><br><span class="line">docker service update --publish-add published=8080,target=80 <span class="comment"># Add or update a published port</span></span><br><span class="line">docker service update --publish-rm  published=8080,target=80  <span class="comment"># Remove a published port by its target port</span></span><br></pre></td></tr></table></figure>
 <h1 id="批量删除所有服务"><a href="#批量删除所有服务" class="headerlink" title="批量删除所有服务"></a>批量删除所有服务</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker service ls -1  <span class="comment"># 获取所有service的ID</span></span><br><span class="line">docker service ls -q | xargs docker service rm</span><br></pre></td></tr></table></figure>
 <h1 id="Docker-Stack-部署多个集群服务"><a href="#Docker-Stack-部署多个集群服务" class="headerlink" title="Docker Stack 部署多个集群服务"></a>Docker Stack 部署多个集群服务</h1><h2 id="docker-stack使用文件docker-compose-yml批量部署服务"><a href="#docker-stack使用文件docker-compose-yml批量部署服务" class="headerlink" title="docker stack使用文件docker-compose.yml批量部署服务"></a>docker stack使用文件docker-compose.yml批量部署服务</h2><h2 id="创建编排文件docker-compose-yml"><a href="#创建编排文件docker-compose-yml" class="headerlink" title="创建编排文件docker-compose.yml"></a>创建编排文件docker-compose.yml</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">version: <span class="string">'3'</span></span><br><span class="line">services:</span><br><span class="line"></span><br><span class="line">  mynginx:</span><br><span class="line">    image: hub.test.com:5000/almi/nginx:0.1</span><br><span class="line">    ports:</span><br><span class="line">     - <span class="string">"8081:80"</span></span><br><span class="line">    deploy:</span><br><span class="line">      replicas: 3</span><br><span class="line"></span><br><span class="line">  busybox:</span><br><span class="line">    image: hub.test.com:5000/busybox:latest</span><br><span class="line">    volumes:</span><br><span class="line">      - <span class="string">"/var/run/docker.sock:/var/run/docker.sock"</span></span><br><span class="line">    deploy:</span><br><span class="line">      replicas: 2</span><br></pre></td></tr></table></figure>
 <h2 id="使用docker-stack批量创建服务"><a href="#使用docker-stack批量创建服务" class="headerlink" title="使用docker-stack批量创建服务"></a>使用docker-stack批量创建服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker stack deploy -c docker-compose.yml deploy-test</span><br><span class="line">docker stack ps deploy-tes</span><br><span class="line"><span class="comment"># docker stack部署的容器名称 deploy-test_&lt;service名称&gt;.随机后缀</span></span><br></pre></td></tr></table></figure>
-<h1 id="docker-stack-常用命令"><a href="#docker-stack-常用命令" class="headerlink" title="docker stack 常用命令"></a>docker stack 常用命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker stack deploy   <span class="comment">#部署新的堆栈或更新现有堆栈</span></span><br><span class="line">docker stack ls   <span class="comment">#列出现有堆栈</span></span><br><span class="line">docker stack ps   <span class="comment">#列出堆栈中的任务</span></span><br><span class="line">docker stack rm   <span class="comment">#删除堆栈 （docker stack deploy部署的时候指定的服务名字）</span></span><br><span class="line">docker stack services   <span class="comment">#列出堆栈中的服务</span></span><br><span class="line">docker stack down   <span class="comment">#移除某个堆栈（不删数据）</span></span><br></pre></td></tr></table></figure>
+<h1 id="docker-stack-常用命令"><a href="#docker-stack-常用命令" class="headerlink" title="docker stack 常用命令"></a>docker stack 常用命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker stack deploy     <span class="comment">#部署新的堆栈或更新现有堆栈</span></span><br><span class="line">docker stack ls         <span class="comment">#列出现有堆栈</span></span><br><span class="line">docker stack ps         <span class="comment">#列出堆栈中的任务</span></span><br><span class="line">docker stack rm         <span class="comment">#删除堆栈 （docker stack deploy部署的时候指定的服务名字）</span></span><br><span class="line">docker stack services   <span class="comment">#列出堆栈中的服务</span></span><br><span class="line">docker stack down       <span class="comment">#移除某个堆栈（不删数据）</span></span><br></pre></td></tr></table></figure>
 <h2 id="docker-stack-deploy-显示服务的状态"><a href="#docker-stack-deploy-显示服务的状态" class="headerlink" title="docker stack deploy 显示服务的状态"></a>docker stack deploy 显示服务的状态</h2><p>accepted: 任务已经被分配到某一个节点执行<br>preparing: 准备资源，一般是从网络拉取iamge<br>running: 副本运行成功<br>shutdown: 报错，终止，当一个任务被终止（stoped or killed），任务不能被重启，但是一个替代的任务会被重启</p>
 <h1 id="查看swarm中服务的ip"><a href="#查看swarm中服务的ip" class="headerlink" title="查看swarm中服务的ip"></a>查看swarm中服务的ip</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker service inspect --format=<span class="string">'&#123;&#123; json.Endpoint.VirtualIPs &#125;&#125;'</span>  服务名</span><br></pre></td></tr></table></figure>
 
@@ -586,9 +592,9 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/归档/">
+                <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -599,7 +605,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/分类/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -610,7 +616,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -684,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-swarm命令"><span class="nav-number">1.</span> <span class="nav-text">docker swarm命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-swarm创建集群"><span class="nav-number">1.1.</span> <span class="nav-text">docker swarm创建集群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node节点加入集群"><span class="nav-number">1.2.</span> <span class="nav-text">node节点加入集群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看集群中的服务"><span class="nav-number">1.3.</span> <span class="nav-text">查看集群中的服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改服务实例数"><span class="nav-number">1.4.</span> <span class="nav-text">修改服务实例数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除节点"><span class="nav-number">1.5.</span> <span class="nav-text">删除节点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除shutdown的容器-和无用数据清理"><span class="nav-number">2.</span> <span class="nav-text">删除shutdown的容器,和无用数据清理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-node常用命令"><span class="nav-number">3.</span> <span class="nav-text">docker node常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-service-常用命令"><span class="nav-number">4.</span> <span class="nav-text">docker service 常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#批量删除所有服务"><span class="nav-number">5.</span> <span class="nav-text">批量删除所有服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-Stack-部署多个集群服务"><span class="nav-number">6.</span> <span class="nav-text">Docker Stack 部署多个集群服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-stack使用文件docker-compose-yml批量部署服务"><span class="nav-number">6.1.</span> <span class="nav-text">docker stack使用文件docker-compose.yml批量部署服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建编排文件docker-compose-yml"><span class="nav-number">6.2.</span> <span class="nav-text">创建编排文件docker-compose.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用docker-stack批量创建服务"><span class="nav-number">6.3.</span> <span class="nav-text">使用docker-stack批量创建服务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-stack-常用命令"><span class="nav-number">7.</span> <span class="nav-text">docker stack 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-stack-deploy-显示服务的状态"><span class="nav-number">7.1.</span> <span class="nav-text">docker stack deploy 显示服务的状态</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看swarm中服务的ip"><span class="nav-number">8.</span> <span class="nav-text">查看swarm中服务的ip</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-swarm命令"><span class="nav-number">1.</span> <span class="nav-text">docker swarm命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-swarm创建集群"><span class="nav-number">1.1.</span> <span class="nav-text">docker swarm创建集群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node节点加入集群"><span class="nav-number">1.2.</span> <span class="nav-text">node节点加入集群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看集群中的服务"><span class="nav-number">1.3.</span> <span class="nav-text">查看集群中的服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看服务部署在哪个节点"><span class="nav-number">1.4.</span> <span class="nav-text">查看服务部署在哪个节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改服务实例数"><span class="nav-number">1.5.</span> <span class="nav-text">修改服务实例数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除节点"><span class="nav-number">1.6.</span> <span class="nav-text">删除节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排除节点"><span class="nav-number">1.7.</span> <span class="nav-text">排除节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恢复排除的节点"><span class="nav-number">1.8.</span> <span class="nav-text">恢复排除的节点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除shutdown的容器-和无用数据清理"><span class="nav-number">2.</span> <span class="nav-text">删除shutdown的容器,和无用数据清理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-node常用命令"><span class="nav-number">3.</span> <span class="nav-text">docker node常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-service-常用命令"><span class="nav-number">4.</span> <span class="nav-text">docker service 常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-swarm服务的动态命令设置"><span class="nav-number">5.</span> <span class="nav-text">docker swarm服务的动态命令设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#批量删除所有服务"><span class="nav-number">6.</span> <span class="nav-text">批量删除所有服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-Stack-部署多个集群服务"><span class="nav-number">7.</span> <span class="nav-text">Docker Stack 部署多个集群服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-stack使用文件docker-compose-yml批量部署服务"><span class="nav-number">7.1.</span> <span class="nav-text">docker stack使用文件docker-compose.yml批量部署服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建编排文件docker-compose-yml"><span class="nav-number">7.2.</span> <span class="nav-text">创建编排文件docker-compose.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用docker-stack批量创建服务"><span class="nav-number">7.3.</span> <span class="nav-text">使用docker-stack批量创建服务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-stack-常用命令"><span class="nav-number">8.</span> <span class="nav-text">docker stack 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-stack-deploy-显示服务的状态"><span class="nav-number">8.1.</span> <span class="nav-text">docker stack deploy 显示服务的状态</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看swarm中服务的ip"><span class="nav-number">9.</span> <span class="nav-text">查看swarm中服务的ip</span></a></li></ol></div>
             
 
           </div>
@@ -740,7 +746,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 8.4k 字</span>
+  <span class="post-count">博客全站共 15k 字</span>
 </div>
 
         
@@ -785,24 +791,15 @@
   
 
 
-  
 
 
 
-  
-  
 
 
-
-  
-  
 
 
 
   
-  
-
-
 
 
 
@@ -838,27 +835,7 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6"  zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   
 
 
@@ -1275,10 +1252,12 @@
   
 
   
-  
-  
+
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/src/love.js"></script>
   
-</body>
+  <!-- 背景动态线条 -->
+  <script src="dist/canvas-nest.js"></script>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":200},"mobile":{"show":true},"log":false});</script></body>
 </html>

@@ -1,6 +1,391 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[GlusterFS使用中的一些命令积累]]></title>
+    <url>%2F2018%2F10%2F27%2FGlusterFS%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4%E7%A7%AF%E7%B4%AF%2F</url>
+    <content type="text"><![CDATA[记录下GlusterFS的命令 分布式文件系统GlusterFS实战，参考文档： CHEGVA博客链接 install1234yum install centos-release-glusteryum install -y glusterfs glusterfs-server glusterfs-fuse glusterfs-rdmasystemctl start glusterd.servicesystemctl enable glusterd.service configuration123456789101112131415161718192021222324252627282930313233343536373839404142# 查看glusterfs版本信息glusterfs -V# 将节点加入存储池# 节点加入防火墙的时候，需要开放防火墙端口：firewall-cmd --add-service=glusterfsgluster peer probe lg1gluster peer probe lg2# 创建volume , 复制几份replica后的数字就是几 分布式复制模式gluster volume create test replica 2 transport tcp lg1:/var/test/data lg2:/var/test/data lg3:/var/test/data lg4:/var/test/data # 查看刚才创建卷gluster volume info#启动刚才创建的卷组 gluster volume start test #查看各节点状态gluster peer status ``` # gluster 性能调优：开启 指定 volume 的配额： (test 为 volume 名称)```bashgluster volume quota test enable限制 test 中 / (既总目录) 最大使用 80GB 空间gluster volume quota test limit-usage / 80GB# 设置 cache 4GBgluster volume set test performance.cache-size 4GB# 开启 异步 ， 后台操作gluster volume set test performance.flush-behind on# 设置 io 线程 32gluster volume set test performance.io-thread-count 32# 设置 回写 (写数据时间，先写入缓存内，再写入硬盘)gluster volume set test performance.write-behind on Mounts1mount -t glusterfs 127.0.0.1:test /var/data]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>GlusterFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[openresty中lua代码调试日志]]></title>
+    <url>%2F2018%2F10%2F27%2Fopenresty%E4%B8%ADlua%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%2F</url>
+    <content type="text"><![CDATA[openresty中，如何使用了lua代码，调试信息输出到log中 1ngx.log(ngx.ERR,"判断一个变量的值: ---", value) #输出value的值到错误日志中]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>openresty</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo博客美化添加live2d]]></title>
+    <url>%2F2018%2F10%2F24%2Fhexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d%2F</url>
+    <content type="text"><![CDATA[hexo添加live2d的使用 live2d-github地址 使用说明文档安装插件 在hexo的根目录下执行 1npm install --save hexo-helper-live2d 安装完插件后，可以安装喜欢的模型模型名称:模型展示图 live2d-widget-model-chitose live2d-widget-model-epsilon2_1 live2d-widget-model-gf live2d-widget-model-haru live2d-widget-model-haruto live2d-widget-model-hibiki live2d-widget-model-hijiki live2d-widget-model-izumi live2d-widget-model-koharu live2d-widget-model-miku live2d-widget-model-ni-j live2d-widget-model-nico live2d-widget-model-nietzsche live2d-widget-model-nipsilon live2d-widget-model-nito live2d-widget-model-shizuku live2d-widget-model-tororo live2d-widget-model-tsumiki live2d-widget-model-unitychan live2d-widget-model-wanko live2d-widget-model-z16 本人安装的是live2d-widget-model-haruto1npm install live2d-widget-model-haruto 配置使用 在hexo的根目录创建名为live2d_models的文件夹 把之前安装的模型文件夹从node_modules文件夹复制到live2d_models中 比如我这里安装的是live2d-widget-model-haruto 从hexo的根目录的node_modules中找到这个文件夹，复制到live2d_models文件夹中 在hexo根目录下的_config.yml中的最后面添加以下内容12345678910111213141516live2d: enable: true scriptFrom: local pluginRootPath: live2dw/ pluginJsPath: lib/ pluginModelPath: assets/ tagMode: false debug: false model: use: live2d-widget-model-haruto display: position: right width: 150 height: 300 mobile: show: true]]></content>
+      <categories>
+        <category>hexo美化</category>
+      </categories>
+      <tags>
+        <tag>hexo添加看板图片</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[openresty的lua语法学习一]]></title>
+    <url>%2F2018%2F10%2F24%2Fopenresty%E7%9A%84lua%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%80%2F</url>
+    <content type="text"><![CDATA[openresty的lua语法学习 lua的popen获取命令的执行结果 1234567891011121314151617181920212223242526272829-- 打开文件local myfile = io.popen("pwd", "r")if nil == myfile then print("open file for dir fail!!")endprint("\n=========command dir result:")-- 读取文件内容for cnt in myfile:lines() do print(cnt)end-- 关闭文件myfile:close()local secondfile = io.popen("ifconfig")if nil == secondfile then print("open file for ifconfig fail!!")endprint("\n==========command ifconfig result:")-- 读取文件内容local content = secondfile:read("*a")print(content)-- 关闭文件secondfile:close() openresty调用lua脚本通过openresty的web服务提供一个接口，执行系统脚本，停止某个服务，并返回结果 1234567891011121314151617# 调用 http://192.168.1.12/testapi?value=stoplocation = /testapi &#123; default_type &apos;text/plain&apos;; content_by_lua_block &#123; local value = ngx.var.arg_value if value ~= nil then local command = &quot;/usr/bin/bash /usr/local/src/stopService.sh &quot;..value local handle = io.popen(command) local result = handle:read(&quot;*a&quot;) handle:close() ngx.say(result) ngx.exit(200) else ngx.exit(404) end &#125;&#125;]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>openresty</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[nginx的server_name正则表达式匹配]]></title>
+    <url>%2F2018%2F10%2F23%2Fnginx%E7%9A%84server-name%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%2F</url>
+    <content type="text"><![CDATA[nginx的server_name 匹配正则 参考文档链接: Nginx技巧:灵活的server_name server_name如果使用了正则，优先级匹配 精确匹配server_name 1234server &#123; listen 80; server_name test1.com test2.com;&#125; 以* 通配符开始的字符串 1234server &#123; listen 80; server_name *.test.com;&#125; 以*通配符结束的字符串 1234server &#123; listen 80; server_name www.*;&#125; 匹配正则 1234server &#123; listen 80; server_name ~^api(?.+)\.test\.com #匹配api*.test.com *代表所有&#125;]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[python的json模块]]></title>
+    <url>%2F2018%2F10%2F21%2Fpython%E7%9A%84json%E6%A8%A1%E5%9D%97%2F</url>
+    <content type="text"><![CDATA[python的json模块笔记 1import json json.dumps: 将Python对象编码成JSON字符串json.loads: 将已编码的JSON字符串解码为Python对象]]></content>
+      <categories>
+        <category>python的积累</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[docker-compose文件对应docker版本号]]></title>
+    <url>%2F2018%2F10%2F15%2Fdocker-compose%E6%96%87%E4%BB%B6%E5%AF%B9%E5%BA%94docker%E7%89%88%E6%9C%AC%E5%8F%B7%2F</url>
+    <content type="text"><![CDATA[docker-compose 文件格式版本对应docker版本 docker-compose github地址 Compose file format compatibility matrix Compose file format Docker Engine 1 1.9.0+ 2.0 1.10.0+ 2.1 1.12.0+ 2.2, 3.0, 3.1, 3.2 1.13.0+ 2.3, 3.3, 3.4, 3.5 17.06.0+ 2.4 17.12.0+ 3.6 18.02.0+ 3.7 18.06.0+]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker-compose</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell匹配数字]]></title>
+    <url>%2F2018%2F10%2F15%2Fshell%E5%8C%B9%E9%85%8D%E6%95%B0%E5%AD%97%2F</url>
+    <content type="text"><![CDATA[使用bash匹配数字1234567str="1222"if [[ $str =~ ^[0-9]+$ ]];then echo "True"else echo "False"fi]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[获取registry私有仓库的镜像信息]]></title>
+    <url>%2F2018%2F10%2F14%2F%E8%8E%B7%E5%8F%96registry%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E4%BF%A1%E6%81%AF%2F</url>
+    <content type="text"><![CDATA[docker官方registry镜像的一些操作命令 获取registry的镜像1curl -X GET http://&#123;IP_Address&#125;:5000/v2/_catalog 获取镜像的标签列表1curl -X GET http://&#123;IP_Address&#125;:5000/v2/&#123;镜像名&#125;/tags/list]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>registry</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[docker命令总结]]></title>
+    <url>%2F2018%2F10%2F12%2Fdocker%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[docker命令总结 docker操作镜像命令导出镜像1docker save -o centos7.tar centos 导入本地镜像1docker load --input centos7.tar docker获取容器名12# docker ps获取容器完整名称docker ps --format '&#123;&#123;.Names&#125;&#125;' --filter name=匹配的关键字 获取本机容器名称1docker ps --format &#123;&#123;.Names&#125;&#125; 获取容器ID1docker ps -q]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[docker遇到的问题总结]]></title>
+    <url>%2F2018%2F10%2F12%2Fdocker%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[总结在工作中，线上使用docker遇到的问题总结 swarm集群相关问题Error response from daemon: context deadline exceededQ: docker swarm集群中节点未离开集群，异常重启机器，删除节点，再次加入提示，已在集群中，docker swarm leave -f提示以下信息1Error response from daemon: context deadline exceeded A: 解决办法 删除/var/lib/docker/swarm目录 systemctl restart docker 重启docker服务 加入集群参考链接: docker swarm leave in daemon error response]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>docker问题总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[查看证书有效期bash命令]]></title>
+    <url>%2F2018%2F10%2F11%2F%E6%9F%A5%E7%9C%8B%E8%AF%81%E4%B9%A6%E6%9C%89%E6%95%88%E6%9C%9Fbash%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[openssl查看证书有效期 123456# 找到证书的CERTIFICATE文件openssl x509 -in cert1.pem -noout -dates#输出结果notBefore=Sep 20 05:07:48 2018 GMTnotAfter=Dec 19 05:07:48 2018 GMT]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>openssl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos7挂载windows共享文件夹]]></title>
+    <url>%2F2018%2F10%2F11%2FCentos7%E7%9A%84mount%E6%8C%82%E8%BD%BDwindows%E7%9A%84%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%2F</url>
+    <content type="text"><![CDATA[记录一下linux系统挂载windows共享文件夹 挂载windows的共享文件夹: 1mount -t cifs -o username="administrator",password="testPWD" //192.168.1.2/software /mnt/share 永久挂载 123vim /etc/fstab #编辑fstab文件,新增以下内容//192.168.1.2/software /mnt/share cifs auto,username="administrator",password="testPWD" 0 0]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>fstab</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos7编译安装python3，进入python终端不能使用退格和上下键翻动]]></title>
+    <url>%2F2018%2F10%2F09%2Fcentos7%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python3%EF%BC%8C%E8%BF%9B%E5%85%A5python%E7%BB%88%E7%AB%AF%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%E9%80%80%E6%A0%BC%E5%92%8C%E4%B8%8A%E4%B8%8B%E9%94%AE%E7%BF%BB%E5%8A%A8%2F</url>
+    <content type="text"><![CDATA[编译安装的python3，进入终端不能使用退格，和上下翻键 解决办法: 1yum -y install readline-devel.* 安装以上依赖包，重新编译安装python3即可！]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>python3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vsftpd中umask数字的含义]]></title>
+    <url>%2F2018%2F10%2F09%2Fvsftpd%E4%B8%ADumask%E6%95%B0%E5%AD%97%E7%9A%84%E5%90%AB%E4%B9%89%2F</url>
+    <content type="text"><![CDATA[之前一直搞不懂vsftpd服务中，local_umask 设置的数值有什么含义，特此记录下所知，所得 参考链接：csdn博客:vsftpd中umask值的介绍及计算 个人总结如下:local_umask: 设置本地用户的上传文件或者目录的权限anon_umask: 设置匿名用户上传的文件或者目录的权限 文件或者目录的权限： 读取： 4 写入： 2 执行： 1 文件最高权限为666目录最高权限为777 local_umask=022 # 022 如果是文件，最高权限为666,022代表从666权限中抽走的权限，剩下644]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>vsftpd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[supervisord提示refused connection]]></title>
+    <url>%2F2018%2F10%2F09%2Fsupervisord%E6%8F%90%E7%A4%BArefused-connection%2F</url>
+    <content type="text"><![CDATA[记录下在工作中，遇到docker容器的supervisord提示 refused connection 错误提示:123[root@sun-host ~]# supervisorctl statusunix:///var/run/supervisor.sock refused connection 问题追溯： 灵感获知：overlayfs不适用于unix域套接字 docker在使用overlayfs时，unix域套接字似乎不起作用，当我使用设备映射器，将/var/run挂载到容器中/var/run，这时supervisord创建的sockt文件，写入挂载的目录 /var/run/supervisor.sock 使用命令supervisorctl status查看的时候，就不再提示此错误了。 可是为了不挂载此路径，再继续翻阅技术文档，完美的解决办法就是修改docker默认的存储驱动 123456789vim /etc/docker/daemon.json #添加以下内容&#123; "storage-driver": "devicemapper" &#125;# 停止docker服务# 删除以前创建的容器数据，rm -rf /var/lib/docker/*# 启动docker服务# 使用docker info可以查看 Storage Driver的类型，默认是overlay]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>supervisord</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[查看linux系统CPU相关信息]]></title>
+    <url>%2F2018%2F10%2F08%2F%E6%9F%A5%E7%9C%8Blinux%E7%B3%BB%E7%BB%9FCPU%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%2F</url>
+    <content type="text"><![CDATA[文档说明: 查看linux系统CPU， 物理个数 逻辑个数 单个CPU的核心数 查看物理CPU个数cat /proc/cpuinfo | grep “pysical id” | sort | uniq | wc -l 查看单个CPU的核心数cat /proc/cpuinfo | grep “cpu cores” | uniq 查看逻辑CPU的个数cat /proc/cpuinfo | grep “processor” | wc -l 物理CPU:很好理解，实际服务器插槽上的cpu个数 逻辑CPU:CPU使用超线程技术，在逻辑上在分一倍数量的cpu core出来1逻辑cpu = 物理cpu * 单个cpu核心数 * 2 CPU核心数： 官方话： 一块CPU上面能处理数据的芯片组的数量]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo Next主題给文章加密]]></title>
+    <url>%2F2018%2F10%2F05%2Fhexo-Next%E4%B8%BB%E9%A1%8C%E7%BB%99%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86%2F</url>
+    <content type="text"><![CDATA[hexo 文章加密 插件: hexo-blog-encrypt 参考链接地址https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md 效果展示:]]></content>
+      <categories>
+        <category>hexo博客配置与优化</category>
+      </categories>
+      <tags>
+        <tag>hexo_Next主题文章加密</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[linux用户管理]]></title>
+    <url>%2F2018%2F10%2F05%2Flinux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[向组中添加用户：1usermod -G groupname username]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>linux用户</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Centos7安裝google身份认证]]></title>
+    <url>%2F2018%2F10%2F05%2FCentos7%E5%AE%89%E8%A3%9Dgoogle%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%2F</url>
+    <content type="text"><![CDATA[记录在Centos7上安装Google身份认证 安装epel源1yum -y install epel-release Qrencode1yum install -y qrencode # 谷歌身份验证器通过该程序生成二维码 安装google身份验证器1234567891011git clone https://github.com/google/google-authenticator-libpam.gitcd google-authenticator-libpam./bootstrap.sh./configure –prefix=/usr/local/google-authenticator# 编译时如果提示一下错误configure: error: Unable to find the PAM library or the PAM header files# 安装pam-devle库yum -y instlal pam-devel# 再次执行./configuremake &amp;&amp; make install 拷贝google的身份验证器pam模块到系统下1cp /usr/local/google-authenticator/lib/security/pam_google_authenticator.so /lib64/security/ 配置sshd的pam认证123vim /etc/pam.d/sshd# 写在auth include password-auth 基于密码认证的上面一行,先基于google验证码认证auth required pam_google_authenticator.so 修改ssh服务配置123vim /etc/ssh/sshd_configChallengeResponseAuthentication yes 重启ssh服务配置1systemctl restart sshd 开始生成google认证码1234# 进入刚才克隆下来的 google-authenticator-libpam 目录，执行./google-authenticator #基于当前用户做验证，如果切换别的系统用户，请登陆其他用户，执行此命令即可Do you want authentication tokens to be time-based (y/n) y #输入y， 提示是否基于时间的认证# 接下来会生成一张二维码图片： 手机上下载身份验证器app软件，扫描此二维码 1234567891011121314151617181920212223242526272829303132333435Your new secret key is: JS57SLVUDEEA7SQ7LD6BEBWGAA #此安全key需要备份，用于后续更换手机或者二维码丢失，浏览器的身份验证丢失后，通过此安全key获取新的验证吗 Your verification code is 005421 #扫描上述二维码后，查看验证吗，输入Your emergency scratch codes are:# 以下验证吗，是后续备用的，只能验证一次4541236521522365851246328512463114785216 Do you want me to update your “/root/.google_authenticator” file (y/n) y Do you want to disallow multiple uses of the same authenticationtoken? This restricts you to one login about every 30s, but it increasesyour chances to notice or even prevent man-in-the-middle attacks (y/n) Do you want to disallow multiple uses of the same authenticationtoken? This restricts you to one login about every 30s, but it increasesyour chances to notice or even prevent man-in-the-middle attacks (y/n) y By default, tokens are good for 30 seconds. In order to compensate forpossible time-skew between the client and the server, we allow an extratoken before and after the current time. If you experience problems withpoor time synchronization, you can increase the window from its defaultsize of +-1min (window size of 3) to about +-4min (window size of17 acceptable tokens).Do you want to do so? (y/n) y# 安全相关，默认继续 If the computer that you are logging into isn’t hardened against brute-forcelogin attempts, you can enable rate-limiting for the authentication module.By default, this limits attackers to no more than 3 login attempts every 30s.Do you want to enable rate-limiting (y/n) y# 安全相关，默认继续 使用xshell连接xshell终端的连接方式改为：keyboard Interactive 输入验证码： 输入密码：]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>Google身份认证</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[python正则表达式]]></title>
+    <url>%2F2018%2F10%2F04%2Fpython%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[python正则表达式 python获取字符串中的数字 123456import retestStr = "100abc"Number = re.sub("\D", "", testStr)print Number100]]></content>
+      <categories>
+        <category>python的积累</category>
+      </categories>
+      <tags>
+        <tag>pyton正则</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[windows编辑的文件上传linux显示^M问题]]></title>
+    <url>%2F2018%2F10%2F02%2Fwindows%E7%BC%96%E8%BE%91%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0linux%E6%98%BE%E7%A4%BA-M%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[记录一下在windows中编辑文件上传到linux的坑 windows上编辑的文件上传到linux中，使用vim打开，会显示^M 的问题 ^M 是因为windows操作系统用的文本换行符和UNIX/Linux操作系统用的不同，Windows系统下输入的换行符在UNIX/Linux下不会显示为“换行”，而是显示为 ^M 这个符号 使用vi的替换功能替换 ^M： 使用键盘的ctrl + v ctrl + M :%s/^M//g]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>^M问题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[sshfs 配置使用]]></title>
+    <url>%2F2018%2F09%2F30%2Fsshfs-%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[sshfs: 通过ssh挂载远程的Linux文件系统或目录 以下总结参考: sshfs配置参考文档来源 安装12yum -y install epel-releaseyum -y install sshfs 使用1234567891011# 挂载远程主机的logs到本机 allow_other参数，允许普通用户读取，如果没有，只能root用户访问sshfs -o allow_other root@192.168.1.17:/var/logs/ /var/logs/testMountLogs/#Ubuntu挂载方式sudo sshfs -o allow_other root@192.168.1.17:/var/logs/ /var/logs/testMountLogs/#基于ssh秘钥授权sshfs -o IdentityFile=~/.ssh/id_rsa root@192.168.1.17:/var/lb/logs/ /var/logs/testMountLogs/#Ubuntu挂载方式sudo sshfs -o allow_other,IdentityFile=~/.ssh/id_rsa root@192.168.1.17:/var/lb/logs/ /var/logs/testMountLogs/ 永久挂载使用12345sshfs#root@192.168.1.17:/var/lb/logs/ /var/logs/testMountLogs/ fuse.sshfs defaults 0 0 基于秘钥的挂载：sshfs#root@192.168.1.17:/var/lb/logs/ /var/logs/testMountLogs/ fuse.sshfs IdentityFile=~/.ssh/id_rsa defaults 0 0]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>sshfs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[grep检索出ip地址]]></title>
+    <url>%2F2018%2F09%2F29%2Fgrep%E6%A3%80%E7%B4%A2%E5%87%BAip%E5%9C%B0%E5%9D%80%2F</url>
+    <content type="text"><![CDATA[grep匹配ip地址 1grep -E "([0-9]&#123;1,3&#125;[\.])&#123;3&#125;[0-9]&#123;1,3&#125;"]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>grep</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[docker-compose相关内容]]></title>
+    <url>%2F2018%2F09%2F28%2Fdocker-compose%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%2F</url>
+    <content type="text"><![CDATA[记录下工作中常用的docker-compose相关内容 开机自启动docker-compose部署的容器开机自动运行找到/etc/rc.d/rc.local文件,添加以下脚本1/usr/local/bin/docker-compose -f /usr/local/nginx/docker-compose.yml up -d]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker-compose</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[python OS模块的学习积累]]></title>
+    <url>%2F2018%2F09%2F28%2Fpython-OS%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%A7%AF%E7%B4%AF%2F</url>
+    <content type="text"><![CDATA[python的学习就是不断的撸，才能对这项技能有更深入的了解 聊聊工作中用到的最基础的功能 os模块目录结构 os.walk 返回可迭代对象os.getcwd 返回当前路径 1234567891011121314151617181920212223242526272829303132333435dir = “/var/lb/apps”# 以下，输出目录下的所有文件，包括二级目录下的文件&gt;&gt;&gt; for root,subdirs,files in os.walk(dir):... print(files)... []['world.txt']['index.html'][][]['test.txt', 'test']# 以下，输出所有目录的绝对路径&gt;&gt;&gt; for root,subdirs,files in os.walk(dir):... print(root)... /var/lb/apps/var/lb/apps/pc-h5/var/lb/apps/mobile-h5/var/lb/apps/server/var/lb/apps/server/WEB-INF/var/lb/apps/server/classes以下输出所有目录，包括二级目录&gt;&gt;&gt; for root,subdirs,files in os.walk(dir):... print(subdirs)... ['pc-h5', 'mobile-h5', 'server'][][]['WEB-INF', 'classes'][][]&gt;&gt;&gt; 12345# 读取文件内容，转为Python字典格式# 文件/etc/environment 内容定义为host=devops1file=testapps=tensorflow 1234567891011121314151617#将以上内容转为字典#!/usr/bin/env python#coding: utf-8import osenv_file = "/etc/environment"def get_env_dict(env_file): env_dict = &#123;&#125; if os.path.exists(env_file): with open(env_file) as f: for line in f.readlines(): line = line.strip("\n") if len(line) != 0 and not line.startswith('#'): k = line.split("=")[0] v = line.split("=")[1] env_dict[k] = v return env_dict]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>OS模块</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[nginx缓存静态资源proxy_cache的一些指令的含义]]></title>
+    <url>%2F2018%2F09%2F28%2Fnginx%E7%BC%93%E5%AD%98%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%2F</url>
+    <content type="text"><![CDATA[记录nginx的缓存proxy_cache的指令的含义 proxy_cache相关的指令proxy_cache_path : 设置缓存路径/tmp/proxy_cache levels=1:2，表示第一级目录1个字符，第2级目录两个字符。 keys_zone=cache_www:100m表示这个zone的名字叫cache_www，分配内存的大小为100MB。inactive表示如果这个资源在inactive规定的时间内没有被访问到就会被删除。max_size表示这个zone可以使用的硬盘空间。 add_header ： 在给客户端的返回中，增加名为X-Cache-Status的header，其值是缓存命中情况，比如MISS，HIT等等。 proxy_cache ： 设置缓存资源的zone proxy_cache_key ： 设置缓存文件中的key，硬盘中缓存文件的名字key值的MD5。譬如key是test.xnow.me/，则在硬盘上的md5值是c9d71dc81143d6d9a60165bdcb1b9c9f，计算方法： echo -n “test.xnow.me/“ | md5sum proxy_cache_valid 200 304 301 302 10d： 设置缓存的状态码，把返回状态是200和304的请求缓存起来。缓存时间是60分钟，过了缓存时间之后，设置缓存状态为EXPIRED，这是绝对时间，和上次更新时间相比。10d代表缓存的时间，为10天proxy_cache_use_stale 返回码出错的时候，使用缓存数据。譬如出现超时，502和503等等情况 Example配置nginx的缓存，通过两个指令控制：proxy_cache_pathproxy_cache 1234567891011proxy_cache_path /path/to/cache levels=1:2 keys_zone=my_cache:10m max_size=10g inactive=60m use_temp_path=off;server &#123;...location / &#123;proxy_cache my_cache;proxy_cache_lock on;proxy_pass http://my_upstream;&#125;&#125; 注释：proxy_cache_path：/path/to/cache 设置缓存文件的存放路径 levels=1:2 设置缓存文件存放目录层级结构，1:2表示第一级目录一个字符，第二级目录2个字符，这样存放的目的，提高文件的读取速度，默认会存放于一个目录中key_zone=my_cache:10m 共享内存区的名称，用于存储缓存键和元数据，设置空间大小10MBmax_size=10g 设置缓存的上限大小，默认允许缓存不断增长，直到用尽可用的磁盘空间inactive=60m 指定在内存中的缓存文件，在60分钟内没有被访问，就会自动删除use_temp_path=off 关闭临时存储区域，开启状态，会把一个写入缓存的文件，先放入一个临时存储区域，建议关闭，可以避免文件系统中不必要的数据拷贝 在location中 使用proxy_cache 共享内存区名称 ，启用匹配location的内容进行缓存 缓存优化参数：proxy_cache_lock on 启用此配置，如果请求到没有存在缓存中的文件时，将只有第一个请求去源服务器获取内容，后续请求从缓存中获取数据。]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[nginx配置健康监测中指令的含义]]></title>
+    <url>%2F2018%2F09%2F28%2Fnginx%E9%85%8D%E7%BD%AE%E5%81%A5%E5%BA%B7%E7%9B%91%E6%B5%8B%E4%B8%AD%E6%8C%87%E4%BB%A4%E7%9A%84%E5%90%AB%E4%B9%89%2F</url>
+    <content type="text"><![CDATA[记录在nginx的upstream后端健康监测配置中，各指令的含义 比较常见的配置方式12345678910upstream backend1 &#123; sticky; server 192.168.0.125:8080 max_fails=1 fail_timeout=10s weight=1; server 192.168.0.126:8080 max_fails=1 fail_timeout=10s weight=1; server 192.168.0.127:8080 max_fails=1 fail_timeout=10s weight=1; keepalive 16; check interval=3000 rise=1 fall=3 timeout=2000 type=http; check_http_send "HEAD hall/health/check.html HTTP/1.0\r\nUser-Agent:check\r\n\r\n"; check_http_expect_alive http_2xx http_3xx;&#125; 以上配置，采用http的方式，对后端tomcat的做健康监测，通过tomcat中提供的check.html接口返回的状态，判断tomcat是否存活。 指令的各含义 interval: 向后端发送的健康检查包的间隔fall: 如果失败次数达到定义的数，服务器就认为是downrise: 如果成功次数达到定义的数,服务器就认为是uptimout: 后端健康请求的超时时间default_down: 设定初始时服务器的状态,如果是true,就说明默认是down的，如果是false，就是up的，默认值为true，也就是一开始服务器认为是不可用的，要等健康检查包达到一定成功次数以后才会被认为是健康的type： 健康监测的类型,常见的类如下: tcp: 简单的tcp连接，如果连接成功，说明后端正常 ssl_hello: 发送一个输出的SSL hello包并接受服务器的SSL hello 包 http: 发送http请求，通过后端的回复包的状态来判断后端是否存活 mysql: 向mysql服务器连接，通过接受Cpong包来判断后端是否存活 ajp: 向后端发送AJP协议的Cping包，通过接受Cpong包来判断后端是否存活port: 指定后端服务器的检查端口.]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[nginx中常见的一些变量]]></title>
+    <url>%2F2018%2F09%2F28%2Fnginx%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8F%98%E9%87%8F%2F</url>
+    <content type="text"><![CDATA[常见的日志变量 $remote_addr, $http_x_forwarded_for 记录客户端IP地址 $remote_user记录客户端用户名称 $request记录请求的URL和HTTP协议(GET,POST,DEL,等) $status记录请求状态 $body_bytes_sent发送给客户端的字节数，不包括响应头的大小； 该变量与Apache模块mod_log_config里的“%B”参数兼容。 $bytes_sent发送给客户端的总字节数。 $connection连接的序列号。 $connection_requests 当前通过一个连接获得的请求数量。 $msec 日志写入时间。单位为秒，精度是毫秒。 $pipe如果请求是通过HTTP流水线(pipelined)发送，pipe值为“p”，否则为“.”。 $http_referer 记录从哪个页面链接访问过来的 $http_user_agent记录客户端浏览器相关信息 $request_length请求的长度（包括请求行，请求头和请求正文）。 $request_time 请求处理时间，单位为秒，精度毫秒；从读入客户端的第一个字节开始，直到把最后一个字符发送给客户端后进行日志写入为止。 $time_iso8601 ISO8601标准格式下的本地时间。 $time_local通用日志格式下的本地时间]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[nginx的location配置优先级]]></title>
+    <url>%2F2018%2F09%2F28%2Fnginx%E7%9A%84location%E9%85%8D%E7%BD%AE%E4%BC%98%E5%85%88%E7%BA%A7%2F</url>
+    <content type="text"><![CDATA[记录下，平常工作中容易混淆的nginx的location 优先级匹配的问题 location表达式类型~ 表示执行一个正则匹配，区分大小写~* 表示执行一个正则匹配，不区分大小写^~ 表示普通字符匹配，使用前缀匹配。如果匹配成功，则不再匹配其他location= 进行普通字符精确匹配。完全匹配 location优先级说明注意： 在nginx的location配置中，和顺序没有太大关系，相同类型的表达式，字符串长的会优先匹配 优先级排列说明: 第一优先级，等号类型，一旦匹配成功，则不再查找其他匹配项 第二优先级，^~ 类型表达式，一旦匹配成功，则不再查找其他匹配项 第三优先级，正则表达式类型(~ ~*)的优先级次之，如果有多个location的正则能匹配的话，则使用正则表达式最长的那个 第四优先级，常规字符串匹配类型，按前缀匹配]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[lsyncd的配置与使用]]></title>
+    <url>%2F2018%2F09%2F26%2Flsyncd%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[简要说明下lsyncd的配置与使用 lsyncd： 持续监控目录下的文件，有变动，实时同步 安装环境描述: OS: centos7 12yum -y install epel-releaseyum install -y lsyncd 配置需求： 两台远程主机之间，目录同步， host1目录： /var/vm1 host2目录： /var/vm2不能加delete=true,因为，在host1的目录如果删除，会同步到host2，把host2中存在的也删除了 lsyncd.conf配置 配置参数说明lsyncd.conf配置选项说明(列出工作中常用的) settings123456789settings &#123; logfile="/var/log/lsyncd.log", #定义日志文件路径 statusFile="/var/log/lsyncd.status", #定义哪些文件发生变动的状态日志 statusInterval=5, # 将lsyncd的状态写入statusFile的间隔，默认为10秒 maxDelays=3, # 累计到多少所监控的事件激活一次同步 inotifyMode="CloseWrite or Modify", # 指定inotify监控的事件，默认CloseWrite（关闭写入操作） nodaemon=false, # 表示不启用守护模式 maxProcesses=1, # 同步进程的最大个数，执行rsync的进程数，如果设置3个进程，有20个文件同步，最大有3个rsync进程&#125; sync12345678sync &#123; default.rsyncssh, #指定同步参数，以什么模式运行 source="/var/data/", #监控的源目录 host="10.10.4.2", # 目标主机 targetdir="/var/data/", #目标目录 exclude=&#123; "*.swp","*.swx" #排除同步的文件 &#125;, rsync 参数12345678910rsync = &#123; binary = "/usr/bin/rsync", archive = true, compress = true, verbose = true, _extra = &#123;"--delete=false"&#125;, &#125;, ssh=&#123; port=22 &#125;]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>lsyncd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jumpserver部署文档]]></title>
+    <url>%2F2018%2F09%2F24%2Fjumpserver%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3%2F</url>
+    <content type="text"><![CDATA[jumpserver部署文档 Jumpserver特点： 1）完全开源，GPL授权 2）Python编写，容易再次开发 3）实现了跳板机基本功能，身份认证、访问控制、授权、审计 、批量操作等。 4）集成了Ansible，批量命令等 5）支持WebTerminal 6）Bootstrap编写，界面美观 7）自动收集硬件信息 8）录像回放 9）命令搜索 10）实时监控 11）批量上传下载 参考官网地址，写的非常详细 jumpserver官网部署文档]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>jumpserver</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[http状态码分析]]></title>
+    <url>%2F2018%2F09%2F24%2Fhttp%E7%8A%B6%E6%80%81%E7%A0%81%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[以下http协议分析图片来自菜鸟教程：http协议状态码 如有侵犯，请告知，将删除。]]></content>
+      <categories>
+        <category>http状态码</category>
+      </categories>
+      <tags>
+        <tag>http状态码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git操作]]></title>
+    <url>%2F2018%2F09%2F21%2FGit%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[作为一名运维人员，学会使用git也是完全有必要的 #git在分支下工作 创建新分支：1git checkout -b sun #此命令，会创建新分支，并切换到新分支上 添加修改的代码文件，到当前新分支12git add 文件git commit -m “注释信息” 合并分支123git checkout master #先切换到master分支上git merge sun #合并新分支sun ，到当前的master上 合并后，删除当前分支1git branch -d sun #如果没有合并，不能删除当前分支 查看所有分支1git branch -a git add之后的撤销操作123456789101112git status #可以看到git add 中的文件git reset HEAD #对上次所有的add撤销git reset HEAD test.txt #只对上次add test.txt文件撤销git commit 之后的撤销操作git log #查看commit信息的哈希值例如：commit b262ed4528aebe2052f0c92e149e3e3fb0f7c609git reset &#123;commit后的哈希值&#125;git push 之后的撤销操作git revert HEAD 撤销前一次 commit git revert HEAD^ 撤销前前一次 commit git revert commit-id (撤销指定的版本，撤销也会作为一次提交进行保存） git revert是提交一个新的版本，将需要revert的版本的内容再反向修改回去，版本会递增，不影响之前提交的内容。 git pull 显示代码冲突的解决办法：123如果丢弃本地的更改，同步仓库的代码，使用以下方法：git reset –hardgit pull git合并冲突解决]]></content>
+      <categories>
+        <category>Git基本操作技能</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Centos7部署ftp服务]]></title>
+    <url>%2F2018%2F09%2F21%2FCentos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1%2F</url>
+    <content type="text"><![CDATA[在生产环境，开发需要借助ftp来上传开发程序包，特此记录下，部署vsftpd的笔记，方便后续查看 环境说明OS: Centos7.3 1511(core) 部署123yum -y install vsftpdsystemctl enable vsftpdsystemctl start vsftpd 配置采用虚拟用户，基于系统用户，实现不同用户，控制不同目录12345678910111213141516171819cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak# vim /etc/vsftpd/vsftpd.conf# 禁用匿名用户登录anonymous_enable=NO# 添加下列内容到vsftpd.conf末尾use_localtime=YESlisten_port=21chroot_local_user=YESidle_session_timeout=300guest_enable=YESguest_username=vsftpduser_config_dir=/etc/vsftpd/vconfdata_connection_timeout=1virtual_use_local_privs=YESpasv_min_port=10060pasv_max_port=10090accept_timeout=5connect_timeout=1allow_writeable_chroot=YES 建立用户文件123# vim /etc/vsftpd/virtuserstesttestpwd@123 生成用户数据文件123456789101112131415161718db_load -T -t hash -f /etc/vsftpd/virtusers /etc/vsftpd/virtusers.db #设定PAM验证文件，并指定对虚拟用户数据库文件进行读取 chmod 600 /etc/vsftpd/virtusers.db ## 修改前先备份 cp /etc/pam.d/vsftpd /etc/pam.d/vsftpd.bak# 将auth及account的所有配置行均注释掉# vi /etc/pam.d/vsftpdauth sufficient /lib64/security/pam_userdb.so db=/etc/vsftpd/virtusersaccount sufficient /lib64/security/pam_userdb.so db=/etc/vsftpd/virtusers# 如果系统为32位，上面改为lib例如：![ftpd](/images/ftp-virtusers.png)## 新建系统用户useradd vsftpd -d /home/vsftpd -s /sbin/nologinchown -R vsftpd:vsftpd /home/vsftpd 建立虚拟用户个人配置文件1234567891011121314mkdir /etc/vsftpd/vconfcd /etc/vsftpd/vconftouch test ##虚拟用户是什么，这里就是什么# vim test内容如下：local_root=/data/packages/write_enable=YESanon_world_readable_only=NOanon_upload_enable=YESanon_mkdir_write_enable=YESanon_other_write_enable=YES 防火墙配置12firewall-cmd --add-service=ftp --permanentfirewall-cmd --reload 重启vsftpd服务1systemctl restart vsftpd 需要注意刚才/data/packages这个目录的本地权限需要允许vsftpd用户，有访问权限！ 如果后续要增加用户： 例如添加test1用户1234567891011121314151617181920212223# 编辑此文件，添加虚拟用户的配置# vim /etc/vsftpd/virtusers# 追加：test1testpwd@123生成用户数据文件db_load -T -t hash -f /etc/vsftpd/virtusers /etc/vsftpd/virtusers.db# 进入此目录/etc/vsftpd/vconftouch test1# 编辑test文件vim test1# 添加以下内容:local_root=/date/test1/packages #指定上传路径write_enable=YESanon_world_readable_only=NOanon_upload_enable=YESanon_mkdir_write_enable=YESanon_other_write_enable=YES]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
+      <tags>
+        <tag>vsftpd配置与使用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[docker仓库Harbor的配置与使用]]></title>
     <url>%2F2018%2F09%2F20%2Fdocker%E4%BB%93%E5%BA%93Harbor%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[有一个私有仓库来管理镜像，还是非常方便的，特此记录下部署docker Harbor的笔记 参考链接 官方文档相关链接安装和配置指南用户指南 简介 Harbor的基本功能： VMware公司最近开源了企业级Registry项目Harbor，由VMware中国研发的团队负责开发 基于角色的访问控制 用户与Docker镜像仓库通过“项目”进行组织管理，一个用户可以对多个镜像仓库在同一命名空间（project）里有不同的权限。 镜像复制 – 镜像可以在多个Registry实例中复制（同步）。尤其适合于负载均衡，高可用，混合云和多云的场景。 图形化用户界面 – 用户可以通过浏览器来浏览，检索当前Docker镜像仓库，管理项目和命名空间。 AD/LDAP 支持 – Harbor可以集成企业内部已有的AD/LDAP，用于鉴权认证管理。 审计管理 – 所有针对镜像仓库的操作都可以被记录追溯，用于审计管理。 国际化 – 已拥有英文、中文、德文、日文和俄文的本地化版本。更多的语言将会添加进来。 RESTful API – RESTful API 提供给管理员对于Harbor更多的操控, 使得与其它管理软件集成变得更容易。 部署简单 – 提供在线（online）和离线（offline）两种安装工具， 也可以安装到vSphere平台(OVA方式)虚拟设备。 官方提供的架构图 环境描述 OS : Centos7本机已经安装docker docker-compose 安装部署下载离线安装包安装包链接地址 解压包1tar xf harbor-offline-installer-v1.5.1.tgz 修改配置文件123456789101112131415# 主配置文件harbor.cfg以下修改的参数中，仓库启用了https，满足docker仓库默认pull push需要使用https，要不然需要修改docker参数添加 –insecure-register修改hostname = hub.com #这个配置，是指定docker 仓库的url地址，也就是在客户端执行 docker pull 时，需要指定的仓库地址 修改ui_url_protocol = https #指定url访问为https，默认是http， 如果这里修改成https，如果使用http访问仓库，会自动跳转到https上；修改customize_crt: on #打开表示，创建私钥和根证书，用于https链接，官方介绍:打开或关闭，默认打开）打开此属性时，准备脚本创建私钥和根证书，用于生成/验证注册表令牌。当由外部来源提供密钥和根证书时，将此属性设置为off。 ssl_cert = /data/cert/hub.com.bundle.crt #ssl证书路径，ssl_cert_key = /data/cert/hub.com.key.pem #ssl私钥文件路径 这两项，在nginx的配置中使用；会加载到nginx的配置文件中注释： https生成证书，我使用的是github上的一个生成自签名证书的脚本生成；这个脚本，使用openssl注册自签名证书，只不过把所有的操作封装成了脚本，可以生成多域名证书，泛域名证书，表示很好用，也可以参考官网提供的openssl 生成 github链接地址：https://github.com/Fishdrowned/ssl 修改self_registration = off #禁止普通用户可以注册用户选项 修改project_creation_restriction = adminonly #只允许管理员创建项目 配置截图： 当然，harbor支持邮件发送，用户忘记密码，通过邮件来更改密码；这里我没有使用邮件服务； harbor也可以支持ldap认证；修改完配置文件，接下来就是制作证书了： 制作证书：创建目录：（此目录，容器会挂载此目录下的证书文件，也就是配置文件中指定的证书路径），当然也可以自定义此路径mkdir /data/cert使用openssl命令生成证书（本文我使用的是脚本生成）openssl生成证书主要分几个步骤： 创建CA证书 生成证书签名请求 生成服务器证书 介绍脚本使用： 脚本路径： /root/ssl 脚本执行: ./gen.cert.sh hub.com 脚本输出路径： /root/ssl/out/hub.com/ 证书生成成功后，就可以执行脚本安装了！修改docker-compose.yml,指定端口访问主要修改，proxy映射到宿主机的默认端口，80改为5000，https默认使用443； 执行以下命令，运行容器：1./install.sh 安装完成后，可以使用docker-compose ps 查看运行的容器；安装成功后，就可以使用浏览器进行访问了！注意： 生成证书时，使用的是hub.com，hub.com是一个虚假的域名，需要在本机添加hosts文件， 192.168.0.154 hub.com 访问UI界面https://hub.com 介绍几个命令如果在容器运行后，修改配置文件，使用以下命令，重新加载容器 停止容器：(注意需要在harbor目录中执行，因为要依赖docker-compose.yml文件) docker-compose down重新加载配置文件修改harbor.cfg配置文件后，执行以下命令，重新生成文件 ./prepare #如果语法错误，会提示错误启动容器： docker-compose up -d]]></content>
@@ -25,7 +410,7 @@
   <entry>
     <title><![CDATA[docker swarm 一些常用命令]]></title>
     <url>%2F2018%2F09%2F20%2Fdocker-swarm-%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[记录工作中常用的一些docker swarm的命令 docker swarm命令docker swarm创建集群1docker swarm init --advertise-addr 192.168.1.10 node节点加入集群1234567891011docker swarm join --token "创建集群的tocken值" 192.168.1.10:2377#如果忘记了加入集群的命令，可以在管理节点执行以下命令获取[1::root@sun-host::~]# &gt;&gt;&gt;docker swarm join-token manager #查看加入管理节点的tockenTo add a manager to this swarm, run the following command: docker swarm join --token SWMTKN-1-5n0yqdoirvjroddv4tk4q352rjg5ywqo0gur2a5ibaw517y9ed-6bwuuocgw1lx3anqsiy373uyn 192.168.1.10:2377[1::root@sun-host::~]# &gt;&gt;&gt;docker swarm join-token worker #查看加入工作节点的tockenTo add a worker to this swarm, run the following command: docker swarm join --token SWMTKN-1-5n0yqdoirvjroddv4tk4q352rjg5ywqo0gur2a5ibaw517y9ed-5lo62wh31nrt439b679s2ulim 192.168.1.10:2377 查看集群中的服务12docker service ls docker service ls ps 服务名 修改服务实例数1docker service scale nginx=3 删除节点1docker node rm node2 删除shutdown的容器,和无用数据清理1docker system prune -f docker node常用命令12345678docker node ls #查看所有集群节点docker node rm #删除某个节点（-f强制删除）docker node inspect ##查看节点详情,标签 --pretty 显示信息比较规整docker node demote #节点降级，由管理节点降级为工作节点docker node promote #节点升级，由工作节点升级为管理节点# docker node promote node1 node2 # 提升node1 node2节点为管理节点docker node update #更新节点docker node ps #查看节点中的 Task 任务 docker service 常用命令1234567docker service create #创建服务, 如果编写compose文件，可以使用docker stack命令部署docker service inspect #查看服务的详细信息docker service logs #查看某个服务的日志信息docker service rm #删除服务docker service ls #列出集群中所有服务docker service update #更新服务docker service update --image hub.com/image service_name #更新服务的镜像 批量删除所有服务12docker service ls -1 # 获取所有service的IDdocker service ls -q | xargs docker service rm Docker Stack 部署多个集群服务docker stack使用文件docker-compose.yml批量部署服务创建编排文件docker-compose.yml12345678910111213141516version: '3'services: mynginx: image: hub.test.com:5000/almi/nginx:0.1 ports: - "8081:80" deploy: replicas: 3 busybox: image: hub.test.com:5000/busybox:latest volumes: - "/var/run/docker.sock:/var/run/docker.sock" deploy: replicas: 2 使用docker-stack批量创建服务123docker stack deploy -c docker-compose.yml deploy-testdocker stack ps deploy-tes# docker stack部署的容器名称 deploy-test_&lt;service名称&gt;.随机后缀 docker stack 常用命令123456docker stack deploy #部署新的堆栈或更新现有堆栈docker stack ls #列出现有堆栈docker stack ps #列出堆栈中的任务docker stack rm #删除堆栈 （docker stack deploy部署的时候指定的服务名字）docker stack services #列出堆栈中的服务docker stack down #移除某个堆栈（不删数据） docker stack deploy 显示服务的状态accepted: 任务已经被分配到某一个节点执行preparing: 准备资源，一般是从网络拉取iamgerunning: 副本运行成功shutdown: 报错，终止，当一个任务被终止（stoped or killed），任务不能被重启，但是一个替代的任务会被重启 查看swarm中服务的ip1docker service inspect --format='&#123;&#123; json.Endpoint.VirtualIPs &#125;&#125;' 服务名]]></content>
+    <content type="text"><![CDATA[记录工作中常用的一些docker swarm的命令 docker命令官网 docker swarm命令docker swarm创建集群1docker swarm init --advertise-addr 192.168.1.10 node节点加入集群1234567891011docker swarm join --token "创建集群的tocken值" 192.168.1.10:2377#如果忘记了加入集群的命令，可以在管理节点执行以下命令获取[1::root@sun-host::~]# &gt;&gt;&gt;docker swarm join-token manager #查看加入管理节点的tockenTo add a manager to this swarm, run the following command: docker swarm join --token SWMTKN-1-5n0yqdoirvjroddv4tk4q352rjg5ywqo0gur2a5ibaw517y9ed-6bwuuocgw1lx3anqsiy373uyn 192.168.1.10:2377[1::root@sun-host::~]# &gt;&gt;&gt;docker swarm join-token worker #查看加入工作节点的tockenTo add a worker to this swarm, run the following command: docker swarm join --token SWMTKN-1-5n0yqdoirvjroddv4tk4q352rjg5ywqo0gur2a5ibaw517y9ed-5lo62wh31nrt439b679s2ulim 192.168.1.10:2377 查看集群中的服务12docker service ls docker service ls ps 服务名 查看服务部署在哪个节点1docker service ps 服务名 修改服务实例数1docker service scale nginx=3 删除节点1docker node rm node2 排除节点1docker node update --availability drain &lt;NODE-ID&gt; 恢复排除的节点1docker node update --availability active &lt;NODE-ID&gt; 删除shutdown的容器,和无用数据清理1docker system prune -f docker node常用命令12345678docker node ls #查看所有集群节点docker node rm #删除某个节点（-f强制删除）docker node inspect ##查看节点详情,标签 --pretty 显示信息比较规整docker node demote #节点降级，由管理节点降级为工作节点docker node promote #节点升级，由工作节点升级为管理节点# docker node promote node1 node2 # 提升node1 node2节点为管理节点docker node update #更新节点docker node ps #查看节点中的 Task 任务 docker service 常用命令12345678docker service create #创建服务, 如果编写compose文件，可以使用docker stack命令部署docker service inspect #查看服务的详细信息docker service ps #查看服务运行的节点docker service logs #查看某个服务的日志信息docker service rm #删除服务docker service ls #列出集群中所有服务docker service update #更新服务docker service update --image hub.com/image service_name #更新服务的镜像 docker swarm服务的动态命令设置123456789101112# 命令格式 docker service [option] servicedocker service update --env-adddocker service update --env-rm docker service update --host-add docker service update --host-rmdocker service update --hostnamedocker service update --mount-add type=volume,source=/data,target=/datadocker service update --mount-rm type=volume,source=/data,target=/datadocker service update --network-add name=my-network,alias=web1 # Add a networkdocker service update --network-rm name=my-network,alias=web1docker service update --publish-add published=8080,target=80 # Add or update a published portdocker service update --publish-rm published=8080,target=80 # Remove a published port by its target port 批量删除所有服务12docker service ls -1 # 获取所有service的IDdocker service ls -q | xargs docker service rm Docker Stack 部署多个集群服务docker stack使用文件docker-compose.yml批量部署服务创建编排文件docker-compose.yml12345678910111213141516version: '3'services: mynginx: image: hub.test.com:5000/almi/nginx:0.1 ports: - "8081:80" deploy: replicas: 3 busybox: image: hub.test.com:5000/busybox:latest volumes: - "/var/run/docker.sock:/var/run/docker.sock" deploy: replicas: 2 使用docker-stack批量创建服务123docker stack deploy -c docker-compose.yml deploy-testdocker stack ps deploy-tes# docker stack部署的容器名称 deploy-test_&lt;service名称&gt;.随机后缀 docker stack 常用命令123456docker stack deploy #部署新的堆栈或更新现有堆栈docker stack ls #列出现有堆栈docker stack ps #列出堆栈中的任务docker stack rm #删除堆栈 （docker stack deploy部署的时候指定的服务名字）docker stack services #列出堆栈中的服务docker stack down #移除某个堆栈（不删数据） docker stack deploy 显示服务的状态accepted: 任务已经被分配到某一个节点执行preparing: 准备资源，一般是从网络拉取iamgerunning: 副本运行成功shutdown: 报错，终止，当一个任务被终止（stoped or killed），任务不能被重启，但是一个替代的任务会被重启 查看swarm中服务的ip1docker service inspect --format='&#123;&#123; json.Endpoint.VirtualIPs &#125;&#125;' 服务名]]></content>
       <categories>
         <category>docker</category>
       </categories>
@@ -50,6 +435,9 @@
     <title><![CDATA[centos7绑定双网卡]]></title>
     <url>%2F2018%2F09%2F19%2Fcentos7%E7%BB%91%E5%AE%9A%E5%8F%8C%E7%BD%91%E5%8D%A1%2F</url>
     <content type="text"><![CDATA[Centos7绑定双网卡： #安装必需的包：1yum install teamd -y #停止NetworkManager123systemctl stop NetworkManagersystemctl disable NetworkManager #Creating a Network Team Using ifcfg Files12345678910111213cd /etc/sysconfig/network-scripts/vi ifcfg-team0DEVICE=team0DEVICETYPE=TeamONBOOT=yesBOOTPROTO=noneIPADDR=192.168.10.110PREFIX=24GATEWAY=192.168.10.254TEAM_CONFIG='&#123;"runner": &#123;"name": "activebackup"&#125;, "link_watch": &#123;"name": "ethtool"&#125;&#125;'#做好备份继续编辑需要绑定的网卡信息，调整prio优先级 1234567# cat ifcfg-eno1DEVICETYPE=TeamPortTEAM_MASTER=team0TEAM_PORT_CONFIG='&#123;"prio":100&#125;'NAME=eno1DEVICE=eno1ONBOOT=yes 12345678# cat ifcfg-eno2DEVICETYPE=TeamPortTEAM_MASTER=team0TEAM_PORT_CONFIG='&#123;"prio":99&#125;'NAME=eno2DEVICE=eno2ONBOOT=yes 123#重启网络systemctl restart network #检查端口状态12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697teamnl team0 ports1: eth0: up 1000Mbit FD2: eth1: up 1000Mbit FD#检查teaming状态teamdctl team0 statesetup: runner: activebackupports: eno1 link watches: link summary: up instance[link_watch_0]: name: ethtool link: up eno2 link watches: link summary: up instance[link_watch_0]: name: ethtool link: uprunner: active port: eno1#手动断开其中一条链路验证主备模式切换是否正常ip link set eno1 downteamdctl team0 statesetup: runner: activebackupports: eno1 link watches: link summary: up instance[link_watch_0]: name: ethtool link: up eno2 link watches: link summary: up instance[link_watch_0]: name: ethtool link: uprunner: active port: eno2]]></content>
+      <categories>
+        <category>linux运维基本技能</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[linux高阶命令使用]]></title>
@@ -70,13 +458,13 @@
         <category>linux运维基本技能</category>
       </categories>
       <tags>
-        <tag>nginx日志检索</tag>
+        <tag>nginx</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Markdown语法积累]]></title>
     <url>%2F2018%2F09%2F19%2FMarkdown%E8%AF%AD%E6%B3%95%E7%A7%AF%E7%B4%AF%2F</url>
-    <content type="text"><![CDATA[markdwon语法积累图片加载显示图片1![加载图片](/images/custome.png) 引用1&gt; 代表引用 标题1234# 一级标题## 二级标题### 三级标题......... 依次类推 表格单元格和表头使用 | 来分割不同的单元格 name description ansible_ssh_host 执行的主机 ansible_ssh_user ssh连接的用户名 ansible_ssh_port ssh目标主机的端口号 name description ansible_ssh_host 执行的主机 ansible_ssh_user ssh连接的用户名 ansible_ssh_port ssh目标主机的端口号 对齐 :— 代表左对齐 :–: 代表居中对齐 —: 代表右对齐]]></content>
+    <content type="text"><![CDATA[markdwon语法积累图片加载显示图片1![加载图片](/images/custome.png) 引用1&gt; 代表引用 标题1234# 一级标题## 二级标题### 三级标题......... 依次类推 表格单元格和表头使用 | 来分割不同的单元格 12345| name | description || ---- | --- ||ansible_ssh_host | 执行的主机 | |ansible_ssh_user | ssh连接的用户名 ||ansible_ssh_port | ssh目标主机的端口号 | name description ansible_ssh_host 执行的主机 ansible_ssh_user ssh连接的用户名 ansible_ssh_port ssh目标主机的端口号 对齐 :— 代表左对齐 :–: 代表居中对齐 —: 代表右对齐]]></content>
       <categories>
         <category>Markdown</category>
       </categories>
@@ -132,9 +520,9 @@
   <entry>
     <title><![CDATA[hexo Next主题使用配置]]></title>
     <url>%2F2018%2F09%2F16%2Fhexo-Next%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[当前主题采用版本信息 Next Version: v6.0.0 Hexo Version: v5.1记录初次使用hexo的基本配置，做个笔记文档！所有的记录，都是在hexo的官网，和别人的博客中找到的，感谢分享的这些文档，让我可以参照部署出自己的博客。 hexo站点使用配置博客的title打开站点配置文件123456789# Sitetitle: Changming's blogssubtitle: 坚持是一种美德description: 命运给你一个比别人低的起点，是想告诉你，让你用一生的努力去奋斗出一个绝地反击的故事。这个故事关于独立，关于梦想，关于坚忍，关于勇气！keywords:author: 李常明language: zh-Hanstimezone:email: 15116973831@163.com 博客左侧导航栏配置打开主题配置文件：D:\hexo\themes\next123456789menu: home: / || home about: /个人简介/ || user tags: /标签/ || tags categories: /分类/ || th archives: /归档/ || archive #schedule: /schedule/ || calendar #sitemap: /sitemap.xml || sitemap #commonweal: /404/ || heartbeat 上面为菜单的配置;在站点的使用逻辑关系home: 为站点中显示的命名/: 匹配的url|| home : 定义显示的图标 about: 站点中显示的名称/个人简介： 匹配的url ，需要hexo new page “个人简介” 创建与url匹配的页面user: 站点中显示的图标 博客左侧底部栏设置打开站点配置文件，site的区域配置123# Siteauthor: 李常明description: 描述信息 下面的日志 分类 标签，如果站点中，有文章，并添加分类，标签，会自动显示 分类 标签的使用分类 标签的关联关系分类： 文章属于哪一类标签： 文章的主题内容，根据标签判断文章的内容 使用，在hexo文件夹中执行以下命令12hexo new page "分类" #名称必须匹配在上述主题配置文件中Menu区域的匹配的urlhexo new page "标签" 以上页面创建完成后，会存在 D:\hexo\source{分类，标签}在分类，标签中，以上命令会默认创建index.md文件，分别编辑分类，标签中的index.md添加如下内容 标签12345---title: 标签date: 2018-09-16 16:07:36type: "tags" #添加tags--- 分类12345---title: 分类date: 2018-09-16 16:09:20type: "categories" #添加categories--- 新建一篇博客，查看分类和标签的使用1hexo new "hello_world" #新建博客的命令 上述命令执行完后，会生成D:\hexo\source_posts\hello_world.md文件 在hello_world.md文件添加分类和标签12345678---title: test 分类和标签使用date: 2018-09-16 16:09:20tags: - hexo部署配置categories: - 博客搭建--- 123hexo calenhexo generatehexo s #本地运行，访问查看分类和标签 在文章中，指定了标签和分类，那么文章就会归类到同名的标签和分类中，可以快速检索到文章 hexo站内搜索 进入hexo根目录，使用npm 安装插件1npm install hexo-generator-searchdb --save 打开站点配置文件，在Extensions下面添加123456# 搜索search: path: search.xml field: post format: html limit: 10000 打开主题配置文件，找到Local search，将enable设置为true123#站点内文章的搜索功能local_search: enable: true 友情链接添加打开主题配置文件,links区域123links: 追马: http://www.zhuimar.com/ jkzhao: http://jkzhao.github.io/ 设置文章只显示预览部分123auto_excerpt: enable: true #改为true，默认显示length设置的长度内容 length: 150 或者在文章中使用,会显示此标志之前的内容 基本上简约版的配置已经完成了，如果添加其它主题配置优化的，基本上网上也都有相似的文章 贴上几个笔者参考主题配置的urlhexo主题配置优化添加必力评论 后续更新markdown的语法，用于平常翻看！]]></content>
+    <content type="text"><![CDATA[当前主题采用版本信息 Next Version: v6.0.0 Hexo Version: v5.1 记录初次使用hexo的基本配置，做个笔记文档！所有的记录，都是在hexo的官网，和别人的博客中找到的，感谢分享的这些文档，让我可以参照部署出自己的博客。 hexo站点使用配置博客的title打开站点配置文件123456789# Sitetitle: Changming's blogssubtitle: 坚持是一种美德description: 命运给你一个比别人低的起点，是想告诉你，让你用一生的努力去奋斗出一个绝地反击的故事。这个故事关于独立，关于梦想，关于坚忍，关于勇气！keywords:author: 李常明language: zh-Hanstimezone:email: 15116973831@163.com 博客左侧导航栏配置打开主题配置文件：D:\hexo\themes\next123456789menu: home: / || home about: /个人简介/ || user tags: /标签/ || tags categories: /分类/ || th archives: /归档/ || archive #schedule: /schedule/ || calendar #sitemap: /sitemap.xml || sitemap #commonweal: /404/ || heartbeat 上面为菜单的配置;在站点的使用逻辑关系home: 为站点中显示的命名/: 匹配的url|| home : 定义显示的图标 about: 站点中显示的名称/个人简介： 匹配的url ，需要hexo new page “个人简介” 创建与url匹配的页面user: 站点中显示的图标 博客左侧底部栏设置打开站点配置文件，site的区域配置123# Siteauthor: 李常明description: 描述信息 下面的日志 分类 标签，如果站点中，有文章，并添加分类，标签，会自动显示 分类 标签的使用分类 标签的关联关系分类： 文章属于哪一类标签： 文章的主题内容，根据标签判断文章的内容 使用，在hexo文件夹中执行以下命令12hexo new page "分类" #名称必须匹配在上述主题配置文件中Menu区域的匹配的urlhexo new page "标签" 以上页面创建完成后，会存在 D:\hexo\source{分类，标签}在分类，标签中，以上命令会默认创建index.md文件，分别编辑分类，标签中的index.md添加如下内容 标签12345---title: 标签date: 2018-09-16 16:07:36type: "tags" #添加tags--- 分类12345---title: 分类date: 2018-09-16 16:09:20type: "categories" #添加categories--- 新建一篇博客，查看分类和标签的使用1hexo new "hello_world" #新建博客的命令 上述命令执行完后，会生成D:\hexo\source_posts\hello_world.md文件 在hello_world.md文件添加分类和标签12345678---title: test 分类和标签使用date: 2018-09-16 16:09:20tags: - hexo部署配置categories: - 博客搭建--- 123hexo calenhexo generatehexo s #本地运行，访问查看分类和标签 在文章中，指定了标签和分类，那么文章就会归类到同名的标签和分类中，可以快速检索到文章 hexo站内搜索 进入hexo根目录，使用npm 安装插件1npm install hexo-generator-searchdb --save 打开站点配置文件，在Extensions下面添加123456# 搜索search: path: search.xml field: post format: html limit: 10000 打开主题配置文件，找到Local search，将enable设置为true123#站点内文章的搜索功能local_search: enable: true 友情链接添加打开主题配置文件,links区域123links: 追马: http://www.zhuimar.com/ jkzhao: http://jkzhao.github.io/ 设置文章只显示预览部分123auto_excerpt: enable: true #改为true，默认显示length设置的长度内容 length: 150 或者在文章中使用,会显示此标志之前的内容 基本上简约版的配置已经完成了，如果添加其它主题配置优化的，基本上网上也都有相似的文章 贴上几个笔者参考主题配置的urlhexo主题配置优化添加必力评论 后续更新markdown的语法，用于平常翻看！]]></content>
       <categories>
-        <category>博客搭建</category>
+        <category>hexo博客配置与优化</category>
       </categories>
       <tags>
         <tag>hexo站点配置</tag>
@@ -143,7 +531,7 @@
   <entry>
     <title><![CDATA[hexo 部署(一)]]></title>
     <url>%2F2018%2F09%2F16%2Fhexo-%E9%83%A8%E7%BD%B2-%E4%B8%80%2F</url>
-    <content type="text"><![CDATA[hexo博客搭建 折腾了好久的时间，终于使用hexo部署起来了自己的博客。初次使用hexo，也是各种纠结，看起来还不错，想用，但又感觉好麻烦，终于借着周六日休息的时间，把博客整起来了，特此记录下遇到的问题，哈哈！ hexo初体验 初体验的博客部署参考连接：jkzhao部署hexohexo简介 Hexo可以集成Github Pages展示自己的博客Hexo是一个可以快速生成静态页面的博客框架，通过编写mardown文件，转换成html文件，方便在浏览器中加载。 hexo的特点： 快速生成静态页面 支持Markdown 一键部署博客 丰富的插件支持 hexo部署 因个人机使用的win10系统，所以，以下环境都在windows上执行 安装依赖工具 Node.js Git 下载以上两个工具即可。 在GitHub上创建仓库 例如我的仓库： 上面的仓库地址，就是后续要访问的地址，格式必须为： name.github.io 配置本地windows可以免秘钥登录自己的仓库，这个这么简单的问题，就不叙述了。 使用Hexo创建博客框架-1. 在本地磁盘中，新建文件夹 自定义名称 例如hexo-2. 进入hexo文件夹，打开git bash,执行以下命令1234npm install -g hexo #使用npm安装hexo，npm需要安装node.js的支持hexo init #初始化项目结构hexo g #用于生成静态网站文件hexo s #在本地运行静态网页 上面的命令执行完成后，会提示：12345678910$ hexo sINFO Start processingWARN ===============================================================WARN ========================= ATTENTION! ==========================WARN ===============================================================WARN NexT repository is moving here: https://github.com/theme-nextWARN ===============================================================WARN It's rebase to v6.0.0 and future maintenance will resume thereWARN ===============================================================INFO Hexo is running at http://localhost:4000 . Press Ctrl+C to stop. 本地浏览器，访问http://localhost:4000(默认端口4000) 默认主题的博客已经可以显示： 配置本地文件部署到GitHub 在Hexo文件夹下找到_config.yml文件，站点配置文件 修改代码如下：1234deploy: type: git repository: git@github.com:MrLichangming/MrLichangming.github.io.git branch: master 部署到仓库123hexo cleanhexo generatehexo deploy #同步到github仓库，必须本地可以免秘钥，上面deploy字段中，仓库地址填写正确 更改默认主题为NexT在hexo文件夹下，使用git clone Next主题1git clone https://github.com/iissnan/hexo-theme-next themes/next 克隆Next主题到本地hexo文件夹下的thems/next,此路径下全是主题配置文件 启用Next主题打开站点配置文件 1.修改theme字段，将值更改为next 2.修改next主题的样式， scheme: Pisces 当然看个人爱好，可以使用其他样式 预览123hexo cleanhexo generatehexo s hexo的部署很简单，就能看到一个默认的雏形，第二篇文章会更新hexo的Next主题配置优化]]></content>
+    <content type="text"><![CDATA[让写作成为习惯，使用博客构建自己的写作平台 hexo博客搭建 折腾了好久的时间，终于使用hexo部署起来了自己的博客。初次使用hexo，也是各种纠结，看起来还不错，想用，但又感觉好麻烦，终于借着周六日休息的时间，把博客整起来了，特此记录下遇到的问题，哈哈！ hexo初体验 初体验的博客部署参考连接：jkzhao部署hexohexo简介 Hexo可以集成Github Pages展示自己的博客Hexo是一个可以快速生成静态页面的博客框架，通过编写mardown文件，转换成html文件，方便在浏览器中加载。 hexo的特点： 快速生成静态页面 支持Markdown 一键部署博客 丰富的插件支持 hexo部署 因个人机使用的win10系统，所以，以下环境都在windows上执行 安装依赖工具 Node.js Git 下载以上两个工具即可。 在GitHub上创建仓库 例如我的仓库： 上面的仓库地址，就是后续要访问的地址，格式必须为： name.github.io 配置本地windows可以免秘钥登录自己的仓库，这个这么简单的问题，就不叙述了。 使用Hexo创建博客框架-1. 在本地磁盘中，新建文件夹 自定义名称 例如hexo-2. 进入hexo文件夹，打开git bash,执行以下命令1234npm install -g hexo #使用npm安装hexo，npm需要安装node.js的支持hexo init #初始化项目结构hexo g #用于生成静态网站文件hexo s #在本地运行静态网页 上面的命令执行完成后，会提示：12345678910$ hexo sINFO Start processingWARN ===============================================================WARN ========================= ATTENTION! ==========================WARN ===============================================================WARN NexT repository is moving here: https://github.com/theme-nextWARN ===============================================================WARN It's rebase to v6.0.0 and future maintenance will resume thereWARN ===============================================================INFO Hexo is running at http://localhost:4000 . Press Ctrl+C to stop. 本地浏览器，访问http://localhost:4000(默认端口4000) 默认主题的博客已经可以显示： 配置本地文件部署到GitHub 在Hexo文件夹下找到_config.yml文件，站点配置文件 修改代码如下：1234deploy: type: git repository: git@github.com:MrLichangming/MrLichangming.github.io.git branch: master 部署到仓库123hexo cleanhexo generatehexo deploy #同步到github仓库，必须本地可以免秘钥，上面deploy字段中，仓库地址填写正确 更改默认主题为NexT在hexo文件夹下，使用git clone Next主题1git clone https://github.com/iissnan/hexo-theme-next themes/next 克隆Next主题到本地hexo文件夹下的thems/next,此路径下全是主题配置文件 启用Next主题打开站点配置文件 1.修改theme字段，将值更改为next 2.修改next主题的样式， scheme: Pisces 当然看个人爱好，可以使用其他样式 预览123hexo cleanhexo generatehexo s hexo的部署很简单，就能看到一个默认的雏形，第二篇文章会更新hexo的Next主题配置优化]]></content>
       <categories>
         <category>博客搭建</category>
       </categories>

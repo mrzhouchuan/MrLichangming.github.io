@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrlichangming.github.io/"/>
-  <updated>2018-09-20T14:10:56.000Z</updated>
+  <updated>2018-10-01T01:56:14.443Z</updated>
   <id>https://mrlichangming.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>docker仓库Harbor的配置与使用</title>
-    <link href="https://mrlichangming.github.io/2018/09/20/docker%E4%BB%93%E5%BA%93Harbor%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
-    <id>https://mrlichangming.github.io/2018/09/20/docker仓库Harbor的配置与使用/</id>
-    <published>2018-09-20T09:21:36.000Z</published>
-    <updated>2018-09-20T14:10:56.000Z</updated>
+    <title>GlusterFS使用中的一些命令积累</title>
+    <link href="https://mrlichangming.github.io/2018/10/27/GlusterFS%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4%E7%A7%AF%E7%B4%AF/"/>
+    <id>https://mrlichangming.github.io/2018/10/27/GlusterFS使用中的一些命令积累/</id>
+    <published>2018-10-27T12:32:59.914Z</published>
+    <updated>2018-10-01T01:56:14.443Z</updated>
     
     <summary type="html">
     
@@ -30,178 +30,9 @@
         
         
           &lt;hr&gt;
-&lt;p&gt;有一个私有仓库来管理镜像，还是非常方便的，特此记录下部署docker Harbor的笔记&lt;/p&gt;
+&lt;p&gt;记录下GlusterFS的命令&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;参考链接&quot;&gt;&lt;a href=&quot;#参考链接&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="docker" scheme="https://mrlichangming.github.io/categories/docker/"/>
-    
-    
-      <category term="docker Harbor仓库" scheme="https://mrlichangming.github.io/tags/docker-Harbor%E4%BB%93%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker与系统软件防火墙关系</title>
-    <link href="https://mrlichangming.github.io/2018/09/20/docker%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E9%98%B2%E7%81%AB%E5%A2%99%E5%85%B3%E7%B3%BB/"/>
-    <id>https://mrlichangming.github.io/2018/09/20/docker与系统软件防火墙关系/</id>
-    <published>2018-09-20T09:05:33.000Z</published>
-    <updated>2018-09-20T09:17:52.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;在使用docker的过程中，经常遇到要改动防火墙，要注意的问题&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;以下笔记总结参考此链接: &lt;a href=&quot;https://my.oschina.net/u/3438714/blog/1204096&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="docker" scheme="https://mrlichangming.github.io/categories/docker/"/>
-    
-    
-      <category term="docker与系统防火墙" scheme="https://mrlichangming.github.io/tags/docker%E4%B8%8E%E7%B3%BB%E7%BB%9F%E9%98%B2%E7%81%AB%E5%A2%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker swarm 一些常用命令</title>
-    <link href="https://mrlichangming.github.io/2018/09/20/docker-swarm-%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>https://mrlichangming.github.io/2018/09/20/docker-swarm-一些常用命令/</id>
-    <published>2018-09-20T08:46:47.000Z</published>
-    <updated>2018-09-20T09:19:14.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;记录工作中常用的一些docker swarm的命令&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;docker-swarm命令&quot;&gt;&lt;a href=&quot;#docker-swarm命令&quot; class=&quot;headerlink&quot; title=&quot;docker
-        
-      
-    
-    </summary>
-    
-      <category term="docker" scheme="https://mrlichangming.github.io/categories/docker/"/>
-    
-    
-      <category term="docker swarm" scheme="https://mrlichangming.github.io/tags/docker-swarm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker中使用supervisor管理进程</title>
-    <link href="https://mrlichangming.github.io/2018/09/20/docker%E4%B8%AD%E4%BD%BF%E7%94%A8supervisor%E7%AE%A1%E7%90%86%E8%BF%9B%E7%A8%8B/"/>
-    <id>https://mrlichangming.github.io/2018/09/20/docker中使用supervisor管理进程/</id>
-    <published>2018-09-20T08:37:03.000Z</published>
-    <updated>2018-09-20T08:45:02.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;docker file 中 ENTRYPOINT 和CMD的用法&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;ENTRYPOINT-amp-amp-CMD&quot;&gt;&lt;a href=&quot;#ENTRYPOINT-amp-amp-CMD&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="docker" scheme="https://mrlichangming.github.io/categories/docker/"/>
-    
-    
-      <category term="docker file" scheme="https://mrlichangming.github.io/tags/docker-file/"/>
-    
-      <category term="ENTRYPOINT" scheme="https://mrlichangming.github.io/tags/ENTRYPOINT/"/>
-    
-      <category term="CMD" scheme="https://mrlichangming.github.io/tags/CMD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centos7绑定双网卡</title>
-    <link href="https://mrlichangming.github.io/2018/09/19/centos7%E7%BB%91%E5%AE%9A%E5%8F%8C%E7%BD%91%E5%8D%A1/"/>
-    <id>https://mrlichangming.github.io/2018/09/19/centos7绑定双网卡/</id>
-    <published>2018-09-19T05:12:59.000Z</published>
-    <updated>2018-09-19T05:15:22.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Centos7绑定双网卡：&lt;/p&gt;
-&lt;p&gt;#安装必需的包：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>linux高阶命令使用</title>
-    <link href="https://mrlichangming.github.io/2018/09/19/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/"/>
-    <id>https://mrlichangming.github.io/2018/09/19/linux高阶命令使用/</id>
-    <published>2018-09-19T04:35:18.000Z</published>
-    <updated>2018-09-19T05:04:56.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;编写shell脚本中，常用的一些awk grep getops 语法&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;awk&quot;&gt;&lt;a href=&quot;#awk&quot; class=&quot;headerlink&quot; title=&quot;awk&quot;&gt;&lt;/a&gt;awk&lt;/h1&gt;&lt;figure
-        
-      
-    
-    </summary>
-    
-      <category term="linux高阶命令" scheme="https://mrlichangming.github.io/categories/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4/"/>
-    
-    
-      <category term="awk getopts" scheme="https://mrlichangming.github.io/tags/awk-getopts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx日志检索常用命令</title>
-    <link href="https://mrlichangming.github.io/2018/09/19/nginx%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>https://mrlichangming.github.io/2018/09/19/nginx日志检索常用命令/</id>
-    <published>2018-09-19T01:33:27.000Z</published>
-    <updated>2018-09-19T05:11:10.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;查找特定时间点的日志&quot;&gt;&lt;a href=&quot;#查找特定时间点的日志&quot; class=&quot;headerlink&quot; title=&quot;查找特定时间点的日志&quot;&gt;&lt;/a&gt;查找特定时间点的日志&lt;/h1&gt;&lt;figure class=&quot;highlight
+&lt;p&gt;分布式文件系统GlusterFS实战，参考文档： &lt;a href=&quot;https://chegva.com/1745.html&quot; target=&quot;_blank&quot;
         
       
     
@@ -210,73 +41,286 @@
       <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
     
     
-      <category term="nginx日志检索" scheme="https://mrlichangming.github.io/tags/nginx%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2/"/>
+      <category term="GlusterFS" scheme="https://mrlichangming.github.io/tags/GlusterFS/"/>
     
   </entry>
   
   <entry>
-    <title>Markdown语法积累</title>
-    <link href="https://mrlichangming.github.io/2018/09/19/Markdown%E8%AF%AD%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
-    <id>https://mrlichangming.github.io/2018/09/19/Markdown语法积累/</id>
-    <published>2018-09-19T00:47:45.000Z</published>
-    <updated>2018-09-19T05:21:22.000Z</updated>
+    <title>openresty中lua代码调试日志</title>
+    <link href="https://mrlichangming.github.io/2018/10/27/openresty%E4%B8%ADlua%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97/"/>
+    <id>https://mrlichangming.github.io/2018/10/27/openresty中lua代码调试日志/</id>
+    <published>2018-10-26T16:39:39.000Z</published>
+    <updated>2018-10-26T16:42:01.182Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h2 id=&quot;markdwon语法积累&quot;&gt;&lt;a href=&quot;#markdwon语法积累&quot; class=&quot;headerlink&quot; title=&quot;markdwon语法积累&quot;&gt;&lt;/a&gt;markdwon语法积累&lt;/h2&gt;&lt;h1 id=&quot;图片加载&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="Markdown" scheme="https://mrlichangming.github.io/categories/Markdown/"/>
-    
-    
-      <category term="Markdown语法" scheme="https://mrlichangming.github.io/tags/Markdown%E8%AF%AD%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语学习一</title>
-    <link href="https://mrlichangming.github.io/2018/09/18/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0%E4%B8%80/"/>
-    <id>https://mrlichangming.github.io/2018/09/18/英语学习一/</id>
-    <published>2018-09-18T14:39:39.000Z</published>
-    <updated>2018-09-18T15:44:21.551Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;英语爱好者的词汇积累&lt;/p&gt;
+      &lt;hr&gt;
+&lt;p&gt;openresty中，如何使用了lua代码，调试信息输出到log中&lt;/p&gt;
 &lt;hr&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Bus No.38 has a regular schedule.&lt;br&gt;第38路车有一个固定的时间表&lt;br&gt;regular: [/‘rɛgjəlɚ/] 定期的，有规律的&lt;br&gt;schedule:
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="openresty" scheme="https://mrlichangming.github.io/tags/openresty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo博客美化添加live2d</title>
+    <link href="https://mrlichangming.github.io/2018/10/24/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E6%B7%BB%E5%8A%A0live2d/"/>
+    <id>https://mrlichangming.github.io/2018/10/24/hexo博客美化添加live2d/</id>
+    <published>2018-10-24T14:13:27.000Z</published>
+    <updated>2018-10-28T00:00:53.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;hexo添加live2d的使用&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="hexo美化" scheme="https://mrlichangming.github.io/categories/hexo%E7%BE%8E%E5%8C%96/"/>
+    
+    
+      <category term="hexo添加看板图片" scheme="https://mrlichangming.github.io/tags/hexo%E6%B7%BB%E5%8A%A0%E7%9C%8B%E6%9D%BF%E5%9B%BE%E7%89%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>openresty的lua语法学习一</title>
+    <link href="https://mrlichangming.github.io/2018/10/24/openresty%E7%9A%84lua%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%80/"/>
+    <id>https://mrlichangming.github.io/2018/10/24/openresty的lua语法学习一/</id>
+    <published>2018-10-23T16:50:58.000Z</published>
+    <updated>2018-10-23T16:59:59.034Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;openresty的lua语法学习&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="openresty" scheme="https://mrlichangming.github.io/tags/openresty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx的server_name正则表达式匹配</title>
+    <link href="https://mrlichangming.github.io/2018/10/23/nginx%E7%9A%84server-name%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/"/>
+    <id>https://mrlichangming.github.io/2018/10/23/nginx的server-name正则表达式匹配/</id>
+    <published>2018-10-23T12:03:25.000Z</published>
+    <updated>2018-10-23T12:17:21.627Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;nginx的server_name 匹配正则&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="nginx" scheme="https://mrlichangming.github.io/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python的json模块</title>
+    <link href="https://mrlichangming.github.io/2018/10/21/python%E7%9A%84json%E6%A8%A1%E5%9D%97/"/>
+    <id>https://mrlichangming.github.io/2018/10/21/python的json模块/</id>
+    <published>2018-10-20T17:17:07.000Z</published>
+    <updated>2018-10-20T17:19:40.440Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;python的json模块笔记&lt;br&gt;
+    
+    </summary>
+    
+      <category term="python的积累" scheme="https://mrlichangming.github.io/categories/python%E7%9A%84%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="python" scheme="https://mrlichangming.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker-compose文件对应docker版本号</title>
+    <link href="https://mrlichangming.github.io/2018/10/15/docker-compose%E6%96%87%E4%BB%B6%E5%AF%B9%E5%BA%94docker%E7%89%88%E6%9C%AC%E5%8F%B7/"/>
+    <id>https://mrlichangming.github.io/2018/10/15/docker-compose文件对应docker版本号/</id>
+    <published>2018-10-15T12:04:11.000Z</published>
+    <updated>2018-10-15T12:17:35.093Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;docker-compose 文件格式版本对应docker版本&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="docker" scheme="https://mrlichangming.github.io/categories/docker/"/>
+    
+    
+      <category term="docker-compose" scheme="https://mrlichangming.github.io/tags/docker-compose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>shell匹配数字</title>
+    <link href="https://mrlichangming.github.io/2018/10/15/shell%E5%8C%B9%E9%85%8D%E6%95%B0%E5%AD%97/"/>
+    <id>https://mrlichangming.github.io/2018/10/15/shell匹配数字/</id>
+    <published>2018-10-15T08:48:48.000Z</published>
+    <updated>2018-10-15T08:51:05.470Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;使用bash匹配数字&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
         
       
     
     </summary>
     
-      <category term="英语学习" scheme="https://mrlichangming.github.io/categories/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
     
     
-      <category term="常明学英语" scheme="https://mrlichangming.github.io/tags/%E5%B8%B8%E6%98%8E%E5%AD%A6%E8%8B%B1%E8%AF%AD/"/>
+      <category term="shell" scheme="https://mrlichangming.github.io/tags/shell/"/>
     
   </entry>
   
   <entry>
-    <title>ansible的playbook文件的语法</title>
-    <link href="https://mrlichangming.github.io/2018/09/18/ansible%E7%9A%84playbook%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%AD%E6%B3%95/"/>
-    <id>https://mrlichangming.github.io/2018/09/18/ansible的playbook文件的语法/</id>
-    <published>2018-09-18T08:41:26.000Z</published>
-    <updated>2018-09-18T12:16:48.000Z</updated>
+    <title>获取registry私有仓库的镜像信息</title>
+    <link href="https://mrlichangming.github.io/2018/10/14/%E8%8E%B7%E5%8F%96registry%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E7%9A%84%E9%95%9C%E5%83%8F%E4%BF%A1%E6%81%AF/"/>
+    <id>https://mrlichangming.github.io/2018/10/14/获取registry私有仓库的镜像信息/</id>
+    <published>2018-10-14T11:34:36.000Z</published>
+    <updated>2018-10-28T00:55:02.482Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;docker官方registry镜像的一些操作命令&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="docker" scheme="https://mrlichangming.github.io/categories/docker/"/>
+    
+    
+      <category term="registry" scheme="https://mrlichangming.github.io/tags/registry/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker命令总结</title>
+    <link href="https://mrlichangming.github.io/2018/10/12/docker%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
+    <id>https://mrlichangming.github.io/2018/10/12/docker命令总结/</id>
+    <published>2018-10-12T05:55:40.000Z</published>
+    <updated>2018-10-27T23:50:49.255Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;docker命令总结&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="docker" scheme="https://mrlichangming.github.io/categories/docker/"/>
+    
+    
+      <category term="docker命令" scheme="https://mrlichangming.github.io/tags/docker%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker遇到的问题总结</title>
+    <link href="https://mrlichangming.github.io/2018/10/12/docker%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>https://mrlichangming.github.io/2018/10/12/docker遇到的问题总结/</id>
+    <published>2018-10-12T01:59:29.000Z</published>
+    <updated>2018-10-27T23:50:46.888Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;总结在工作中，线上使用docker遇到的问题总结&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="docker问题总结" scheme="https://mrlichangming.github.io/tags/docker%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>查看证书有效期bash命令</title>
+    <link href="https://mrlichangming.github.io/2018/10/11/%E6%9F%A5%E7%9C%8B%E8%AF%81%E4%B9%A6%E6%9C%89%E6%95%88%E6%9C%9Fbash%E5%91%BD%E4%BB%A4/"/>
+    <id>https://mrlichangming.github.io/2018/10/11/查看证书有效期bash命令/</id>
+    <published>2018-10-11T08:51:39.000Z</published>
+    <updated>2018-10-11T09:39:33.922Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;openssl查看证书有效期&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="openssl" scheme="https://mrlichangming.github.io/tags/openssl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos7挂载windows共享文件夹</title>
+    <link href="https://mrlichangming.github.io/2018/10/11/Centos7%E7%9A%84mount%E6%8C%82%E8%BD%BDwindows%E7%9A%84%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    <id>https://mrlichangming.github.io/2018/10/11/Centos7的mount挂载windows的共享文件夹/</id>
+    <published>2018-10-11T01:47:48.000Z</published>
+    <updated>2018-10-11T06:00:11.975Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;记录一下linux系统挂载windows共享文件夹&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;挂载windows的共享文件夹:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="fstab" scheme="https://mrlichangming.github.io/tags/fstab/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos7编译安装python3，进入python终端不能使用退格和上下键翻动</title>
+    <link href="https://mrlichangming.github.io/2018/10/09/centos7%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85python3%EF%BC%8C%E8%BF%9B%E5%85%A5python%E7%BB%88%E7%AB%AF%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%E9%80%80%E6%A0%BC%E5%92%8C%E4%B8%8A%E4%B8%8B%E9%94%AE%E7%BF%BB%E5%8A%A8/"/>
+    <id>https://mrlichangming.github.io/2018/10/09/centos7编译安装python3，进入python终端不能使用退格和上下键翻动/</id>
+    <published>2018-10-09T11:57:29.000Z</published>
+    <updated>2018-10-11T02:00:09.762Z</updated>
     
     <summary type="html">
     
@@ -285,27 +329,28 @@
         
         
           &lt;hr&gt;
-&lt;p&gt;记录工作中使用到的编写playbook文件的一些语法&lt;/p&gt;
+&lt;p&gt;编译安装的python3，进入终端不能使用退格，和上下翻键&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;ansible中编写playbook文件，通过不同的角色执行操作&quot;&gt;&lt;a href=&quot;#ansible中编写playbook文件，通过不同的角色执行操作&quot;
+&lt;p&gt;解决办法:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
         
       
     
     </summary>
     
-      <category term="自动化运维工具" scheme="https://mrlichangming.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/"/>
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
     
     
-      <category term="ansible的playbook语法" scheme="https://mrlichangming.github.io/tags/ansible%E7%9A%84playbook%E8%AF%AD%E6%B3%95/"/>
+      <category term="python3" scheme="https://mrlichangming.github.io/tags/python3/"/>
     
   </entry>
   
   <entry>
-    <title>ansible命令与模块的使用</title>
-    <link href="https://mrlichangming.github.io/2018/09/18/ansible%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>https://mrlichangming.github.io/2018/09/18/ansible命令与模块的使用/</id>
-    <published>2018-09-18T05:25:29.000Z</published>
-    <updated>2018-09-18T08:40:26.000Z</updated>
+    <title>vsftpd中umask数字的含义</title>
+    <link href="https://mrlichangming.github.io/2018/10/09/vsftpd%E4%B8%ADumask%E6%95%B0%E5%AD%97%E7%9A%84%E5%90%AB%E4%B9%89/"/>
+    <id>https://mrlichangming.github.io/2018/10/09/vsftpd中umask数字的含义/</id>
+    <published>2018-10-09T07:27:10.000Z</published>
+    <updated>2018-10-09T07:37:13.151Z</updated>
     
     <summary type="html">
     
@@ -314,29 +359,27 @@
         
         
           &lt;hr&gt;
-&lt;p&gt;主要记录一下，平常使用ansible的一些命令和模块的使用 &lt;/p&gt;
+&lt;p&gt;之前一直搞不懂vsftpd服务中，local_umask 设置的数值有什么含义，特此记录下所知，所得&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;ansible定义主机组&quot;&gt;&lt;a href=&quot;#ansible定义主机组&quot; class=&quot;headerlink&quot;
+&lt;p&gt;参考链接：&lt;br&gt;&lt;a
         
       
     
     </summary>
     
-      <category term="自动化运维工具" scheme="https://mrlichangming.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/"/>
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
     
     
-      <category term="ansible命令" scheme="https://mrlichangming.github.io/tags/ansible%E5%91%BD%E4%BB%A4/"/>
-    
-      <category term="ansible模块" scheme="https://mrlichangming.github.io/tags/ansible%E6%A8%A1%E5%9D%97/"/>
+      <category term="vsftpd" scheme="https://mrlichangming.github.io/tags/vsftpd/"/>
     
   </entry>
   
   <entry>
-    <title>firewalld自定义服务开放端口</title>
-    <link href="https://mrlichangming.github.io/2018/09/18/firewalld%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/"/>
-    <id>https://mrlichangming.github.io/2018/09/18/firewalld自定义服务开放端口/</id>
-    <published>2018-09-18T00:44:28.000Z</published>
-    <updated>2018-09-18T01:04:18.000Z</updated>
+    <title>supervisord提示refused connection</title>
+    <link href="https://mrlichangming.github.io/2018/10/09/supervisord%E6%8F%90%E7%A4%BArefused-connection/"/>
+    <id>https://mrlichangming.github.io/2018/10/09/supervisord提示refused-connection/</id>
+    <published>2018-10-09T07:15:16.000Z</published>
+    <updated>2018-10-09T07:57:45.272Z</updated>
     
     <summary type="html">
     
@@ -345,51 +388,27 @@
         
         
           &lt;hr&gt;
-&lt;p&gt;在使用docker swarm集群的时候，各工作节点需要开放通信的端口，手动一个一个加，又比较麻烦&lt;/p&gt;
-&lt;p&gt;索性写成firewalld的服务，然后直接添加此服务即可！&lt;/p&gt;
+&lt;p&gt;记录下在工作中，遇到docker容器的supervisord提示 refused connection&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;自定义firewalld服务&quot;&gt;&lt;a
+&lt;p&gt;错误提示:&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
         
       
     
     </summary>
     
-      <category term="Centos7防火墙" scheme="https://mrlichangming.github.io/categories/Centos7%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
     
     
-      <category term="firewalld" scheme="https://mrlichangming.github.io/tags/firewalld/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo Next主题使用配置</title>
-    <link href="https://mrlichangming.github.io/2018/09/16/hexo-Next%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
-    <id>https://mrlichangming.github.io/2018/09/16/hexo-Next主题使用配置/</id>
-    <published>2018-09-16T15:15:46.000Z</published>
-    <updated>2018-09-17T15:18:51.705Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;当前主题采用版本信息&lt;br&gt;  Next Version: v6.0.0&lt;br&gt;  Hexo Version: v5.1&lt;br&gt;记录初次使用hexo的基本配置，做个笔记文档！&lt;br&gt;所有的记录，都是在hexo的官网，和别人的博客中找到的，感谢分享的这些文档，让我可以参照部署出自己的博客。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;hexo站点使用配置&quot;&gt;&lt;a href=&quot;#hexo站点使用配置&quot; class=&quot;headerlink&quot; title=&quot;hexo站点使用配置&quot;&gt;&lt;/a&gt;hexo站点使用配置&lt;/h1&gt;&lt;h2 id=&quot;博客的title&quot;&gt;&lt;a href=&quot;#博客的title&quot; class=&quot;headerlink&quot; title=&quot;博客的title&quot;&gt;&lt;/a&gt;博客的title&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/title.png&quot; alt=&quot;博客title配置&quot;&gt;&lt;br&gt;打开站点配置文件&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Site&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;title: Changming&lt;span class=&quot;string&quot;&gt;&#39;s blogs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;subtitle: 坚持是一种美德&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;description: 命运给你一个比别人低的起点，是想告诉你，让你用一生的努力去奋斗出一个绝地反击的故事。这个故事关于独立，关于梦想，关于坚忍，关于勇气！&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;keywords:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;author: 李常明&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;language: zh-Hans&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;timezone:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;email: 15116973831@163.com&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="博客搭建" scheme="https://mrlichangming.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-    
-      <category term="hexo站点配置" scheme="https://mrlichangming.github.io/tags/hexo%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE/"/>
+      <category term="supervisord" scheme="https://mrlichangming.github.io/tags/supervisord/"/>
     
   </entry>
   
   <entry>
-    <title>hexo 部署(一)</title>
-    <link href="https://mrlichangming.github.io/2018/09/16/hexo-%E9%83%A8%E7%BD%B2-%E4%B8%80/"/>
-    <id>https://mrlichangming.github.io/2018/09/16/hexo-部署-一/</id>
-    <published>2018-09-16T10:01:26.000Z</published>
-    <updated>2018-09-16T14:42:09.448Z</updated>
+    <title>查看linux系统CPU相关信息</title>
+    <link href="https://mrlichangming.github.io/2018/10/08/%E6%9F%A5%E7%9C%8Blinux%E7%B3%BB%E7%BB%9FCPU%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF/"/>
+    <id>https://mrlichangming.github.io/2018/10/08/查看linux系统CPU相关信息/</id>
+    <published>2018-10-08T01:34:06.000Z</published>
+    <updated>2018-10-08T01:49:09.715Z</updated>
     
     <summary type="html">
     
@@ -397,16 +416,103 @@
       
         
         
-          &lt;h1 id=&quot;hexo博客搭建&quot;&gt;&lt;a href=&quot;#hexo博客搭建&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;文档说明:&lt;/p&gt;
+&lt;p&gt;查看linux系统CPU， 物理个数  逻辑个数  单个CPU的核心数&lt;/p&gt;
+&lt;h1 id=&quot;查看物理CPU个数&quot;&gt;&lt;a href=&quot;#查看物理CPU个数&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="博客搭建" scheme="https://mrlichangming.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
     
     
-      <category term="hexo部署配置" scheme="https://mrlichangming.github.io/tags/hexo%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE/"/>
+      <category term="Linux" scheme="https://mrlichangming.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo Next主題给文章加密</title>
+    <link href="https://mrlichangming.github.io/2018/10/05/hexo-Next%E4%B8%BB%E9%A1%8C%E7%BB%99%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86/"/>
+    <id>https://mrlichangming.github.io/2018/10/05/hexo-Next主題给文章加密/</id>
+    <published>2018-10-05T07:25:05.000Z</published>
+    <updated>2018-10-27T23:51:08.536Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;hexo 文章加密&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;插件: hexo-blog-encrypt&lt;/p&gt;
+&lt;p&gt;参考链接地址&lt;br&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="hexo博客配置与优化" scheme="https://mrlichangming.github.io/categories/hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="hexo_Next主题文章加密" scheme="https://mrlichangming.github.io/tags/hexo-Next%E4%B8%BB%E9%A2%98%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux用户管理</title>
+    <link href="https://mrlichangming.github.io/2018/10/05/linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/"/>
+    <id>https://mrlichangming.github.io/2018/10/05/linux用户管理/</id>
+    <published>2018-10-05T06:16:07.000Z</published>
+    <updated>2018-10-05T06:17:13.416Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;向组中添加用户：&quot;&gt;&lt;a href=&quot;#向组中添加用户：&quot; class=&quot;headerlink&quot; title=&quot;向组中添加用户：&quot;&gt;&lt;/a&gt;向组中添加用户：&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="linux用户" scheme="https://mrlichangming.github.io/tags/linux%E7%94%A8%E6%88%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Centos7安裝google身份认证</title>
+    <link href="https://mrlichangming.github.io/2018/10/05/Centos7%E5%AE%89%E8%A3%9Dgoogle%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/"/>
+    <id>https://mrlichangming.github.io/2018/10/05/Centos7安裝google身份认证/</id>
+    <published>2018-10-05T01:16:16.000Z</published>
+    <updated>2018-10-11T02:03:10.909Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;记录在Centos7上安装Google身份认证&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;安装epel源&quot;&gt;&lt;a href=&quot;#安装epel源&quot; class=&quot;headerlink&quot; title=&quot;安装epel源&quot;&gt;&lt;/a&gt;安装epel源&lt;/h1&gt;&lt;figure
+        
+      
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="Google身份认证" scheme="https://mrlichangming.github.io/tags/Google%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/"/>
     
   </entry>
   
