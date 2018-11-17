@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrlichangming.github.io/"/>
-  <updated>2018-10-01T01:56:14.443Z</updated>
+  <updated>2018-11-17T14:18:52.792Z</updated>
   <id>https://mrlichangming.github.io/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python的ConfigParser总结</title>
+    <link href="https://mrlichangming.github.io/2018/11/16/Python%E7%9A%84ConfigParser%E6%80%BB%E7%BB%93/"/>
+    <id>https://mrlichangming.github.io/2018/11/16/Python的ConfigParser总结/</id>
+    <published>2018-11-16T13:23:29.000Z</published>
+    <updated>2018-11-17T14:18:52.792Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;python操作配置文件读取写入的ConfigParser模块&lt;br&gt;python version: python3&lt;br&gt;
+    
+    </summary>
+    
+      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="python的ConfigParser" scheme="https://mrlichangming.github.io/tags/python%E7%9A%84ConfigParser/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python的argparse总结</title>
+    <link href="https://mrlichangming.github.io/2018/11/16/python%E7%9A%84argparse%E6%80%BB%E7%BB%93/"/>
+    <id>https://mrlichangming.github.io/2018/11/16/python的argparse总结/</id>
+    <published>2018-11-16T12:41:49.000Z</published>
+    <updated>2018-11-16T12:53:46.475Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;argparse是python内置的一个用于命令选项与参数解析的模块&lt;br&gt;argparse 将会从 sys.argv 中解析出这些参数，并自动生成帮助和使用信息&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="python的argparse" scheme="https://mrlichangming.github.io/tags/python%E7%9A%84argparse/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python学习(一)搭建开发环境</title>
+    <link href="https://mrlichangming.github.io/2018/11/15/python%E5%AD%A6%E4%B9%A0-%E4%B8%80-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://mrlichangming.github.io/2018/11/15/python学习-一-搭建开发环境/</id>
+    <published>2018-11-15T10:27:16.000Z</published>
+    <updated>2018-11-16T11:39:06.679Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学习来源： 51Reboot学院&lt;br&gt;搞运维，不管写python脚本，还是python的项目，都希望在linux环境中调试代码&lt;br&gt;所以使用，以下方式搭建自己的本地开发环境&lt;br&gt;使用vagrant+virtualbox+pycharm&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="python" scheme="https://mrlichangming.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>GlusterFS使用中的一些命令积累</title>
@@ -138,7 +201,7 @@
     <link href="https://mrlichangming.github.io/2018/10/21/python%E7%9A%84json%E6%A8%A1%E5%9D%97/"/>
     <id>https://mrlichangming.github.io/2018/10/21/python的json模块/</id>
     <published>2018-10-20T17:17:07.000Z</published>
-    <updated>2018-10-20T17:19:40.440Z</updated>
+    <updated>2018-11-15T10:29:43.707Z</updated>
     
     <summary type="html">
     
@@ -146,7 +209,7 @@
     
     </summary>
     
-      <category term="python的积累" scheme="https://mrlichangming.github.io/categories/python%E7%9A%84%E7%A7%AF%E7%B4%AF/"/>
+      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
       <category term="python" scheme="https://mrlichangming.github.io/tags/python/"/>
@@ -428,91 +491,6 @@
     
     
       <category term="Linux" scheme="https://mrlichangming.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo Next主題给文章加密</title>
-    <link href="https://mrlichangming.github.io/2018/10/05/hexo-Next%E4%B8%BB%E9%A1%8C%E7%BB%99%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86/"/>
-    <id>https://mrlichangming.github.io/2018/10/05/hexo-Next主題给文章加密/</id>
-    <published>2018-10-05T07:25:05.000Z</published>
-    <updated>2018-10-27T23:51:08.536Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;hexo 文章加密&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;插件: hexo-blog-encrypt&lt;/p&gt;
-&lt;p&gt;参考链接地址&lt;br&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="hexo博客配置与优化" scheme="https://mrlichangming.github.io/categories/hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BC%98%E5%8C%96/"/>
-    
-    
-      <category term="hexo_Next主题文章加密" scheme="https://mrlichangming.github.io/tags/hexo-Next%E4%B8%BB%E9%A2%98%E6%96%87%E7%AB%A0%E5%8A%A0%E5%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux用户管理</title>
-    <link href="https://mrlichangming.github.io/2018/10/05/linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/"/>
-    <id>https://mrlichangming.github.io/2018/10/05/linux用户管理/</id>
-    <published>2018-10-05T06:16:07.000Z</published>
-    <updated>2018-10-05T06:17:13.416Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;向组中添加用户：&quot;&gt;&lt;a href=&quot;#向组中添加用户：&quot; class=&quot;headerlink&quot; title=&quot;向组中添加用户：&quot;&gt;&lt;/a&gt;向组中添加用户：&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-    
-    
-      <category term="linux用户" scheme="https://mrlichangming.github.io/tags/linux%E7%94%A8%E6%88%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Centos7安裝google身份认证</title>
-    <link href="https://mrlichangming.github.io/2018/10/05/Centos7%E5%AE%89%E8%A3%9Dgoogle%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/"/>
-    <id>https://mrlichangming.github.io/2018/10/05/Centos7安裝google身份认证/</id>
-    <published>2018-10-05T01:16:16.000Z</published>
-    <updated>2018-10-11T02:03:10.909Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;记录在Centos7上安装Google身份认证&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;安装epel源&quot;&gt;&lt;a href=&quot;#安装epel源&quot; class=&quot;headerlink&quot; title=&quot;安装epel源&quot;&gt;&lt;/a&gt;安装epel源&lt;/h1&gt;&lt;figure
-        
-      
-    
-    </summary>
-    
-      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-    
-    
-      <category term="Google身份认证" scheme="https://mrlichangming.github.io/tags/Google%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/"/>
     
   </entry>
   
