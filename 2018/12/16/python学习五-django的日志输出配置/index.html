@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo站点配置," />
+  <meta name="keywords" content="django," />
 
 
 
@@ -81,25 +81,20 @@
 
 
 
-<meta name="description" content="当前主题采用版本信息    Next Version: v6.0.0    Hexo Version: v5.1">
-<meta name="keywords" content="hexo站点配置">
+<meta name="description" content="django的日志管理">
+<meta name="keywords" content="django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo Next主题使用配置">
-<meta property="og:url" content="https://mrlichangming.github.io/2018/09/16/hexo-Next主题使用配置/index.html">
+<meta property="og:title" content="python学习五-django的日志输出配置">
+<meta property="og:url" content="https://mrlichangming.github.io/2018/12/16/python学习五-django的日志输出配置/index.html">
 <meta property="og:site_name" content="Changming&#39;s blogs">
-<meta property="og:description" content="当前主题采用版本信息    Next Version: v6.0.0    Hexo Version: v5.1">
+<meta property="og:description" content="django的日志管理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://mrlichangming.github.io/images/title.png">
-<meta property="og:image" content="https://mrlichangming.github.io/images/nav.png">
-<meta property="og:image" content="https://mrlichangming.github.io/images/center.png">
-<meta property="og:image" content="https://mrlichangming.github.io/images/useTags.png">
-<meta property="og:image" content="https://mrlichangming.github.io/images/useCategories.png">
-<meta property="og:image" content="https://mrlichangming.github.io/images/siteSearch.png">
-<meta property="og:updated_time" content="2018-10-27T23:44:49.849Z">
+<meta property="og:image" content="https://mrlichangming.github.io/images/django_log_formatters.png">
+<meta property="og:updated_time" content="2018-12-16T12:40:53.618Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo Next主题使用配置">
-<meta name="twitter:description" content="当前主题采用版本信息    Next Version: v6.0.0    Hexo Version: v5.1">
-<meta name="twitter:image" content="https://mrlichangming.github.io/images/title.png">
+<meta name="twitter:title" content="python学习五-django的日志输出配置">
+<meta name="twitter:description" content="django的日志管理">
+<meta name="twitter:image" content="https://mrlichangming.github.io/images/django_log_formatters.png">
 
 
 
@@ -130,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://mrlichangming.github.io/2018/09/16/hexo-Next主题使用配置/"/>
+  <link rel="canonical" href="https://mrlichangming.github.io/2018/12/16/python学习五-django的日志输出配置/"/>
 
 
 
 
 
-  <title>hexo Next主题使用配置 | Changming's blogs</title>
+  <title>python学习五-django的日志输出配置 | Changming's blogs</title>
   
 
 
@@ -309,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://mrlichangming.github.io/2018/09/16/hexo-Next主题使用配置/">
+    <link itemprop="mainEntityOfPage" href="https://mrlichangming.github.io/2018/12/16/python学习五-django的日志输出配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李常明">
@@ -326,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo Next主题使用配置</h1>
+          <h1 class="post-title" itemprop="name headline">python学习五-django的日志输出配置</h1>
         
 
         <div class="post-meta">
@@ -338,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T23:15:46+08:00">
-                2018-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-16T19:20:30+08:00">
+                2018-12-16
               </time>
             
 
@@ -361,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo博客配置与优化/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo博客配置与优化</span>
+                  <a href="/categories/python学习之路/" itemprop="url" rel="index">
+                    <span itemprop="name">python学习之路</span>
                   </a>
                 </span>
 
@@ -397,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  933
+                  1.5k
                 </span>
               
 
@@ -413,7 +408,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  6
                 </span>
               
             </div>
@@ -435,40 +430,98 @@
 
       
         <hr>
-<p>当前主题采用版本信息<br>    Next Version: v6.0.0<br>    Hexo Version: v5.1</p>
+<p>django的日志管理</p>
 <hr>
 <a id="more"></a>
-<p>记录初次使用hexo的基本配置，做个笔记文档！<br>所有的记录，都是在hexo的官网，和别人的博客中找到的，感谢分享的这些文档，让我可以参照部署出自己的博客。</p>
-<h1 id="hexo站点使用配置"><a href="#hexo站点使用配置" class="headerlink" title="hexo站点使用配置"></a>hexo站点使用配置</h1><h2 id="博客的title"><a href="#博客的title" class="headerlink" title="博客的title"></a>博客的title</h2><p><img src="/images/title.png" alt="博客title配置"><br>打开站点配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: Changming<span class="string">'s blogs</span></span><br><span class="line"><span class="string">subtitle: 坚持是一种美德</span></span><br><span class="line"><span class="string">description: 命运给你一个比别人低的起点，是想告诉你，让你用一生的努力去奋斗出一个绝地反击的故事。这个故事关于独立，关于梦想，关于坚忍，关于勇气！</span></span><br><span class="line"><span class="string">keywords:</span></span><br><span class="line"><span class="string">author: 李常明</span></span><br><span class="line"><span class="string">language: zh-Hans</span></span><br><span class="line"><span class="string">timezone:</span></span><br><span class="line"><span class="string">email: 15116973831@163.com</span></span><br></pre></td></tr></table></figure></p>
-<!--more-->
-<h2 id="博客左侧导航栏配置"><a href="#博客左侧导航栏配置" class="headerlink" title="博客左侧导航栏配置"></a>博客左侧导航栏配置</h2><p><img src="/images/nav.png" alt="博客左侧导航栏"><br>打开主题配置文件：D:\hexo\themes\next<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home   </span><br><span class="line">  about: /个人简介/ || user </span><br><span class="line">  tags: /标签/ || tags</span><br><span class="line">  categories: /分类/ || th</span><br><span class="line">  archives: /归档/ || archive</span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure></p>
-<p>上面为菜单的配置;在站点的使用逻辑关系<br>home: 为站点中显示的命名<br>/: 匹配的url<br>|| home : 定义显示的图标</p>
-<p>about: 站点中显示的名称<br>/个人简介： 匹配的url   ，需要hexo new page “个人简介”  创建与url匹配的页面<br>user: 站点中显示的图标</p>
-<h1 id="博客左侧底部栏设置"><a href="#博客左侧底部栏设置" class="headerlink" title="博客左侧底部栏设置"></a>博客左侧底部栏设置</h1><p><img src="/images/center.png" alt="博客左侧底部栏设置"><br>打开站点配置文件，site的区域配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">author: 李常明</span><br><span class="line">description: 描述信息</span><br></pre></td></tr></table></figure></p>
-<p>下面的日志 分类 标签，如果站点中，有文章，并添加分类，标签，会自动显示</p>
-<h2 id="分类-标签的使用"><a href="#分类-标签的使用" class="headerlink" title="分类 标签的使用"></a>分类 标签的使用</h2><h3 id="分类-标签的关联关系"><a href="#分类-标签的关联关系" class="headerlink" title="分类 标签的关联关系"></a>分类 标签的关联关系</h3><p>分类： 文章属于哪一类<br>标签： 文章的主题内容，根据标签判断文章的内容</p>
-<h3 id="使用，在hexo文件夹中执行以下命令"><a href="#使用，在hexo文件夹中执行以下命令" class="headerlink" title="使用，在hexo文件夹中执行以下命令"></a>使用，在hexo文件夹中执行以下命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"分类"</span>  <span class="comment">#名称必须匹配在上述主题配置文件中Menu区域的匹配的url</span></span><br><span class="line">hexo new page <span class="string">"标签"</span></span><br></pre></td></tr></table></figure>
-<p>以上页面创建完成后，会存在 D:\hexo\source{分类，标签}<br>在分类，标签中，以上命令会默认创建index.md文件，分别编辑分类，标签中的index.md添加如下内容</p>
-<p>标签<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2018-09-16 16:07:36</span><br><span class="line"><span class="built_in">type</span>: <span class="string">"tags"</span>  <span class="comment">#添加tags</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>分类<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2018-09-16 16:09:20</span><br><span class="line"><span class="built_in">type</span>: <span class="string">"categories"</span>  <span class="comment">#添加categories</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<h3 id="新建一篇博客，查看分类和标签的使用"><a href="#新建一篇博客，查看分类和标签的使用" class="headerlink" title="新建一篇博客，查看分类和标签的使用"></a>新建一篇博客，查看分类和标签的使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"hello_world"</span>  <span class="comment">#新建博客的命令</span></span><br></pre></td></tr></table></figure>
-<p>上述命令执行完后，会生成D:\hexo\source_posts\hello_world.md文件</p>
-<p>在hello_world.md文件添加分类和标签<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: <span class="built_in">test</span> 分类和标签使用</span><br><span class="line">date: 2018-09-16 16:09:20</span><br><span class="line">tags:</span><br><span class="line"> - hexo部署配置</span><br><span class="line">categories: </span><br><span class="line"> - 博客搭建</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo calen</span><br><span class="line">hexo generate</span><br><span class="line">hexo s  <span class="comment">#本地运行，访问查看分类和标签</span></span><br></pre></td></tr></table></figure>
-<p><img src="/images/useTags.png" alt="标签效果图"><br><img src="/images/useCategories.png" alt="分类效果图"></p>
-<p>在文章中，指定了标签和分类，那么文章就会归类到同名的标签和分类中，可以快速检索到文章</p>
-<h3 id="hexo站内搜索"><a href="#hexo站内搜索" class="headerlink" title="hexo站内搜索"></a>hexo站内搜索</h3><p><img src="/images/siteSearch.png" alt="hexo站内搜索"></p>
-<p>进入hexo根目录，使用npm 安装插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></p>
-<p>打开站点配置文件，在Extensions下面添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 搜索</span></span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  <span class="built_in">limit</span>: 10000</span><br></pre></td></tr></table></figure></p>
-<p>打开主题配置文件，找到Local search，将enable设置为true<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#站点内文章的搜索功能</span></span><br><span class="line">local_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="友情链接添加"><a href="#友情链接添加" class="headerlink" title="友情链接添加"></a>友情链接添加</h3><p>打开主题配置文件,links区域<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">links:</span><br><span class="line">  追马: http://www.zhuimar.com/</span><br><span class="line">  jkzhao: http://jkzhao.github.io/</span><br></pre></td></tr></table></figure></p>
-<h3 id="设置文章只显示预览部分"><a href="#设置文章只显示预览部分" class="headerlink" title="设置文章只显示预览部分"></a>设置文章只显示预览部分</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span>   <span class="comment">#改为true，默认显示length设置的长度内容</span></span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
-<p>或者在文章中使用<!--more-->,会显示此标志之前的内容</p>
-<p>基本上简约版的配置已经完成了，如果添加其它主题配置优化的，基本上网上也都有相似的文章</p>
-<blockquote>
-<p>贴上几个笔者参考主题配置的url<br><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">hexo主题配置优化</a><br><a href="https://blog.csdn.net/ganzhilin520/article/details/79048010" target="_blank" rel="noopener">添加必力评论</a></p>
-</blockquote>
-<p>后续更新markdown的语法，用于平常翻看！</p>
+<h1 id="django日志"><a href="#django日志" class="headerlink" title="django日志"></a>django日志</h1><p>Django 使用Python 内建的logging 模块打印日志，Python 的logging 配置由四个部分组成</p>
+<ul>
+<li>记录器 —— Logger</li>
+<li>处理程序 —— Handler</li>
+<li>过滤器 —— Filter</li>
+<li>格式化 —— Formatter</li>
+</ul>
+<h2 id="记录器-Logger"><a href="#记录器-Logger" class="headerlink" title="记录器 Logger"></a>记录器 Logger</h2><ol>
+<li>Logger为日志系统的入口，每个logger命名都是bucket，可以向bucket写入需要处理的消息</li>
+<li>每个logger都有一个日志级别，日志级别表示该logger将要处理的消息的严重性，python定义以下几种日志级别:</li>
+</ol>
+<ul>
+<li>DEBUG: 用于调试目的的底层系统信息</li>
+<li>INFO：普通的系统信息</li>
+<li>WARNING：表示出现一个较小的问题</li>
+<li>ERROR：表示出现一个较大的问题</li>
+<li>CRITICAL：表示出现一个致命的问题</li>
+</ul>
+<ol start="3">
+<li>写入logger 的每条消息都是一条日志。每条日志也具有一个日志级别，它表示对应的消息的严重性。每个日志记录还可以包含描述正在打印的事件的元信息。</li>
+<li>当一条消息传递给logger 时，消息的日志级别将与logger 的日志级别进行比较。如果消息的日志级别大于等于logger 的日志级别，该消息将会往下继续处理。如果小于，该消息将被忽略。</li>
+<li>Logger 一旦决定消息需要处理，它将传递该消息给一个Handler</li>
+</ol>
+<h2 id="logger日志级别"><a href="#logger日志级别" class="headerlink" title="logger日志级别"></a>logger日志级别</h2><table>
+<thead>
+<tr>
+<th>级别</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRITICAL</td>
+<td>50</td>
+<td>关键错误/消息</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>40</td>
+<td>错误</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>30</td>
+<td>警告消息</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>20</td>
+<td>通知消息</td>
+</tr>
+<tr>
+<td>DEBUG</td>
+<td>10</td>
+<td>调试</td>
+</tr>
+<tr>
+<td>NOTSET</td>
+<td>0</td>
+<td>无级别</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Logger配置"><a href="#Logger配置" class="headerlink" title="Logger配置"></a>Logger配置</h2><p>logger 对应的值是个字典，其每一个键都是logger的名字，每一个值又是个字典，描述了如何配置对应的Logger实例。</p>
+<ul>
+<li>level （可选的）。logger的级别。</li>
+<li>propagate （可选的）。logger的传播设置。</li>
+<li>filters （可选的）。logger的filter的标识符的列表。</li>
+<li>handlers （可选的）。logger的handler的标识符的列表</li>
+</ul>
+<h2 id="Logger配置实例"><a href="#Logger配置实例" class="headerlink" title="Logger配置实例"></a>Logger配置实例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">LOGGING = &#123;</span><br><span class="line">    <span class="string">'loggers'</span>: &#123;</span><br><span class="line">        <span class="string">'log1'</span>: &#123;</span><br><span class="line">            <span class="string">'handlers'</span>: [<span class="string">'file_handler'</span>, <span class="string">'console_handler'</span>],</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="处理程序Handler"><a href="#处理程序Handler" class="headerlink" title="处理程序Handler"></a>处理程序Handler</h2><ol>
+<li>Handler 决定如何处理logger 中的每条消息。它表示一个特定的日志行为，例如将消息写到屏幕上、写到文件中或者写到网络socket</li>
+<li>与logger 一样，handler 也有一个日志级别。如果消息的日志级别小于handler 的级别，handler 将忽略该消息</li>
+<li>Logger 可以有多个handler，而每个handler 可以有不同的日志级别。利用这种方式，可以根据消息的重要性提供不同形式的处理</li>
+</ol>
+<h2 id="Handler配置实例"><a href="#Handler配置实例" class="headerlink" title="Handler配置实例"></a>Handler配置实例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LOGGING = &#123;</span><br><span class="line">    <span class="string">'handlers'</span>: &#123;</span><br><span class="line">        <span class="string">'log1'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'class'</span>: <span class="string">'logging.StreamHandler'</span>,</span><br><span class="line">            <span class="string">'formatter'</span>: <span class="string">'simple’,</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="过滤器-Filter"><a href="#过滤器-Filter" class="headerlink" title="过滤器 Filter"></a>过滤器 Filter</h2><ol>
+<li>Filter 用于对从logger 传递给handler 的日志记录进行额外的控制。</li>
+<li>默认情况下，满足日志级别的任何消息都将被处理。通过安装一个filter，你可以对日志处理添加额外的条件。例如，你可以安装一个filter，只允许处理来自特定源的ERROR 消息</li>
+<li>Filters 还可以用于修改将要处理的日志记录的优先级。例如，如果日志记录满足特定的条件，你可以编写一个filter 将日志记录从ERROR 降为WARNING</li>
+<li>Filters 可以安装在logger 上或者handler 上；多个filter 可以串联起来实现多层filter 行为</li>
+</ol>
+<h2 id="格式化-Formatters"><a href="#格式化-Formatters" class="headerlink" title="格式化 Formatters"></a>格式化 Formatters</h2><p>日志记录需要转换成文本。Formatter 表示文本的格式。Fomatter 通常由包含日志记录属性的Python 格式字符串组成；你也可以编写自定义的fomatter 来实现自己的格式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">LOGGING = &#123;</span><br><span class="line">    <span class="string">'formatters'</span>: &#123;</span><br><span class="line">        <span class="string">'log1'</span>:&#123;</span><br><span class="line">            <span class="string">'format'</span>: <span class="string">'%(asctime)s - %(pathname)s:%(lineno)d[%(levelname)s] - %(message)s'</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="string">'simple'</span>: &#123;</span><br><span class="line">            <span class="string">'format'</span>: <span class="string">'%(asctime)s %(levelname)s %(message)s'</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Format日志消息格式"><a href="#Format日志消息格式" class="headerlink" title="Format日志消息格式"></a>Format日志消息格式</h2><p><img src="/images/django_log_formatters.png" alt="Format日志消息格式"></p>
+<h1 id="django日志配置管理demo"><a href="#django日志配置管理demo" class="headerlink" title="django日志配置管理demo"></a>django日志配置管理demo</h1><h2 id="写入文件的日志-用于生产环境"><a href="#写入文件的日志-用于生产环境" class="headerlink" title="写入文件的日志,用于生产环境"></a>写入文件的日志,用于生产环境</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># settings.py文件定义LOGGING</span></span><br><span class="line">LOGGING = &#123;</span><br><span class="line">    <span class="string">'version'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'disable_existing_loggers'</span>: <span class="keyword">False</span>,</span><br><span class="line">    <span class="string">'loggers'</span>: &#123;</span><br><span class="line">        <span class="string">'reboot'</span>: &#123;</span><br><span class="line">            <span class="string">'handlers'</span>: [<span class="string">"reboot"</span>],</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'propagate'</span>: <span class="keyword">True</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"django"</span>: &#123;</span><br><span class="line">            <span class="string">'handlers'</span>: [<span class="string">"django"</span>],</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'propagate'</span>: <span class="keyword">True</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"django.server"</span>: &#123;</span><br><span class="line">            <span class="string">'handlers'</span>: [<span class="string">"django_server"</span>],</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">"propagate"</span>: <span class="keyword">True</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'handlers'</span>: &#123;</span><br><span class="line">        <span class="string">'reboot'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'class'</span>: <span class="string">'logging.StreamHandler'</span>,</span><br><span class="line">            <span class="string">'formatter'</span>: <span class="string">'simple'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'file'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'class'</span>: <span class="string">'logging.FileHandler'</span>,</span><br><span class="line">            <span class="string">'filename'</span>: <span class="string">'/tmp/django.log'</span>,</span><br><span class="line">            <span class="string">'formatter'</span>: <span class="string">'json'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'django'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'class'</span>: <span class="string">'logging.FileHandler'</span>,</span><br><span class="line">            <span class="string">'filename'</span>: <span class="string">'/tmp/default.log'</span>,</span><br><span class="line">            <span class="string">'formatter'</span>: <span class="string">'simple'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'django_server'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'class'</span>: <span class="string">'logging.FileHandler'</span>,</span><br><span class="line">            <span class="string">'filename'</span>: <span class="string">'/tmp/django_server.log'</span>,</span><br><span class="line">            <span class="string">'formatter'</span>: <span class="string">'simple'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'formatters'</span>: &#123;</span><br><span class="line">        <span class="string">'json'</span>: &#123;</span><br><span class="line">             <span class="string">'format'</span>: <span class="string">'&#123;"levelname":"%(levelname)s","asctime":"%(asctime)s","module":"%(name)s","fullpath":"%(pathname)s","funcName":"%(funcName)s","lineno":"%(lineno)s","message":"%(message)s"&#125;'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'reboot'</span>: &#123;</span><br><span class="line">            <span class="string">'format'</span>: <span class="string">'%(asctime)s - %(pathname)s:%(lineno)d[%(levelname)s] - %(message)s'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'simple'</span>: &#123;</span><br><span class="line">            <span class="string">'format'</span>: <span class="string">'%(name)s %(asctime)s %(levelname)s %(message)s'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'verbose'</span>: &#123;</span><br><span class="line">            <span class="string">'format'</span>: <span class="string">'%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'root'</span>: &#123;</span><br><span class="line">        <span class="string">'handlers'</span>: [<span class="string">"file"</span>],</span><br><span class="line">        <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># views.py定义输出日志</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">userView2</span><span class="params">(View)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">        logger.debug(<span class="string">"创建用户"</span>)   <span class="comment">#输出日志</span></span><br><span class="line">        <span class="comment"># 1. 获取提交数据</span></span><br><span class="line">        data = request.POST.dict()  <span class="comment"># 获取post提交的所有数据</span></span><br><span class="line">        logger.debug(<span class="string">"请求数据转dict"</span>)</span><br><span class="line">        <span class="comment"># 2. 创建用户</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            logger.debug(<span class="string">"执行用户创建"</span>)    <span class="comment">#输出日志</span></span><br><span class="line">            user = User.objects.create_user(**data)</span><br><span class="line">        <span class="keyword">except</span> IntegrityError:</span><br><span class="line">            logger.debug(<span class="string">"用户已存在"</span>)</span><br><span class="line">            <span class="keyword">return</span> JsonResponse(&#123;<span class="string">"errmsg"</span>: <span class="string">"用户已存在"</span>&#125;)</span><br><span class="line">        <span class="keyword">return</span> JsonResponse(&#123;<span class="string">"id"</span>: user.id, <span class="string">"email"</span>: user.email, <span class="string">"username"</span>: user.username&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="写入终端的日志-用于开发环境"><a href="#写入终端的日志-用于开发环境" class="headerlink" title="写入终端的日志,用于开发环境"></a>写入终端的日志,用于开发环境</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复制一份manage_dev.py 用于使用这个文件启动webserver，日志输出到终端</span></span><br><span class="line"><span class="comment"># 修改导入的settings配置</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    os.environ.setdefault(<span class="string">"DJANGO_SETTINGS_MODULE"</span>, <span class="string">"devops.settings_dev"</span>) <span class="comment">#修改此处，导入settings_dev文件</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">from</span> django.core.management <span class="keyword">import</span> execute_from_command_line</span><br><span class="line">    <span class="keyword">except</span> ImportError:</span><br><span class="line">        <span class="comment"># The above import may fail for some other reason. Ensure that the</span></span><br><span class="line">        <span class="comment"># issue is really that Django is missing to avoid masking other</span></span><br><span class="line">        <span class="comment"># exceptions on Python 2.</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">import</span> django</span><br><span class="line">        <span class="keyword">except</span> ImportError:</span><br><span class="line">            <span class="keyword">raise</span> ImportError(</span><br><span class="line">                <span class="string">"Couldn't import Django. Are you sure it's installed and "</span></span><br><span class="line">                <span class="string">"available on your PYTHONPATH environment variable? Did you "</span></span><br><span class="line">                <span class="string">"forget to activate a virtual environment?"</span></span><br><span class="line">            )</span><br><span class="line">        <span class="keyword">raise</span></span><br><span class="line">    execute_from_command_line(sys.argv)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制一份settings文件为settings_dev.py</span></span><br><span class="line"><span class="comment"># 输出到终端的日志格式定义</span></span><br><span class="line">LOGGING = &#123;</span><br><span class="line">    <span class="string">'version'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'disable_existing_loggers'</span>: <span class="keyword">False</span>,</span><br><span class="line">    <span class="string">"loggers"</span>: &#123;</span><br><span class="line">        <span class="string">"django"</span>: &#123;</span><br><span class="line">            <span class="string">'handlers'</span>: [<span class="string">"reboot"</span>],</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'propagate'</span>: <span class="keyword">False</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'handlers'</span>: &#123;</span><br><span class="line">        <span class="string">'reboot'</span>: &#123;</span><br><span class="line">            <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">            <span class="string">'class'</span>: <span class="string">'logging.StreamHandler'</span>,</span><br><span class="line">            <span class="string">'formatter'</span>: <span class="string">'simple'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'formatters'</span>: &#123;</span><br><span class="line">        <span class="string">'simple'</span>: &#123;</span><br><span class="line">            <span class="string">'format'</span>: <span class="string">'%(name)s %(asctime)s %(levelname)s %(message)s'</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"root"</span>: &#123;</span><br><span class="line">        <span class="string">'handlers'</span>: [<span class="string">"reboot"</span>],</span><br><span class="line">        <span class="string">'level'</span>: <span class="string">'DEBUG'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 启动django，使用以下命令</span></span><br><span class="line">python manage_dev.py runserver <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">8000</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -531,7 +584,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo站点配置/" rel="tag"><i class="fa fa-tag"></i> hexo站点配置</a>
+            <a href="/tags/django/" rel="tag"><i class="fa fa-tag"></i> django</a>
           
         </div>
       
@@ -544,8 +597,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/16/hexo-部署-一/" rel="next" title="hexo 部署(一)">
-                <i class="fa fa-chevron-left"></i> hexo 部署(一)
+              <a href="/2018/12/07/openresty学习记录知识点/" rel="next" title="openresty学习记录知识点">
+                <i class="fa fa-chevron-left"></i> openresty学习记录知识点
               </a>
             
           </div>
@@ -553,10 +606,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/18/firewalld自定义服务开放端口/" rel="prev" title="firewalld自定义服务开放端口">
-                firewalld自定义服务开放端口 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -738,7 +787,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo站点使用配置"><span class="nav-number">1.</span> <span class="nav-text">hexo站点使用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客的title"><span class="nav-number">1.1.</span> <span class="nav-text">博客的title</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博客左侧导航栏配置"><span class="nav-number">1.2.</span> <span class="nav-text">博客左侧导航栏配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博客左侧底部栏设置"><span class="nav-number">2.</span> <span class="nav-text">博客左侧底部栏设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类-标签的使用"><span class="nav-number">2.1.</span> <span class="nav-text">分类 标签的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类-标签的关联关系"><span class="nav-number">2.1.1.</span> <span class="nav-text">分类 标签的关联关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用，在hexo文件夹中执行以下命令"><span class="nav-number">2.1.2.</span> <span class="nav-text">使用，在hexo文件夹中执行以下命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一篇博客，查看分类和标签的使用"><span class="nav-number">2.1.3.</span> <span class="nav-text">新建一篇博客，查看分类和标签的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo站内搜索"><span class="nav-number">2.1.4.</span> <span class="nav-text">hexo站内搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#友情链接添加"><span class="nav-number">2.1.5.</span> <span class="nav-text">友情链接添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置文章只显示预览部分"><span class="nav-number">2.1.6.</span> <span class="nav-text">设置文章只显示预览部分</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#django日志"><span class="nav-number">1.</span> <span class="nav-text">django日志</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#记录器-Logger"><span class="nav-number">1.1.</span> <span class="nav-text">记录器 Logger</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#logger日志级别"><span class="nav-number">1.2.</span> <span class="nav-text">logger日志级别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Logger配置"><span class="nav-number">1.3.</span> <span class="nav-text">Logger配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Logger配置实例"><span class="nav-number">1.4.</span> <span class="nav-text">Logger配置实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理程序Handler"><span class="nav-number">1.5.</span> <span class="nav-text">处理程序Handler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handler配置实例"><span class="nav-number">1.6.</span> <span class="nav-text">Handler配置实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器-Filter"><span class="nav-number">1.7.</span> <span class="nav-text">过滤器 Filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化-Formatters"><span class="nav-number">1.8.</span> <span class="nav-text">格式化 Formatters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Format日志消息格式"><span class="nav-number">1.9.</span> <span class="nav-text">Format日志消息格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#django日志配置管理demo"><span class="nav-number">2.</span> <span class="nav-text">django日志配置管理demo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写入文件的日志-用于生产环境"><span class="nav-number">2.1.</span> <span class="nav-text">写入文件的日志,用于生产环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写入终端的日志-用于开发环境"><span class="nav-number">2.2.</span> <span class="nav-text">写入终端的日志,用于开发环境</span></a></li></ol></li></ol></div>
             
 
           </div>
