@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrlichangming.github.io/"/>
-  <updated>2018-12-16T13:12:57.554Z</updated>
+  <updated>2018-12-27T15:17:47.954Z</updated>
   <id>https://mrlichangming.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python学习-class面向对象</title>
+    <link href="https://mrlichangming.github.io/2018/12/27/python%E5%AD%A6%E4%B9%A0-class%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://mrlichangming.github.io/2018/12/27/python学习-class面向对象/</id>
+    <published>2018-12-27T15:08:52.000Z</published>
+    <updated>2018-12-27T15:17:47.954Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;python类学习&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="python类" scheme="https://mrlichangming.github.io/tags/python%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python学习六-django模板页面和数据库模型操作</title>
+    <link href="https://mrlichangming.github.io/2018/12/21/python%E5%AD%A6%E4%B9%A0%E5%85%AD-django%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%9E%8B%E6%93%8D%E4%BD%9C/"/>
+    <id>https://mrlichangming.github.io/2018/12/21/python学习六-django模板页面和数据库模型操作/</id>
+    <published>2018-12-21T14:03:51.000Z</published>
+    <updated>2018-12-27T15:40:33.736Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;django的类视图中的模板页面加载&lt;br&gt;django的数据库模型增删改查&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="django" scheme="https://mrlichangming.github.io/tags/django/"/>
+    
+  </entry>
   
   <entry>
     <title>siege压测工具使用说明</title>
@@ -394,57 +438,6 @@
     
     
       <category term="Centos7" scheme="https://mrlichangming.github.io/tags/Centos7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GlusterFS使用中的一些命令积累</title>
-    <link href="https://mrlichangming.github.io/2018/10/27/GlusterFS%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4%E7%A7%AF%E7%B4%AF/"/>
-    <id>https://mrlichangming.github.io/2018/10/27/GlusterFS使用中的一些命令积累/</id>
-    <published>2018-10-27T12:32:59.914Z</published>
-    <updated>2018-10-01T01:56:14.443Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;p&gt;记录下GlusterFS的命令&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;分布式文件系统GlusterFS实战，参考文档： &lt;a href=&quot;https://chegva.com/1745.html&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-    
-    
-      <category term="GlusterFS" scheme="https://mrlichangming.github.io/tags/GlusterFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>openresty中lua代码调试日志</title>
-    <link href="https://mrlichangming.github.io/2018/10/27/openresty%E4%B8%ADlua%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97/"/>
-    <id>https://mrlichangming.github.io/2018/10/27/openresty中lua代码调试日志/</id>
-    <published>2018-10-26T16:39:39.000Z</published>
-    <updated>2018-10-26T16:42:01.182Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;openresty中，如何使用了lua代码，调试信息输出到log中&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-    
-    
-      <category term="openresty" scheme="https://mrlichangming.github.io/tags/openresty/"/>
     
   </entry>
   
