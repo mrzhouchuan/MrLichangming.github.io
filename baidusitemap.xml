@@ -4,8 +4,205 @@
 
     
   <url>
+    <loc>https://mrlichangming.github.io/2018/09/21/Git%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2019-02-10T14:08:06.163Z</lastmod>
+    <data>
+        <display>
+        <title>Git操作</title>
+        <pubTime>2018-09-21T01:07:11.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="Git基本操作技能" url="https://mrlichangming.github.io/categories/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/18/ansible%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-02-10T14:04:39.570Z</lastmod>
+    <data>
+        <display>
+        <title>ansible命令与模块的使用</title>
+        <pubTime>2018-09-18T05:25:29.000Z</pubTime>
+        
+        <tag>ansible命令</tag>
+         
+        <tag>ansible模块</tag>
+         
+         
+           
+             
+              <breadCrumb title="自动化运维工具" url="https://mrlichangming.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/18/ansible%E7%9A%84playbook%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2019-02-10T14:04:08.159Z</lastmod>
+    <data>
+        <display>
+        <title>ansible的playbook文件的语法</title>
+        <pubTime>2018-09-18T08:41:26.000Z</pubTime>
+        
+        <tag>ansible的playbook语法</tag>
+         
+         
+           
+             
+              <breadCrumb title="自动化运维工具" url="https://mrlichangming.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/02/10/openresty%E5%80%9F%E5%8A%A9lua%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E8%B7%B3%E8%BD%AChttps%EF%BC%8C%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96%E8%AF%81%E4%B9%A6%E5%86%85%E5%AE%B9%E5%93%8D%E5%BA%94/</loc>
+    <lastmod>2019-02-10T13:35:29.632Z</lastmod>
+    <data>
+        <display>
+        <title>openresty借助lua实现动态跳转https，动态获取证书内容响应</title>
+        <pubTime>2019-02-10T13:17:54.000Z</pubTime>
+        
+        <tag>openresty</tag>
+         
+         
+           
+             
+              <breadCrumb title="openresty" url="https://mrlichangming.github.io/categories/openresty/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/12/17/docker-swarm%E4%BD%BF%E7%94%A8%E4%B8%8A%E7%9A%84%E5%BF%83%E5%BE%97/</loc>
+    <lastmod>2019-02-10T03:41:54.961Z</lastmod>
+    <data>
+        <display>
+        <title>docker swarm使用上的心得</title>
+        <pubTime>2018-12-17T08:13:31.000Z</pubTime>
+        
+        <tag>docker swarm</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/02/03/linux%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2019-02-06T06:17:49.841Z</lastmod>
+    <data>
+        <display>
+        <title>linux普通用户编辑文件保存方法</title>
+        <pubTime>2019-02-03T06:58:40.000Z</pubTime>
+        
+        <tag>vim</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/01/16/python3%E7%9A%84print%E8%BE%93%E5%87%BA%E9%A2%9C%E8%89%B2%E5%AD%97%E4%BD%93/</loc>
+    <lastmod>2019-01-16T02:47:33.294Z</lastmod>
+    <data>
+        <display>
+        <title>python3的print输出颜色字体</title>
+        <pubTime>2019-01-16T02:44:21.000Z</pubTime>
+        
+        <tag>python3的print颜色字体</tag>
+         
+         
+           
+             
+              <breadCrumb title="python的积累" url="https://mrlichangming.github.io/categories/python%E7%9A%84%E7%A7%AF%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/01/14/nginx%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A1%88%E4%BE%8B/</loc>
+    <lastmod>2019-01-14T11:12:28.856Z</lastmod>
+    <data>
+        <display>
+        <title>nginx中的正则匹配表达式案例</title>
+        <pubTime>2019-01-14T11:08:38.000Z</pubTime>
+        
+        <tag>nginx正则表达式书写方式</tag>
+         
+         
+           
+             
+              <breadCrumb title="nginx" url="https://mrlichangming.github.io/categories/nginx/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/01/03/openresty%E7%9A%84try-files%E6%8C%87%E4%BB%A4%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2019-01-08T12:25:22.313Z</lastmod>
+    <data>
+        <display>
+        <title>openresty的try_files指令说明</title>
+        <pubTime>2019-01-03T12:08:54.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/01/03/OpenSUSE-Leap-42-3%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-01-05T00:56:00.150Z</lastmod>
+    <data>
+        <display>
+        <title>OpenSUSE Leap 42.3使用</title>
+        <pubTime>2019-01-03T08:31:10.000Z</pubTime>
+        
+        <tag>openSUSE系统使用之路</tag>
+         
+         
+           
+             
+              <breadCrumb title="openSUSE系统" url="https://mrlichangming.github.io/categories/openSUSE%E7%B3%BB%E7%BB%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://mrlichangming.github.io/2018/12/21/python%E5%AD%A6%E4%B9%A0%E5%85%AD-django%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%9E%8B%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2018-12-27T15:40:33.736Z</lastmod>
+    <lastmod>2019-01-03T15:15:35.518Z</lastmod>
     <data>
         <display>
         <title>python学习六-django模板页面和数据库模型操作</title>
@@ -17,6 +214,66 @@
            
              
               <breadCrumb title="python学习之路" url="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/10/24/openresty%E7%9A%84lua%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%80/</loc>
+    <lastmod>2019-01-03T01:34:57.217Z</lastmod>
+    <data>
+        <display>
+        <title>openresty的lua语法学习一</title>
+        <pubTime>2018-10-23T16:50:58.000Z</pubTime>
+        
+        <tag>openresty</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/12/31/openresty%E5%8A%A8%E6%80%81%E5%AE%9E%E7%8E%B0url%E8%B7%B3%E8%BD%AC/</loc>
+    <lastmod>2019-01-01T01:51:03.057Z</lastmod>
+    <data>
+        <display>
+        <title>openresty动态实现url跳转</title>
+        <pubTime>2018-12-31T08:11:24.000Z</pubTime>
+        
+        <tag>openresty</tag>
+         
+         
+           
+             
+              <breadCrumb title="openresty" url="https://mrlichangming.github.io/categories/openresty/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/12/28/hexoEditor%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9/</loc>
+    <lastmod>2018-12-28T02:32:46.680Z</lastmod>
+    <data>
+        <display>
+        <title>hexoEditor编辑器使用帮助</title>
+        <pubTime>2018-12-28T01:37:35.000Z</pubTime>
+        
+        <tag>hexoEditor</tag>
+         
+         
+           
+             
+              <breadCrumb title="markdown编辑器" url="https://mrlichangming.github.io/categories/markdown%E7%BC%96%E8%BE%91%E5%99%A8/"/>
           
         </display>
     </data>
@@ -37,6 +294,46 @@
            
              
               <breadCrumb title="python学习之路" url="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/12/25/python%E6%96%B9%E6%B3%95%E7%A7%AF%E7%B4%AF/</loc>
+    <lastmod>2018-12-25T06:31:36.482Z</lastmod>
+    <data>
+        <display>
+        <title>python方法积累</title>
+        <pubTime>2018-12-25T06:26:51.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python的积累" url="https://mrlichangming.github.io/categories/python%E7%9A%84%E7%A7%AF%E7%B4%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/12/18/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-12-18T08:50:39.368Z</lastmod>
+    <data>
+        <display>
+        <title>redis学习笔记</title>
+        <pubTime>2018-12-18T06:36:24.000Z</pubTime>
+        
+        <tag>redis</tag>
+         
+         
+           
+             
+              <breadCrumb title="redis" url="https://mrlichangming.github.io/categories/redis/"/>
           
         </display>
     </data>
@@ -359,26 +656,6 @@
 
     
   <url>
-    <loc>https://mrlichangming.github.io/2018/09/18/ansible%E7%9A%84playbook%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2018-11-16T06:54:39.751Z</lastmod>
-    <data>
-        <display>
-        <title>ansible的playbook文件的语法</title>
-        <pubTime>2018-09-18T08:41:26.000Z</pubTime>
-        
-        <tag>ansible的playbook语法</tag>
-         
-         
-           
-             
-              <breadCrumb title="自动化运维工具" url="https://mrlichangming.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://mrlichangming.github.io/2018/09/28/python-OS%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%A7%AF%E7%B4%AF/</loc>
     <lastmod>2018-11-16T05:35:45.299Z</lastmod>
     <data>
@@ -601,28 +878,6 @@
 
     
   <url>
-    <loc>https://mrlichangming.github.io/2018/09/18/ansible%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2018-10-27T23:50:57.543Z</lastmod>
-    <data>
-        <display>
-        <title>ansible命令与模块的使用</title>
-        <pubTime>2018-09-18T05:25:29.000Z</pubTime>
-        
-        <tag>ansible命令</tag>
-         
-        <tag>ansible模块</tag>
-         
-         
-           
-             
-              <breadCrumb title="自动化运维工具" url="https://mrlichangming.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://mrlichangming.github.io/2018/10/12/docker%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2018-10-27T23:50:49.255Z</lastmod>
     <data>
@@ -781,26 +1036,6 @@
 
     
   <url>
-    <loc>https://mrlichangming.github.io/2018/10/24/openresty%E7%9A%84lua%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B8%80/</loc>
-    <lastmod>2018-10-23T16:59:59.034Z</lastmod>
-    <data>
-        <display>
-        <title>openresty的lua语法学习一</title>
-        <pubTime>2018-10-23T16:50:58.000Z</pubTime>
-        
-        <tag>openresty</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://mrlichangming.github.io/2018/10/23/nginx%E7%9A%84server-name%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/</loc>
     <lastmod>2018-10-23T12:17:21.627Z</lastmod>
     <data>
@@ -834,26 +1069,6 @@
            
              
               <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/21/Git%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2018-10-18T01:51:05.432Z</lastmod>
-    <data>
-        <display>
-        <title>Git操作</title>
-        <pubTime>2018-09-21T01:07:11.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="Git基本操作技能" url="https://mrlichangming.github.io/categories/Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%8A%80%E8%83%BD/"/>
           
         </display>
     </data>

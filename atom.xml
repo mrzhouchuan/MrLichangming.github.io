@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrlichangming.github.io/"/>
-  <updated>2018-12-27T15:17:47.954Z</updated>
+  <updated>2019-02-10T13:35:29.632Z</updated>
   <id>https://mrlichangming.github.io/</id>
   
   <author>
@@ -15,6 +15,180 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>openresty借助lua实现动态跳转https，动态获取证书内容响应</title>
+    <link href="https://mrlichangming.github.io/2019/02/10/openresty%E5%80%9F%E5%8A%A9lua%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E8%B7%B3%E8%BD%AChttps%EF%BC%8C%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96%E8%AF%81%E4%B9%A6%E5%86%85%E5%AE%B9%E5%93%8D%E5%BA%94/"/>
+    <id>https://mrlichangming.github.io/2019/02/10/openresty借助lua实现动态跳转https，动态获取证书内容响应/</id>
+    <published>2019-02-10T13:17:54.000Z</published>
+    <updated>2019-02-10T13:35:29.632Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;内容描述:&lt;br&gt;  借助openresty通过lua代码实现动态跳转https，并动态获取证书&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="openresty" scheme="https://mrlichangming.github.io/categories/openresty/"/>
+    
+    
+      <category term="openresty" scheme="https://mrlichangming.github.io/tags/openresty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux普通用户编辑文件保存方法</title>
+    <link href="https://mrlichangming.github.io/2019/02/03/linux%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98%E6%96%B9%E6%B3%95/"/>
+    <id>https://mrlichangming.github.io/2019/02/03/linux普通用户编辑文件保存方法/</id>
+    <published>2019-02-03T06:58:40.000Z</published>
+    <updated>2019-02-06T06:17:49.841Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;普通用户使用vim编辑文件，临时保存的方法&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="vim" scheme="https://mrlichangming.github.io/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python3的print输出颜色字体</title>
+    <link href="https://mrlichangming.github.io/2019/01/16/python3%E7%9A%84print%E8%BE%93%E5%87%BA%E9%A2%9C%E8%89%B2%E5%AD%97%E4%BD%93/"/>
+    <id>https://mrlichangming.github.io/2019/01/16/python3的print输出颜色字体/</id>
+    <published>2019-01-16T02:44:21.000Z</published>
+    <updated>2019-01-16T02:47:33.294Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;在编写脚本时，有些提示错误信息想输出带颜色的字体，特备注下&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="python的积累" scheme="https://mrlichangming.github.io/categories/python%E7%9A%84%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="python3的print颜色字体" scheme="https://mrlichangming.github.io/tags/python3%E7%9A%84print%E9%A2%9C%E8%89%B2%E5%AD%97%E4%BD%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx中的正则匹配表达式案例</title>
+    <link href="https://mrlichangming.github.io/2019/01/14/nginx%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A1%88%E4%BE%8B/"/>
+    <id>https://mrlichangming.github.io/2019/01/14/nginx中的正则匹配表达式案例/</id>
+    <published>2019-01-14T11:08:38.000Z</published>
+    <updated>2019-01-14T11:12:28.856Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;记录下工作中遇到的&lt;br&gt;nginx的正则表达式的书写案列&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="nginx" scheme="https://mrlichangming.github.io/categories/nginx/"/>
+    
+    
+      <category term="nginx正则表达式书写方式" scheme="https://mrlichangming.github.io/tags/nginx%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B9%A6%E5%86%99%E6%96%B9%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>openresty的try_files指令说明</title>
+    <link href="https://mrlichangming.github.io/2019/01/03/openresty%E7%9A%84try-files%E6%8C%87%E4%BB%A4%E8%AF%B4%E6%98%8E/"/>
+    <id>https://mrlichangming.github.io/2019/01/03/openresty的try-files指令说明/</id>
+    <published>2019-01-03T12:08:54.000Z</published>
+    <updated>2019-01-08T12:25:22.313Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>OpenSUSE Leap 42.3使用</title>
+    <link href="https://mrlichangming.github.io/2019/01/03/OpenSUSE-Leap-42-3%E4%BD%BF%E7%94%A8/"/>
+    <id>https://mrlichangming.github.io/2019/01/03/OpenSUSE-Leap-42-3使用/</id>
+    <published>2019-01-03T08:31:10.000Z</published>
+    <updated>2019-01-05T00:56:00.150Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;总结下使用openSUSE系统的备忘录&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="openSUSE系统" scheme="https://mrlichangming.github.io/categories/openSUSE%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="openSUSE系统使用之路" scheme="https://mrlichangming.github.io/tags/openSUSE%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>openresty动态实现url跳转</title>
+    <link href="https://mrlichangming.github.io/2018/12/31/openresty%E5%8A%A8%E6%80%81%E5%AE%9E%E7%8E%B0url%E8%B7%B3%E8%BD%AC/"/>
+    <id>https://mrlichangming.github.io/2018/12/31/openresty动态实现url跳转/</id>
+    <published>2018-12-31T08:11:24.000Z</published>
+    <updated>2019-01-01T01:51:03.057Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;openresty 通过lua代码，查询redis，获取后端proxy_pass的值，实现跳转&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="openresty" scheme="https://mrlichangming.github.io/categories/openresty/"/>
+    
+    
+      <category term="openresty" scheme="https://mrlichangming.github.io/tags/openresty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexoEditor编辑器使用帮助</title>
+    <link href="https://mrlichangming.github.io/2018/12/28/hexoEditor%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9/"/>
+    <id>https://mrlichangming.github.io/2018/12/28/hexoEditor编辑器使用帮助/</id>
+    <published>2018-12-28T01:37:35.000Z</published>
+    <updated>2018-12-28T02:32:46.680Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;zhuzhuyule/HexoEditor&lt;br&gt;github作者: zhuzhuyule&lt;br&gt;使用electron编写的markdown编辑器软件&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="markdown编辑器" scheme="https://mrlichangming.github.io/categories/markdown%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+    
+      <category term="hexoEditor" scheme="https://mrlichangming.github.io/tags/hexoEditor/"/>
+    
+  </entry>
   
   <entry>
     <title>python学习-class面向对象</title>
@@ -39,11 +213,33 @@
   </entry>
   
   <entry>
+    <title>python方法积累</title>
+    <link href="https://mrlichangming.github.io/2018/12/25/python%E6%96%B9%E6%B3%95%E7%A7%AF%E7%B4%AF/"/>
+    <id>https://mrlichangming.github.io/2018/12/25/python方法积累/</id>
+    <published>2018-12-25T06:26:51.000Z</published>
+    <updated>2018-12-25T06:31:36.482Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;python的小笔记，一些方法的使用说明&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="python的积累" scheme="https://mrlichangming.github.io/categories/python%E7%9A%84%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="python" scheme="https://mrlichangming.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python学习六-django模板页面和数据库模型操作</title>
     <link href="https://mrlichangming.github.io/2018/12/21/python%E5%AD%A6%E4%B9%A0%E5%85%AD-django%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%9E%8B%E6%93%8D%E4%BD%9C/"/>
     <id>https://mrlichangming.github.io/2018/12/21/python学习六-django模板页面和数据库模型操作/</id>
     <published>2018-12-21T14:03:51.000Z</published>
-    <updated>2018-12-27T15:40:33.736Z</updated>
+    <updated>2019-01-03T15:15:35.518Z</updated>
     
     <summary type="html">
     
@@ -57,6 +253,50 @@
     
     
       <category term="django" scheme="https://mrlichangming.github.io/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis学习笔记</title>
+    <link href="https://mrlichangming.github.io/2018/12/18/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://mrlichangming.github.io/2018/12/18/redis学习笔记/</id>
+    <published>2018-12-18T06:36:24.000Z</published>
+    <updated>2018-12-18T08:50:39.368Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;redis学习笔记&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="redis" scheme="https://mrlichangming.github.io/categories/redis/"/>
+    
+    
+      <category term="redis" scheme="https://mrlichangming.github.io/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker swarm使用上的心得</title>
+    <link href="https://mrlichangming.github.io/2018/12/17/docker-swarm%E4%BD%BF%E7%94%A8%E4%B8%8A%E7%9A%84%E5%BF%83%E5%BE%97/"/>
+    <id>https://mrlichangming.github.io/2018/12/17/docker-swarm使用上的心得/</id>
+    <published>2018-12-17T08:13:31.000Z</published>
+    <updated>2019-02-10T03:41:54.961Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;聊聊生产环境中运行docker swarm的那些事&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="docker" scheme="https://mrlichangming.github.io/categories/docker/"/>
+    
+    
+      <category term="docker swarm" scheme="https://mrlichangming.github.io/tags/docker-swarm/"/>
     
   </entry>
   
@@ -209,235 +449,6 @@
     
     
       <category term="django" scheme="https://mrlichangming.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>服务器的上行和下行带宽理解</title>
-    <link href="https://mrlichangming.github.io/2018/11/23/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E4%B8%8A%E8%A1%8C%E5%92%8C%E4%B8%8B%E8%A1%8C%E5%B8%A6%E5%AE%BD%E7%90%86%E8%A7%A3/"/>
-    <id>https://mrlichangming.github.io/2018/11/23/服务器的上行和下行带宽理解/</id>
-    <published>2018-11-23T02:00:34.000Z</published>
-    <updated>2018-11-23T02:14:11.436Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;上行带宽 和下行带宽 理解&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Vagrantfile配置虚拟机网络</title>
-    <link href="https://mrlichangming.github.io/2018/11/20/Vagrantfile%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    <id>https://mrlichangming.github.io/2018/11/20/Vagrantfile配置虚拟机网络/</id>
-    <published>2018-11-20T01:12:30.000Z</published>
-    <updated>2018-11-20T01:19:24.349Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;了解下Vagrant创建虚拟机的几种网络模式&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-    
-    
-      <category term="Vagrantfile" scheme="https://mrlichangming.github.io/tags/Vagrantfile/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>autoenv使用</title>
-    <link href="https://mrlichangming.github.io/2018/11/19/autoenv%E4%BD%BF%E7%94%A8/"/>
-    <id>https://mrlichangming.github.io/2018/11/19/autoenv使用/</id>
-    <published>2018-11-19T11:18:18.000Z</published>
-    <updated>2018-11-19T11:25:05.071Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;autoenv 进入目录，自动加载虚拟环境&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="完美工具分享" scheme="https://mrlichangming.github.io/categories/%E5%AE%8C%E7%BE%8E%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="autoenv" scheme="https://mrlichangming.github.io/tags/autoenv/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python学习(三)django URL</title>
-    <link href="https://mrlichangming.github.io/2018/11/18/python%E5%AD%A6%E4%B9%A0-%E4%B8%89-django-URL/"/>
-    <id>https://mrlichangming.github.io/2018/11/18/python学习-三-django-URL/</id>
-    <published>2018-11-18T14:40:44.000Z</published>
-    <updated>2018-11-24T14:43:56.695Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;django 的url基础知识&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="django" scheme="https://mrlichangming.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python学习(二)django基础配置</title>
-    <link href="https://mrlichangming.github.io/2018/11/17/python%E5%AD%A6%E4%B9%A0-%E4%BA%8C-django%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"/>
-    <id>https://mrlichangming.github.io/2018/11/17/python学习-二-django基础配置/</id>
-    <published>2018-11-17T14:23:36.000Z</published>
-    <updated>2018-11-26T15:22:08.446Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;学习django路程一，基础配置&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="django" scheme="https://mrlichangming.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python的ConfigParser总结</title>
-    <link href="https://mrlichangming.github.io/2018/11/16/Python%E7%9A%84ConfigParser%E6%80%BB%E7%BB%93/"/>
-    <id>https://mrlichangming.github.io/2018/11/16/Python的ConfigParser总结/</id>
-    <published>2018-11-16T13:23:29.000Z</published>
-    <updated>2018-11-17T15:55:59.963Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;python操作配置文件读取写入的ConfigParser模块&lt;br&gt;python version: python3&lt;br&gt;
-    
-    </summary>
-    
-      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="python的ConfigParser" scheme="https://mrlichangming.github.io/tags/python%E7%9A%84ConfigParser/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python的argparse总结</title>
-    <link href="https://mrlichangming.github.io/2018/11/16/python%E7%9A%84argparse%E6%80%BB%E7%BB%93/"/>
-    <id>https://mrlichangming.github.io/2018/11/16/python的argparse总结/</id>
-    <published>2018-11-16T12:41:49.000Z</published>
-    <updated>2018-11-16T12:53:46.475Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;argparse是python内置的一个用于命令选项与参数解析的模块&lt;br&gt;argparse 将会从 sys.argv 中解析出这些参数，并自动生成帮助和使用信息&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="python的argparse" scheme="https://mrlichangming.github.io/tags/python%E7%9A%84argparse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python脚本积累1</title>
-    <link href="https://mrlichangming.github.io/2018/11/15/python%E8%84%9A%E6%9C%AC%E7%A7%AF%E7%B4%AF1/"/>
-    <id>https://mrlichangming.github.io/2018/11/15/python脚本积累1/</id>
-    <published>2018-11-15T12:36:30.000Z</published>
-    <updated>2018-11-15T12:49:27.507Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;总结下工作中写过的python脚本&lt;br&gt;以下脚本内容，主要控制容器服务的启动和停止，采用多线程，并发执行&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="python实践" scheme="https://mrlichangming.github.io/categories/python%E5%AE%9E%E8%B7%B5/"/>
-    
-    
-      <category term="python脚本" scheme="https://mrlichangming.github.io/tags/python%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python学习(一)搭建开发环境</title>
-    <link href="https://mrlichangming.github.io/2018/11/15/python%E5%AD%A6%E4%B9%A0-%E4%B8%80-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>https://mrlichangming.github.io/2018/11/15/python学习-一-搭建开发环境/</id>
-    <published>2018-11-15T10:27:16.000Z</published>
-    <updated>2018-11-16T11:39:06.679Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;学习来源： 51Reboot学院&lt;br&gt;搞运维，不管写python脚本，还是python的项目，都希望在linux环境中调试代码&lt;br&gt;所以使用，以下方式搭建自己的本地开发环境&lt;br&gt;使用vagrant+virtualbox+pycharm&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="python" scheme="https://mrlichangming.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>openresty添加nginx_dynamic_upstream模块</title>
-    <link href="https://mrlichangming.github.io/2018/11/12/openresty%E6%B7%BB%E5%8A%A0nginx-dynamic-upstream%E6%A8%A1%E5%9D%97/"/>
-    <id>https://mrlichangming.github.io/2018/11/12/openresty添加nginx-dynamic-upstream模块/</id>
-    <published>2018-11-12T02:33:23.000Z</published>
-    <updated>2018-11-12T02:57:07.590Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;openresty version : 1.13.6.2&lt;br&gt;编译nginx添加nginx_dynamic_upstream模块，提供api接口，动态控制后端upstream的server上下线&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="openresty" scheme="https://mrlichangming.github.io/categories/openresty/"/>
-    
-    
-      <category term="openresty" scheme="https://mrlichangming.github.io/tags/openresty/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centos7中设置目录的ACL规则</title>
-    <link href="https://mrlichangming.github.io/2018/11/02/centos7%E4%B8%AD%E8%AE%BE%E7%BD%AE%E7%9B%AE%E5%BD%95%E7%9A%84ACL%E8%A7%84%E5%88%99/"/>
-    <id>https://mrlichangming.github.io/2018/11/02/centos7中设置目录的ACL规则/</id>
-    <published>2018-11-02T11:52:01.000Z</published>
-    <updated>2018-11-02T11:54:30.539Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;centos系统设置目录的ACL控制权限&lt;br&gt;
-    
-    </summary>
-    
-      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-    
-    
-      <category term="Centos7" scheme="https://mrlichangming.github.io/tags/Centos7/"/>
     
   </entry>
   

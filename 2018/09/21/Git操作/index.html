@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="作为一名运维人员，学会使用git也是完全有必要的  #git在分支下工作 创建新分支：1git  checkout -b sun #此命令，会创建新分支，并切换到新分支上 添加修改的代码文件，到当前新分支12git  add  文件git  commit  -m “注释信息” 合并分支123git  checkout master	#先切换到master分支上git  merge  sun">
+<meta name="description" content="作为一名运维人员，学会使用git也是完全有必要的  #git在分支下工作 创建新分支：1git  checkout -b sun #此命令，会创建新分支，并切换到新分支上 添加修改的代码文件，到当前新分支12git  add  文件git  commit  -m “注释信息” 合并分支123git  checkout master    #先切换到master分支上git  merge  sun">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git操作">
 <meta property="og:url" content="https://mrlichangming.github.io/2018/09/21/Git操作/index.html">
 <meta property="og:site_name" content="Changming&#39;s blogs">
-<meta property="og:description" content="作为一名运维人员，学会使用git也是完全有必要的  #git在分支下工作 创建新分支：1git  checkout -b sun #此命令，会创建新分支，并切换到新分支上 添加修改的代码文件，到当前新分支12git  add  文件git  commit  -m “注释信息” 合并分支123git  checkout master	#先切换到master分支上git  merge  sun">
+<meta property="og:description" content="作为一名运维人员，学会使用git也是完全有必要的  #git在分支下工作 创建新分支：1git  checkout -b sun #此命令，会创建新分支，并切换到新分支上 添加修改的代码文件，到当前新分支12git  add  文件git  commit  -m “注释信息” 合并分支123git  checkout master    #先切换到master分支上git  merge  sun">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-18T01:51:05.432Z">
+<meta property="og:updated_time" content="2019-02-10T14:08:06.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git操作">
-<meta name="twitter:description" content="作为一名运维人员，学会使用git也是完全有必要的  #git在分支下工作 创建新分支：1git  checkout -b sun #此命令，会创建新分支，并切换到新分支上 添加修改的代码文件，到当前新分支12git  add  文件git  commit  -m “注释信息” 合并分支123git  checkout master	#先切换到master分支上git  merge  sun">
+<meta name="twitter:description" content="作为一名运维人员，学会使用git也是完全有必要的  #git在分支下工作 创建新分支：1git  checkout -b sun #此命令，会创建新分支，并切换到新分支上 添加修改的代码文件，到当前新分支12git  add  文件git  commit  -m “注释信息” 合并分支123git  checkout master    #先切换到master分支上git  merge  sun">
 
 
 
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  367
+                  408
                 </span>
               
 
@@ -444,12 +444,14 @@
 <p>#git在分支下工作</p>
 <h2 id="创建新分支："><a href="#创建新分支：" class="headerlink" title="创建新分支："></a>创建新分支：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git  checkout -b sun <span class="comment">#此命令，会创建新分支，并切换到新分支上</span></span><br></pre></td></tr></table></figure>
 <h2 id="添加修改的代码文件，到当前新分支"><a href="#添加修改的代码文件，到当前新分支" class="headerlink" title="添加修改的代码文件，到当前新分支"></a>添加修改的代码文件，到当前新分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git  add  文件</span><br><span class="line">git  commit  -m “注释信息”</span><br></pre></td></tr></table></figure>
-<h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git  checkout master	<span class="comment">#先切换到master分支上</span></span><br><span class="line"></span><br><span class="line">git  merge  sun   <span class="comment">#合并新分支sun ，到当前的master上</span></span><br></pre></td></tr></table></figure>
+<h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git  checkout master    <span class="comment">#先切换到master分支上</span></span><br><span class="line"></span><br><span class="line">git  merge  sun   <span class="comment">#合并新分支sun ，到当前的master上</span></span><br></pre></td></tr></table></figure>
 <h2 id="合并后，删除当前分支"><a href="#合并后，删除当前分支" class="headerlink" title="合并后，删除当前分支"></a>合并后，删除当前分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git  branch  -d  sun   <span class="comment">#如果没有合并，不能删除当前分支</span></span><br></pre></td></tr></table></figure>
 <h2 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch  -a</span><br></pre></td></tr></table></figure>
 <h2 id="git-add之后的撤销操作"><a href="#git-add之后的撤销操作" class="headerlink" title="git add之后的撤销操作"></a>git add之后的撤销操作</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git status  <span class="comment">#可以看到git add 中的文件</span></span><br><span class="line">git reset HEAD <span class="comment">#对上次所有的add撤销</span></span><br><span class="line">git reset HEAD test.txt  <span class="comment">#只对上次add test.txt文件撤销</span></span><br><span class="line">git commit 之后的撤销操作</span><br><span class="line">git <span class="built_in">log</span> <span class="comment">#查看commit信息的哈希值</span></span><br><span class="line">例如：commit b262ed4528aebe2052f0c92e149e3e3fb0f7c609</span><br><span class="line">git reset &#123;commit后的哈希值&#125;</span><br><span class="line">git push 之后的撤销操作</span><br><span class="line">git revert HEAD 撤销前一次 commit </span><br><span class="line">git revert HEAD^ 撤销前前一次 commit </span><br><span class="line">git revert commit-id (撤销指定的版本，撤销也会作为一次提交进行保存） </span><br><span class="line">git revert是提交一个新的版本，将需要revert的版本的内容再反向修改回去，版本会递增，不影响之前提交的内容。</span><br></pre></td></tr></table></figure>
 <h2 id="git-pull-显示代码冲突的解决办法："><a href="#git-pull-显示代码冲突的解决办法：" class="headerlink" title="git pull 显示代码冲突的解决办法："></a>git pull 显示代码冲突的解决办法：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果丢弃本地的更改，同步仓库的代码，使用以下方法：</span><br><span class="line">git reset –hard</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-<h2 id="git合并冲突解决"><a href="#git合并冲突解决" class="headerlink" title="git合并冲突解决"></a>git合并冲突解决</h2>
+<h2 id="git合并冲突解决"><a href="#git合并冲突解决" class="headerlink" title="git合并冲突解决"></a>git合并冲突解决</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --  文件名    <span class="comment"># 以工程为主，覆盖本地文件</span></span><br></pre></td></tr></table></figure>
+<h2 id="git忽略本地文件权限发生变动"><a href="#git忽略本地文件权限发生变动" class="headerlink" title="git忽略本地文件权限发生变动"></a>git忽略本地文件权限发生变动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config core.filemode <span class="literal">false</span></span><br><span class="line"><span class="comment"># 或者修改.git/config文件</span></span><br><span class="line">filemode = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -622,7 +624,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">80</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -633,7 +635,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/分类/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -644,7 +646,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -718,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新分支："><span class="nav-number">1.</span> <span class="nav-text">创建新分支：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加修改的代码文件，到当前新分支"><span class="nav-number">2.</span> <span class="nav-text">添加修改的代码文件，到当前新分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合并分支"><span class="nav-number">3.</span> <span class="nav-text">合并分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合并后，删除当前分支"><span class="nav-number">4.</span> <span class="nav-text">合并后，删除当前分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看所有分支"><span class="nav-number">5.</span> <span class="nav-text">查看所有分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add之后的撤销操作"><span class="nav-number">6.</span> <span class="nav-text">git add之后的撤销操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-pull-显示代码冲突的解决办法："><span class="nav-number">7.</span> <span class="nav-text">git pull 显示代码冲突的解决办法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git合并冲突解决"><span class="nav-number">8.</span> <span class="nav-text">git合并冲突解决</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新分支："><span class="nav-number">1.</span> <span class="nav-text">创建新分支：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加修改的代码文件，到当前新分支"><span class="nav-number">2.</span> <span class="nav-text">添加修改的代码文件，到当前新分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合并分支"><span class="nav-number">3.</span> <span class="nav-text">合并分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合并后，删除当前分支"><span class="nav-number">4.</span> <span class="nav-text">合并后，删除当前分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看所有分支"><span class="nav-number">5.</span> <span class="nav-text">查看所有分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add之后的撤销操作"><span class="nav-number">6.</span> <span class="nav-text">git add之后的撤销操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-pull-显示代码冲突的解决办法："><span class="nav-number">7.</span> <span class="nav-text">git pull 显示代码冲突的解决办法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git合并冲突解决"><span class="nav-number">8.</span> <span class="nav-text">git合并冲突解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git忽略本地文件权限发生变动"><span class="nav-number">9.</span> <span class="nav-text">git忽略本地文件权限发生变动</span></a></li></ol></div>
             
 
           </div>
@@ -738,7 +740,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -774,7 +776,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 28.2k 字</span>
+  <span class="post-count">博客全站共 33.3k 字</span>
 </div>
 
         
