@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="编写shell脚本中，常用的一些awk grep getops 语法">
+<meta name="description" content="编写shell脚本中，常用的一些awk grep getops 语法  awk1234567tailf access.log | awk &apos;substr($3,1,3)&amp;gt;200&apos;# 查看访问日志中，过滤非200状态码的日志请求# substr是一个内置函数substr($4,20)  # 表示从第四个字段里的第20个字符开始，一直到设定的分隔符 结束substr($4,1,3) # 表示从">
 <meta name="keywords" content="awk getopts">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux高阶命令使用">
 <meta property="og:url" content="https://mrlichangming.github.io/2018/09/19/linux高阶命令使用/index.html">
 <meta property="og:site_name" content="Changming&#39;s blogs">
-<meta property="og:description" content="编写shell脚本中，常用的一些awk grep getops 语法">
+<meta property="og:description" content="编写shell脚本中，常用的一些awk grep getops 语法  awk1234567tailf access.log | awk &apos;substr($3,1,3)&amp;gt;200&apos;# 查看访问日志中，过滤非200状态码的日志请求# substr是一个内置函数substr($4,20)  # 表示从第四个字段里的第20个字符开始，一直到设定的分隔符 结束substr($4,1,3) # 表示从">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-27T23:44:45.005Z">
+<meta property="og:updated_time" content="2019-03-14T14:12:48.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux高阶命令使用">
-<meta name="twitter:description" content="编写shell脚本中，常用的一些awk grep getops 语法">
+<meta name="twitter:description" content="编写shell脚本中，常用的一些awk grep getops 语法  awk1234567tailf access.log | awk &apos;substr($3,1,3)&amp;gt;200&apos;# 查看访问日志中，过滤非200状态码的日志请求# substr是一个内置函数substr($4,20)  # 表示从第四个字段里的第20个字符开始，一直到设定的分隔符 结束substr($4,1,3) # 表示从">
 
 
 
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  499
+                  869
                 </span>
               
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -451,7 +451,6 @@
         <hr>
 <p>编写shell脚本中，常用的一些awk grep getops 语法</p>
 <hr>
-<a id="more"></a>
 <h1 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tailf access.log | awk <span class="string">'substr($3,1,3)&gt;200'</span></span><br><span class="line"><span class="comment"># 查看访问日志中，过滤非200状态码的日志请求</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># substr是一个内置函数</span></span><br><span class="line">substr(<span class="variable">$4</span>,20)  <span class="comment"># 表示从第四个字段里的第20个字符开始，一直到设定的分隔符 结束</span></span><br><span class="line">substr(<span class="variable">$4</span>,1,3) <span class="comment"># 表示从第四个字段里的第1个字符开始，截取3个字符结束</span></span><br><span class="line">substr(<span class="variable">$4</span>,3,6) <span class="comment"># 表示从第四个字段里的第3个字符开始，截取6个字符结束</span></span><br></pre></td></tr></table></figure>
 <h1 id="getops"><a href="#getops" class="headerlink" title="getops"></a>getops</h1><p>getops指定参数，获取值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@<span class="built_in">test</span>-host tmp]<span class="comment"># cat  test.sh</span></span><br><span class="line"><span class="keyword">while</span>  <span class="built_in">getopts</span>  “:h:p:”  optname;<span class="keyword">do</span></span><br><span class="line">	<span class="keyword">case</span> “<span class="variable">$optname</span>”  <span class="keyword">in</span></span><br><span class="line">	“h”)</span><br><span class="line">	<span class="built_in">echo</span> “ -h选项的值是 <span class="variable">$OPTARG</span>”</span><br><span class="line">	;;</span><br><span class="line">	“p”)</span><br><span class="line">	<span class="built_in">echo</span> “-p 选项的值是 <span class="variable">$OPTARG</span>”</span><br><span class="line">	;;</span><br><span class="line">	 	“?” )</span><br><span class="line">	<span class="built_in">echo</span> “不知道此选项”</span><br><span class="line">	；；</span><br><span class="line">	“:”)</span><br><span class="line">	<span class="built_in">echo</span> “此选项没有值”</span><br><span class="line">	;;</span><br><span class="line">	“*”)</span><br><span class="line">	<span class="built_in">echo</span> “错误信息”</span><br><span class="line">	；；</span><br><span class="line">	<span class="keyword">esac</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
@@ -460,12 +459,12 @@
 <h1 id="du命令"><a href="#du命令" class="headerlink" title="du命令"></a>du命令</h1><p>统计目录大小<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -h --max-depth=1 &#123;path&#125;  <span class="comment">#只显示目录的层级是一级，但是列出的大小，是属于整个文件夹的</span></span><br></pre></td></tr></table></figure></p>
 <h1 id="pkill"><a href="#pkill" class="headerlink" title="pkill"></a>pkill</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#提出当前登录用户的终端</span></span><br><span class="line">sudo pkill -<span class="built_in">kill</span> -t pts/15</span><br></pre></td></tr></table></figure>
 <h1 id="脚本执行，获取当前路径"><a href="#脚本执行，获取当前路径" class="headerlink" title="脚本执行，获取当前路径"></a>脚本执行，获取当前路径</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cur_dir=<span class="string">"<span class="variable">$(cd "$(dirname "$[BASH_SOURCE[0]]")</span>"</span>; <span class="built_in">pwd</span>)<span class="string">"</span></span><br></pre></td></tr></table></figure>
-<h1 id="echo输出颜色"><a href="#echo输出颜色" class="headerlink" title="echo输出颜色"></a>echo输出颜色</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">"\e[31m  我要输入的内容  \e[0m"</span>  <span class="comment">#输出内容为红色</span></span><br></pre></td></tr></table></figure>
+<h1 id="echo输出颜色"><a href="#echo输出颜色" class="headerlink" title="echo输出颜色"></a>echo输出颜色</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">"\e[31m  我要输入的内容  \e[0m"</span>  <span class="comment">#输出内容为红色</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"\033[31m 红色字 \033[0m"</span> </span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"\033[34m 黄色字 \033[0m"</span> </span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"\033[41;33m 红底黄字 \033[0m"</span> </span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"\033[41;37m 红底白字 \033[0m"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字颜色: 30--37</span></span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[30m 黑色字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[31m 红色字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[32m 绿色字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[33m 黄色字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[34m 蓝色字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[35m 紫色字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[36m 天蓝字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[37m 白色字 \033[0m"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字背景颜色范围：40—–47</span></span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[40;37m 黑底白字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[41;37m 红底白字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[42;37m 绿底白字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[43;37m 黄底白字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[44;37m 蓝底白字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[45;37m 紫底白字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[46;37m 天蓝底白字 \033[0m"</span> </span><br><span class="line">　　<span class="built_in">echo</span> -e <span class="string">"\033[47;30m 白底黑字 \033[0m"</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 最后控制选项</span></span><br><span class="line">　　\33[0m 关闭所有属性 </span><br><span class="line">　　\33[1m 设置高亮度 </span><br><span class="line">　　\33[4m 下划线 </span><br><span class="line">　　\33[5m 闪烁 </span><br><span class="line">　　\33[7m 反显 </span><br><span class="line">　　\33[8m 消隐 </span><br><span class="line">　　\33[30m — \33[37m 设置前景色 </span><br><span class="line">　　\33[40m — \33[47m 设置背景色 </span><br><span class="line">　　\33[nA 光标上移n行 </span><br><span class="line">　　\33[nB 光标下移n行 </span><br><span class="line">　　\33[nC 光标右移n行 </span><br><span class="line">　　\33[nD 光标左移n行 </span><br><span class="line">　　\33[y;xH设置光标位置 </span><br><span class="line">　　\33[2J 清屏 </span><br><span class="line">　　\33[K 清除从光标到行尾的内容 </span><br><span class="line">　　\33[s 保存光标位置 </span><br><span class="line">　　\33[u 恢复光标位置 </span><br><span class="line">　　\33[?25l 隐藏光标 </span><br><span class="line">　　\33[?25h 显示光标</span><br></pre></td></tr></table></figure>
 <h1 id="sed获取域名解析的ip地址"><a href="#sed获取域名解析的ip地址" class="headerlink" title="sed获取域名解析的ip地址"></a>sed获取域名解析的ip地址</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nslookup www.baidu.com | sed -n -e <span class="string">'4,$p'</span> | awk <span class="string">'/Address/&#123;print $2&#125;'</span></span><br></pre></td></tr></table></figure>
 <h1 id="tr分割符"><a href="#tr分割符" class="headerlink" title="tr分割符"></a>tr分割符</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">testinfo=<span class="string">"python,java,php"</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="variable">$testinfo</span>;<span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$testinfo</span> | tr <span class="string">','</span> <span class="string">'\n'</span>   <span class="comment">#将逗号隔开，\n换行 , \n也可以使用别的字符替换</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#结果输出:</span></span><br><span class="line">python</span><br><span class="line">java</span><br><span class="line">php</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用-- 拼接</span></span><br><span class="line">[42::root@<span class="built_in">test</span>-host:: <span class="built_in">test</span>]<span class="comment"># &gt;&gt;&gt; for i in $testinfo;do echo $testinfo | tr ',' '--'; done</span></span><br><span class="line">python-java-php</span><br></pre></td></tr></table></figure>
 <h1 id="eval命令"><a href="#eval命令" class="headerlink" title="eval命令"></a>eval命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> ls <span class="variable">$pipe</span> wc -l</span><br><span class="line"><span class="comment"># shell第1次扫描命令行时，它替换出pipe的值｜，接着eval使它再次扫描命令行，这时shell把｜作为管道符号了。</span></span><br></pre></td></tr></table></figure>
-
+<h1 id="查看timewait的连接数"><a href="#查看timewait的连接数" class="headerlink" title="查看timewait的连接数"></a>查看timewait的连接数</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ss -tan state time-wait | wc -l</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -636,7 +635,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -658,7 +657,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -713,6 +712,14 @@
                     <a href="http://jkzhao.github.io/" title="jkzhao" target="_blank">jkzhao</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="https://owelinux.github.io/" title="晚点咖啡" target="_blank">晚点咖啡</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.beijinggushi.cn/" title="生强博客" target="_blank">生强博客</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -732,7 +739,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#awk"><span class="nav-number">1.</span> <span class="nav-text">awk</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#getops"><span class="nav-number">2.</span> <span class="nav-text">getops</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fgrep"><span class="nav-number">3.</span> <span class="nav-text">fgrep</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#du命令"><span class="nav-number">4.</span> <span class="nav-text">du命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pkill"><span class="nav-number">5.</span> <span class="nav-text">pkill</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#脚本执行，获取当前路径"><span class="nav-number">6.</span> <span class="nav-text">脚本执行，获取当前路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#echo输出颜色"><span class="nav-number">7.</span> <span class="nav-text">echo输出颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sed获取域名解析的ip地址"><span class="nav-number">8.</span> <span class="nav-text">sed获取域名解析的ip地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tr分割符"><span class="nav-number">9.</span> <span class="nav-text">tr分割符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#eval命令"><span class="nav-number">10.</span> <span class="nav-text">eval命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#awk"><span class="nav-number">1.</span> <span class="nav-text">awk</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#getops"><span class="nav-number">2.</span> <span class="nav-text">getops</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fgrep"><span class="nav-number">3.</span> <span class="nav-text">fgrep</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#du命令"><span class="nav-number">4.</span> <span class="nav-text">du命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pkill"><span class="nav-number">5.</span> <span class="nav-text">pkill</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#脚本执行，获取当前路径"><span class="nav-number">6.</span> <span class="nav-text">脚本执行，获取当前路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#echo输出颜色"><span class="nav-number">7.</span> <span class="nav-text">echo输出颜色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sed获取域名解析的ip地址"><span class="nav-number">8.</span> <span class="nav-text">sed获取域名解析的ip地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tr分割符"><span class="nav-number">9.</span> <span class="nav-text">tr分割符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#eval命令"><span class="nav-number">10.</span> <span class="nav-text">eval命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看timewait的连接数"><span class="nav-number">11.</span> <span class="nav-text">查看timewait的连接数</span></a></li></ol></div>
             
 
           </div>
@@ -788,7 +795,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 33.3k 字</span>
+  <span class="post-count">博客全站共 35.7k 字</span>
 </div>
 
         

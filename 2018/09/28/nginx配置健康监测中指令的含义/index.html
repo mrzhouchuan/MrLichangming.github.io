@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="Changming&#39;s blogs">
 <meta property="og:description" content="记录在nginx的upstream后端健康监测配置中，各指令的含义  比较常见的配置方式12345678910upstream backend1 &amp;#123;    sticky;    server 192.168.0.125:8080 max_fails=1 fail_timeout=10s weight=1;    server 192.168.0.126:8080 max_fails=1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-27T23:51:56.780Z">
+<meta property="og:updated_time" content="2019-03-14T14:13:06.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx配置健康监测中指令的含义">
 <meta name="twitter:description" content="记录在nginx的upstream后端健康监测配置中，各指令的含义  比较常见的配置方式12345678910upstream backend1 &amp;#123;    sticky;    server 192.168.0.125:8080 max_fails=1 fail_timeout=10s weight=1;    server 192.168.0.126:8080 max_fails=1">
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  437
+                  517
                 </span>
               
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -453,7 +453,10 @@
 <hr>
 <h1 id="比较常见的配置方式"><a href="#比较常见的配置方式" class="headerlink" title="比较常见的配置方式"></a>比较常见的配置方式</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">upstream backend1 &#123;</span><br><span class="line">    sticky;</span><br><span class="line">    server 192.168.0.125:8080 max_fails=1 fail_timeout=10s weight=1;</span><br><span class="line">    server 192.168.0.126:8080 max_fails=1 fail_timeout=10s weight=1;</span><br><span class="line">    server 192.168.0.127:8080 max_fails=1 fail_timeout=10s weight=1;</span><br><span class="line">    keepalive 16;</span><br><span class="line">    check interval=3000 rise=1 fall=3 timeout=2000 <span class="built_in">type</span>=http;</span><br><span class="line">    check_http_send <span class="string">"HEAD hall/health/check.html HTTP/1.0\r\nUser-Agent:check\r\n\r\n"</span>;</span><br><span class="line">    check_http_expect_alive http_2xx http_3xx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上配置，采用http的方式，对后端tomcat的做健康监测，通过tomcat中提供的check.html接口返回的状态，判断tomcat是否存活。</p>
-<h1 id="指令的各含义"><a href="#指令的各含义" class="headerlink" title="指令的各含义"></a>指令的各含义</h1><blockquote>
+<h1 id="指令的各含义"><a href="#指令的各含义" class="headerlink" title="指令的各含义"></a>指令的各含义</h1><h2 id="server中指令含义"><a href="#server中指令含义" class="headerlink" title="server中指令含义"></a>server中指令含义</h2><blockquote>
+<p>max_fails=1 允许失败的次数为1次，配合fail_timeout使用<br>fail_timeout=10s 在10s内允许的失败次数    加上上面一条指令，指的是，在10秒内的期间如果失败次数为1此，即认为后端不可用，不转发请求到此后端</p>
+</blockquote>
+<h2 id="check指令"><a href="#check指令" class="headerlink" title="check指令"></a>check指令</h2><blockquote>
 <p>interval: 向后端发送的健康检查包的间隔<br>fall: 如果失败次数达到定义的数，服务器就认为是down<br>rise: 如果成功次数达到定义的数,服务器就认为是up<br>timout: 后端健康请求的超时时间<br>default_down: 设定初始时服务器的状态,如果是true,就说明默认是down的，如果是false，就是up的，默认值为true，也就是一开始服务器认为是不可用的，要等健康检查包达到一定成功次数以后才会被认为是健康的<br>type： 健康监测的类型,常见的类如下:  </p>
 <ul>
 <li>tcp: 简单的tcp连接，如果连接成功，说明后端正常</li>
@@ -634,7 +637,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -656,7 +659,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -711,6 +714,14 @@
                     <a href="http://jkzhao.github.io/" title="jkzhao" target="_blank">jkzhao</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="https://owelinux.github.io/" title="晚点咖啡" target="_blank">晚点咖啡</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.beijinggushi.cn/" title="生强博客" target="_blank">生强博客</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -730,7 +741,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#比较常见的配置方式"><span class="nav-number">1.</span> <span class="nav-text">比较常见的配置方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令的各含义"><span class="nav-number">2.</span> <span class="nav-text">指令的各含义</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#比较常见的配置方式"><span class="nav-number">1.</span> <span class="nav-text">比较常见的配置方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令的各含义"><span class="nav-number">2.</span> <span class="nav-text">指令的各含义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#server中指令含义"><span class="nav-number">2.1.</span> <span class="nav-text">server中指令含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#check指令"><span class="nav-number">2.2.</span> <span class="nav-text">check指令</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -786,7 +797,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 33.3k 字</span>
+  <span class="post-count">博客全站共 35.7k 字</span>
 </div>
 
         

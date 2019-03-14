@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="Changming&#39;s blogs">
 <meta property="og:description" content="总结在工作中，线上使用docker遇到的问题总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-27T23:50:46.888Z">
+<meta property="og:updated_time" content="2019-03-14T14:11:42.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker遇到的问题总结">
 <meta name="twitter:description" content="总结在工作中，线上使用docker遇到的问题总结">
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  116
+                  424
                 </span>
               
 
@@ -458,6 +458,17 @@
 <li>删除/var/lib/docker/swarm目录</li>
 <li>systemctl restart docker 重启docker服务</li>
 <li>加入集群<br>参考链接: <a href="https://github.com/moby/moby/issues/34140" target="_blank" rel="noopener">docker swarm leave in daemon error response</a></li>
+</ol>
+<h1 id="docker运行nginx，nginx中获取-remote-addr获取的是宿主机网桥的ip地址"><a href="#docker运行nginx，nginx中获取-remote-addr获取的是宿主机网桥的ip地址" class="headerlink" title="docker运行nginx，nginx中获取$remote_addr获取的是宿主机网桥的ip地址"></a>docker运行nginx，nginx中获取$remote_addr获取的是宿主机网桥的ip地址</h1><p>A: 解决办法<br>centos7的firewalld开启地址伪装后，nginx中获取的地址就是宿主机和容器关联的那个网桥IP，也是容器的网关<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查是否允许伪装IP</span></span><br><span class="line">firewall-cmd --query-masquerade</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许防火墙伪装IP</span></span><br><span class="line">firewall-cmd --add-masquerade</span><br><span class="line"></span><br><span class="line"><span class="comment"># 禁止防火墙伪装IP</span></span><br><span class="line">firewall-cmd --remove-masquerade</span><br></pre></td></tr></table></figure></p>
+<h1 id="删除容器提示device-or-resource-busy"><a href="#删除容器提示device-or-resource-busy" class="headerlink" title="删除容器提示device or resource busy"></a>删除容器提示device or resource busy</h1><p>问题:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[::root@host:: ~] docker rm 834bea2c7324</span><br><span class="line"></span><br><span class="line">Error response from daemon: driver <span class="string">"overlay"</span> failed to remove root filesystem <span class="keyword">for</span> 834bea2c7324398542943babb6c9d93704cc04b93df494f5dd24719acf6645a9: remove /var/lib/docker/overlay/b4e0ef61ac822c75e5eb8c9cc6b9f2286c76f6e3ee1cccffdec482517792baa4/merged: device or resource busy</span><br></pre></td></tr></table></figure></p>
+<p>解决方法:</p>
+<ol>
+<li><p>先查看是哪个进程pid在占用device</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># device路径: /var/lib/docker/overlay/b4e0ef61ac822c75e5eb8c9cc6b9f2286c76f6e3ee1cccffdec482517792baa4/merged</span></span><br><span class="line"><span class="comment"># 在系统挂载设备信息中检索是哪个进程在占用</span></span><br><span class="line">[::root@host:: ~] grep b4e0ef61ac822c75e5eb8c9cc6b9f2286c76f6e3ee1cccffdec482517792baa4 /proc/*/mountinfo</span><br><span class="line"></span><br><span class="line">/proc/3594/mountinfo:799 787 0:78 / /var/lib/docker/overlay/b4e0ef61ac822c75e5eb8c9cc6b9f2286c76f6e3ee1cccffdec482517792baa4/merged rw,relatime shared:196 - overlay overlay rw,seclabel,lowerdir=/var/lib/docker/overlay/b7b47a8adc4753582404b1e666c015d094d79f04eb793d727afb222f44ffe7ba/root,upperdir=/var/lib/docker/overlay/b4e0ef61ac822c75e5eb8c9cc6b9f2286c76f6e3ee1cccffdec482517792baa4/upper,workdir=/var/lib/docker/overlay/b4e0ef61ac822c75e5eb8c9cc6b9f2286c76f6e3ee1cccffdec482517792baa4/work</span><br><span class="line"></span><br><span class="line"><span class="comment"># 根据pid查询进程名</span></span><br><span class="line">[::root@host:: ~] ps -p 3594 -o comm=</span><br><span class="line"></span><br><span class="line">chronyd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看chronyd服务使用pid 3594也在使用/var/lib/docker/overlay/b4e0ef61ac822c75e5eb8c9cc6b9f2286c76f6e3ee1cccffdec482517792baa4/merged,这就是为什么无法删除相关容器并返回device or resource busy错误</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启chronyd服务，然后删除容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart chronyd</span><br><span class="line">docker rm &lt;container-id&gt;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 
       
@@ -630,7 +641,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -652,7 +663,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -707,6 +718,14 @@
                     <a href="http://jkzhao.github.io/" title="jkzhao" target="_blank">jkzhao</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="https://owelinux.github.io/" title="晚点咖啡" target="_blank">晚点咖啡</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.beijinggushi.cn/" title="生强博客" target="_blank">生强博客</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -726,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#swarm集群相关问题"><span class="nav-number">1.</span> <span class="nav-text">swarm集群相关问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-response-from-daemon-context-deadline-exceeded"><span class="nav-number">1.1.</span> <span class="nav-text">Error response from daemon: context deadline exceeded</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#swarm集群相关问题"><span class="nav-number">1.</span> <span class="nav-text">swarm集群相关问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-response-from-daemon-context-deadline-exceeded"><span class="nav-number">1.1.</span> <span class="nav-text">Error response from daemon: context deadline exceeded</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker运行nginx，nginx中获取-remote-addr获取的是宿主机网桥的ip地址"><span class="nav-number">2.</span> <span class="nav-text">docker运行nginx，nginx中获取$remote_addr获取的是宿主机网桥的ip地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除容器提示device-or-resource-busy"><span class="nav-number">3.</span> <span class="nav-text">删除容器提示device or resource busy</span></a></li></ol></div>
             
 
           </div>
@@ -782,7 +801,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 33.3k 字</span>
+  <span class="post-count">博客全站共 35.7k 字</span>
 </div>
 
         

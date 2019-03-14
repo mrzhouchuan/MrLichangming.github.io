@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="Changming&#39;s blogs">
 <meta property="og:description" content="查找特定时间点的日志1cat access.log | awk &apos;$1 &amp;gt;=&quot;[21/Jul/2014:14:37:50&quot; &amp;amp;&amp;amp; $1 &amp;lt;=&quot;[21/Jul/2014:14:38:00&quot;&apos; 禁止特定ip访问12封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP解封命令： iptables -t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-27T23:57:26.137Z">
+<meta property="og:updated_time" content="2019-03-14T14:14:36.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx日志检索常用命令">
 <meta name="twitter:description" content="查找特定时间点的日志1cat access.log | awk &apos;$1 &amp;gt;=&quot;[21/Jul/2014:14:37:50&quot; &amp;amp;&amp;amp; $1 &amp;lt;=&quot;[21/Jul/2014:14:38:00&quot;&apos; 禁止特定ip访问12封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP解封命令： iptables -t">
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  123
+                  176
                 </span>
               
 
@@ -452,6 +452,7 @@
 <h1 id="禁止特定ip访问"><a href="#禁止特定ip访问" class="headerlink" title="禁止特定ip访问"></a>禁止特定ip访问</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP</span><br><span class="line">解封命令： iptables -t mangle -D PREROUTING -s 192.168.1.53 -j DROP</span><br></pre></td></tr></table></figure>
 <h1 id="获取IP前10"><a href="#获取IP前10" class="headerlink" title="获取IP前10"></a>获取IP前10</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;print $7&#125;'</span> access.log | sort | uniq -c | sort -n | tail</span><br></pre></td></tr></table></figure>
 <h1 id="计算文件中列的和"><a href="#计算文件中列的和" class="headerlink" title="计算文件中列的和"></a>计算文件中列的和</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@<span class="built_in">test</span>-host /tmp]<span class="comment">#  cat test.txt</span></span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line"><span class="comment">#求列的和</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;sum=0&#125;&#123;sum+=$1&#125;END&#123;print sum&#125;'</span> test.txt</span><br></pre></td></tr></table></figure>
+<h1 id="检索request-time比较长的日志请求"><a href="#检索request-time比较长的日志请求" class="headerlink" title="检索request_time比较长的日志请求"></a>检索request_time比较长的日志请求</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配request_time大于1秒以上的请求日志中，并匹配hall的location匹配</span></span><br><span class="line">cat  access.log | awk <span class="string">'substr($10,2,5)&gt;1 &amp;&amp; $0~/hall/&#123;print $0&#125;'</span> &gt; lr2-response_long_access.log</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -623,7 +624,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -645,7 +646,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -700,6 +701,14 @@
                     <a href="http://jkzhao.github.io/" title="jkzhao" target="_blank">jkzhao</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="https://owelinux.github.io/" title="晚点咖啡" target="_blank">晚点咖啡</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.beijinggushi.cn/" title="生强博客" target="_blank">生强博客</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -719,7 +728,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查找特定时间点的日志"><span class="nav-number">1.</span> <span class="nav-text">查找特定时间点的日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#禁止特定ip访问"><span class="nav-number">2.</span> <span class="nav-text">禁止特定ip访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取IP前10"><span class="nav-number">3.</span> <span class="nav-text">获取IP前10</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算文件中列的和"><span class="nav-number">4.</span> <span class="nav-text">计算文件中列的和</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查找特定时间点的日志"><span class="nav-number">1.</span> <span class="nav-text">查找特定时间点的日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#禁止特定ip访问"><span class="nav-number">2.</span> <span class="nav-text">禁止特定ip访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取IP前10"><span class="nav-number">3.</span> <span class="nav-text">获取IP前10</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算文件中列的和"><span class="nav-number">4.</span> <span class="nav-text">计算文件中列的和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#检索request-time比较长的日志请求"><span class="nav-number">5.</span> <span class="nav-text">检索request_time比较长的日志请求</span></a></li></ol></div>
             
 
           </div>
@@ -775,7 +784,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 33.3k 字</span>
+  <span class="post-count">博客全站共 35.7k 字</span>
 </div>
 
         

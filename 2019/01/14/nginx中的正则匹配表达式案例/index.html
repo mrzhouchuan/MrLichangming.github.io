@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="Changming&#39;s blogs">
 <meta property="og:description" content="记录下工作中遇到的nginx的正则表达式的书写案列">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-14T11:12:28.856Z">
+<meta property="og:updated_time" content="2019-03-14T14:13:50.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx中的正则匹配表达式案例">
 <meta name="twitter:description" content="记录下工作中遇到的nginx的正则表达式的书写案列">
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  81
+                  119
                 </span>
               
 
@@ -452,7 +452,7 @@
 <p>记录下工作中遇到的<br>nginx的正则表达式的书写案列</p>
 <hr>
 <a id="more"></a>
-<p>前言1： 因受到cc攻击，所以在location匹配mobile-api，获取访问的头部信息，拒绝攻击端直接穿透后端服务器，配置如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">location ^~ /mobile-api &#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="variable">$http_user_agent</span> ~~* (app_android)|(app_ios)) &#123;</span><br><span class="line">		<span class="built_in">return</span> 403</span><br><span class="line">	&#125;</span><br><span class="line">	proxy_pass http://mobile-upstream;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前言1： 因受到cc攻击，所以在location匹配mobile-api，获取访问的头部信息，拒绝攻击端直接穿透后端服务器，配置如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">location ^~ /mobile-api &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$http_user_agent</span> ~~* (app_android)|(app_ios)) &#123;</span><br><span class="line">        <span class="built_in">return</span> 403</span><br><span class="line">    &#125;</span><br><span class="line">    proxy_pass http://mobile-upstream;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 被cc攻击，通过代理服务器挡住请求 判断http_user_agent 符合哪些规则</span></span><br><span class="line"><span class="comment"># 写在location中</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$http_user_agent</span> !~* ((okhttp)|(app_((rn)|(ios)|(android))))) &#123;</span><br><span class="line">    <span class="built_in">return</span> 200 ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -615,7 +615,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -637,7 +637,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -690,6 +690,14 @@
                 
                   <li class="links-of-blogroll-item">
                     <a href="http://jkzhao.github.io/" title="jkzhao" target="_blank">jkzhao</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://owelinux.github.io/" title="晚点咖啡" target="_blank">晚点咖啡</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.beijinggushi.cn/" title="生强博客" target="_blank">生强博客</a>
                   </li>
                 
               </ul>
@@ -751,7 +759,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 33.3k 字</span>
+  <span class="post-count">博客全站共 35.7k 字</span>
 </div>
 
         
