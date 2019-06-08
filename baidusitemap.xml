@@ -3,10 +3,169 @@
 
 
     
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/nginx%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2019-05-24T07:59:32.767Z</lastmod>
+    <data>
+        <display>
+        <title>nginx日志检索常用命令</title>
+        <pubTime>2018-09-19T01:33:27.000Z</pubTime>
+        
+        <tag>nginx日志检索</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/05/20/yum%E6%8C%87%E5%AE%9A%E5%8C%85%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%8C%85%E6%8B%AC%E4%BE%9D%E8%B5%96%E5%8C%85%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    <lastmod>2019-05-20T08:31:11.238Z</lastmod>
+    <data>
+        <display>
+        <title>yum指定包下载并包括依赖包命令备忘录</title>
+        <pubTime>2019-05-20T08:27:08.000Z</pubTime>
+        
+        <tag>yum</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-05-05T01:37:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>linux高阶命令使用</title>
+        <pubTime>2018-09-19T04:35:18.000Z</pubTime>
+        
+        <tag>awk getopts</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux高阶命令" url="https://mrlichangming.github.io/categories/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/11/12/openresty%E6%B7%BB%E5%8A%A0nginx-dynamic-upstream%E6%A8%A1%E5%9D%97/</loc>
+    <lastmod>2019-04-17T08:11:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>openresty添加nginx_dynamic_upstream模块</title>
+        <pubTime>2018-11-12T02:33:23.000Z</pubTime>
+        
+        <tag>openresty</tag>
+         
+         
+           
+             
+              <breadCrumb title="openresty" url="https://mrlichangming.github.io/categories/openresty/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/04/09/kibana%E6%9F%A5%E8%AF%A2%E8%AF%AD%E6%B3%95%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    <lastmod>2019-04-09T01:06:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>kibana查询语法备忘录</title>
+        <pubTime>2019-04-09T01:01:39.000Z</pubTime>
+        
+        <tag>kibana</tag>
+         
+         
+           
+             
+              <breadCrumb title="ELK" url="https://mrlichangming.github.io/categories/ELK/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/31/nginx%E7%9A%84rewrite%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3-%E6%91%98%E6%8A%84%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    <lastmod>2019-03-31T11:36:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>nginx的rewrite用法详解-摘抄备忘录</title>
+        <pubTime>2019-03-31T11:12:31.000Z</pubTime>
+        
+        <tag>nginx的rewrite指令</tag>
+         
+         
+           
+             
+              <breadCrumb title="nignx" url="https://mrlichangming.github.io/categories/nignx/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/28/nginx%E9%85%8D%E7%BD%AE%E5%81%A5%E5%BA%B7%E7%9B%91%E6%B5%8B%E4%B8%AD%E6%8C%87%E4%BB%A4%E7%9A%84%E5%90%AB%E4%B9%89/</loc>
+    <lastmod>2019-03-25T09:47:44.000Z</lastmod>
+    <data>
+        <display>
+        <title>nginx配置健康监测中指令的含义</title>
+        <pubTime>2018-09-27T23:42:37.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/22/Nginx%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81-%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E8%BF%9B%E8%A1%8Cweb%E8%AE%BF%E9%97%AE/</loc>
+    <lastmod>2019-03-22T06:53:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>Nginx安全认证-设置用户名和密码进行web访问</title>
+        <pubTime>2019-03-22T06:35:09.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="nginx" url="https://mrlichangming.github.io/categories/nginx/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>https://mrlichangming.github.io/2018/12/21/python%E5%AD%A6%E4%B9%A0%E5%85%AD-django%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%9E%8B%E6%93%8D%E4%BD%9C/</loc>
-    <lastmod>2019-03-14T15:32:41.837Z</lastmod>
+    <lastmod>2019-03-22T04:21:25.315Z</lastmod>
     <data>
         <display>
         <title>python学习六-django模板页面和数据库模型操作</title>
@@ -25,8 +184,128 @@
 
     
   <url>
+    <loc>https://mrlichangming.github.io/2019/03/20/rocketmq%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2019-03-20T09:09:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>rocketmq重点知识笔记</title>
+        <pubTime>2019-03-20T01:46:16.000Z</pubTime>
+        
+        <tag>rocketmq笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/15/%E6%9F%A5%E7%9C%8Blinux%E6%80%A7%E8%83%BD%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2019-03-20T02:38:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>查看linux性能相关命令详解</title>
+        <pubTime>2019-03-15T09:11:58.000Z</pubTime>
+        
+        <tag>linux系统性能分析</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/19/chrony%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2019-03-19T06:20:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>chrony时间同步详解</title>
+        <pubTime>2019-03-19T03:44:37.000Z</pubTime>
+        
+        <tag>chrony</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/17/nginx%E7%9A%84url%E5%8C%B9%E9%85%8D-location%E5%92%8Cproxy-pass%E4%BB%A5-%E7%BB%93%E5%B0%BE%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2019-03-17T12:56:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>nginx的url匹配,location和proxy_pass以/结尾的问题</title>
+        <pubTime>2019-03-17T12:18:21.000Z</pubTime>
+        
+        <tag>/结尾的匹配</tag>
+         
+         
+           
+             
+              <breadCrumb title="nginx" url="https://mrlichangming.github.io/categories/nginx/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/13/docker-swarm-%E4%B8%80%E4%BA%9B%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E6%89%8B%E5%86%8C/</loc>
+    <lastmod>2019-03-17T12:16:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>docker swarm 一些理论知识手册</title>
+        <pubTime>2019-03-13T01:48:03.000Z</pubTime>
+        
+        <tag>docker swarm</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/28/docker-compose%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/</loc>
+    <lastmod>2019-03-17T03:19:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>docker-compose相关内容</title>
+        <pubTime>2018-09-28T01:39:41.000Z</pubTime>
+        
+        <tag>docker-compose</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://mrlichangming.github.io/2018/09/20/docker-swarm-%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2019-03-14T14:14:55.796Z</lastmod>
+    <lastmod>2019-03-15T03:04:45.000Z</lastmod>
     <data>
         <display>
         <title>docker swarm 一些常用命令</title>
@@ -44,25 +323,6 @@
     </url>
 
     
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/19/nginx%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2019-03-14T14:14:36.332Z</lastmod>
-    <data>
-        <display>
-        <title>nginx日志检索常用命令</title>
-        <pubTime>2018-09-19T01:33:27.000Z</pubTime>
-        
-        <tag>nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://mrlichangming.github.io/2019/01/14/nginx%E4%B8%AD%E7%9A%84%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A1%88%E4%BE%8B/</loc>
@@ -85,46 +345,6 @@
 
     
   <url>
-    <loc>https://mrlichangming.github.io/2018/09/28/nginx%E9%85%8D%E7%BD%AE%E5%81%A5%E5%BA%B7%E7%9B%91%E6%B5%8B%E4%B8%AD%E6%8C%87%E4%BB%A4%E7%9A%84%E5%90%AB%E4%B9%89/</loc>
-    <lastmod>2019-03-14T14:13:06.915Z</lastmod>
-    <data>
-        <display>
-        <title>nginx配置健康监测中指令的含义</title>
-        <pubTime>2018-09-27T23:42:37.000Z</pubTime>
-        
-        <tag>nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux运维基本技能" url="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/19/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2019-03-14T14:12:48.828Z</lastmod>
-    <data>
-        <display>
-        <title>linux高阶命令使用</title>
-        <pubTime>2018-09-19T04:35:18.000Z</pubTime>
-        
-        <tag>awk getopts</tag>
-         
-         
-           
-             
-              <breadCrumb title="linux高阶命令" url="https://mrlichangming.github.io/categories/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://mrlichangming.github.io/2018/10/12/docker%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2019-03-14T14:12:29.883Z</lastmod>
     <data>
@@ -133,26 +353,6 @@
         <pubTime>2018-10-12T05:55:40.000Z</pubTime>
         
         <tag>docker命令</tag>
-         
-         
-           
-             
-              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/28/docker-compose%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/</loc>
-    <lastmod>2019-03-14T14:12:10.811Z</lastmod>
-    <data>
-        <display>
-        <title>docker-compose相关内容</title>
-        <pubTime>2018-09-28T01:39:41.000Z</pubTime>
-        
-        <tag>docker-compose</tag>
          
          
            
@@ -198,26 +398,6 @@
            
              
               <breadCrumb title="redis" url="https://mrlichangming.github.io/categories/redis/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2019/03/13/docker-swarm-%E4%B8%80%E4%BA%9B%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E6%89%8B%E5%86%8C/</loc>
-    <lastmod>2019-03-14T06:21:48.267Z</lastmod>
-    <data>
-        <display>
-        <title>docker swarm 一些理论知识手册</title>
-        <pubTime>2019-03-13T01:48:03.000Z</pubTime>
-        
-        <tag>docker swarm</tag>
-         
-         
-           
-             
-              <breadCrumb title="docker" url="https://mrlichangming.github.io/categories/docker/"/>
           
         </display>
     </data>
@@ -910,26 +1090,6 @@
            
              
               <breadCrumb title="python学习之路" url="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://mrlichangming.github.io/2018/11/12/openresty%E6%B7%BB%E5%8A%A0nginx-dynamic-upstream%E6%A8%A1%E5%9D%97/</loc>
-    <lastmod>2018-11-12T02:57:07.590Z</lastmod>
-    <data>
-        <display>
-        <title>openresty添加nginx_dynamic_upstream模块</title>
-        <pubTime>2018-11-12T02:33:23.000Z</pubTime>
-        
-        <tag>openresty</tag>
-         
-         
-           
-             
-              <breadCrumb title="openresty" url="https://mrlichangming.github.io/categories/openresty/"/>
           
         </display>
     </data>

@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="Changming&#39;s blogs">
 <meta property="og:description" content="记录下工作中常用的docker-compose相关内容  开机自启动docker-compose部署的容器开机自动运行找到/etc/rc.d/rc.local文件,添加以下脚本1/usr/local/bin/docker-compose -f /usr/local/nginx/docker-compose.yml up -d docker-stack 部署的compose文件语法simple e">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-14T14:12:10.811Z">
+<meta property="og:updated_time" content="2019-03-17T03:19:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker-compose相关内容">
 <meta name="twitter:description" content="记录下工作中常用的docker-compose相关内容  开机自启动docker-compose部署的容器开机自动运行找到/etc/rc.d/rc.local文件,添加以下脚本1/usr/local/bin/docker-compose -f /usr/local/nginx/docker-compose.yml up -d docker-stack 部署的compose文件语法simple e">
@@ -453,12 +453,8 @@
 <hr>
 <h1 id="开机自启动docker-compose部署的容器"><a href="#开机自启动docker-compose部署的容器" class="headerlink" title="开机自启动docker-compose部署的容器"></a>开机自启动docker-compose部署的容器</h1><p>开机自动运行<br>找到/etc/rc.d/rc.local文件,添加以下脚本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/bin/docker-compose -f /usr/<span class="built_in">local</span>/nginx/docker-compose.yml up -d</span><br></pre></td></tr></table></figure></p>
 <h1 id="docker-stack-部署的compose文件语法"><a href="#docker-stack-部署的compose文件语法" class="headerlink" title="docker-stack 部署的compose文件语法"></a>docker-stack 部署的compose文件语法</h1><p>simple example:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">version: <span class="string">"3.3"</span></span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  swarm-net:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line"></span><br><span class="line">  rd-1:</span><br><span class="line">    image: hub.dayu-boss.com/core/redis</span><br><span class="line">    networks:</span><br><span class="line">      swarm-net:</span><br><span class="line">        aliases:</span><br><span class="line">          - ss-rd-1</span><br><span class="line">    ports:</span><br><span class="line">      - target: 6379</span><br><span class="line">        published: 6381</span><br><span class="line">        protocol: tcp</span><br><span class="line">        mode: host</span><br><span class="line">    hostname: rd-1</span><br><span class="line">    deploy:</span><br><span class="line">      placement:</span><br><span class="line">        <span class="comment"># 部署在指定的节点</span></span><br><span class="line">        constraints:  [node.labels.redis == 1]</span><br><span class="line">      restart_policy:</span><br><span class="line">        condition: on-failure</span><br></pre></td></tr></table></figure></p>
-<h2 id="ports映射"><a href="#ports映射" class="headerlink" title="ports映射"></a>ports映射</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#docker stack部署时，使用的ports映射</span></span><br><span class="line">ports:</span><br><span class="line">      - target: 6379        <span class="comment"># 容器的端口</span></span><br><span class="line">        published: 6381     <span class="comment"># 宿主机映射的端口</span></span><br><span class="line">        protocol: tcp       <span class="comment"># 协议</span></span><br><span class="line">        mode: host          <span class="comment"># host用于在每个节点上发布主机端口，或者ingress用于负载平衡的群集模式端口</span></span><br></pre></td></tr></table></figure>
-<h1 id="docker-compose-up-部署的compose文件"><a href="#docker-compose-up-部署的compose文件" class="headerlink" title="docker-compose up 部署的compose文件"></a>docker-compose up 部署的compose文件</h1><p><code></code>bash<br>networks:<br>  t-net:<br>    driver: bridge<br>    driver_opts:<br>      com.docker.network.enable_ipv6: “false”<br>    ipam:<br>      driver: default<br>      config:</p>
-<pre><code>- subnet: 172.30.31.0/24
-  gateway: 172.30.31.1
-</code></pre><p><code>`</code></p>
-
+<h2 id="ports映射"><a href="#ports映射" class="headerlink" title="ports映射"></a>ports映射</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#docker stack部署时，使用的ports映射</span></span><br><span class="line">ports:</span><br><span class="line">      - target: 6379    	<span class="comment"># 容器的端口</span></span><br><span class="line">        published: 6381		<span class="comment"># 宿主机映射的端口</span></span><br><span class="line">        protocol: tcp       <span class="comment"># 协议</span></span><br><span class="line">        mode: host          <span class="comment"># host用于在每个节点上发布主机端口，或者ingress用于负载平衡的群集模式端口</span></span><br></pre></td></tr></table></figure>
+<h1 id="docker-compose-up-部署的compose文件"><a href="#docker-compose-up-部署的compose文件" class="headerlink" title="docker-compose up 部署的compose文件"></a>docker-compose up 部署的compose文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">networks:</span><br><span class="line">  t-net:</span><br><span class="line">    driver: bridge</span><br><span class="line">    driver_opts:</span><br><span class="line">      com.docker.network.enable_ipv6: <span class="string">"false"</span></span><br><span class="line">    ipam:</span><br><span class="line">      driver: default</span><br><span class="line">      config:</span><br><span class="line">      - subnet: 172.30.31.0/24</span><br><span class="line">        gateway: 172.30.31.1</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -629,7 +625,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -640,7 +636,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/分类/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -651,7 +647,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -789,7 +785,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 35.9k 字</span>
+  <span class="post-count">博客全站共 43.8k 字</span>
 </div>
 
         

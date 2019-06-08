@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="nginx," />
+  <meta name="keywords" content="nginx日志检索," />
 
 
 
@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="查找特定时间点的日志1cat access.log | awk &apos;$1 &amp;gt;=&quot;[21/Jul/2014:14:37:50&quot; &amp;amp;&amp;amp; $1 &amp;lt;=&quot;[21/Jul/2014:14:38:00&quot;&apos; 禁止特定ip访问12封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP解封命令： iptables -t">
-<meta name="keywords" content="nginx">
+<meta name="description" content="查找特定时间点的日志1cat access.log | awk &apos;$1 &amp;gt;=&quot;[21/Jul/2014:14:37:50&quot; &amp;amp;&amp;amp; $1 &amp;lt;=&quot;[21/Jul/2014:14:38:00&quot;&apos; 禁止特定ip访问12345678封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP解封命令： iptabl">
+<meta name="keywords" content="nginx日志检索">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx日志检索常用命令">
 <meta property="og:url" content="https://mrlichangming.github.io/2018/09/19/nginx日志检索常用命令/index.html">
 <meta property="og:site_name" content="Changming&#39;s blogs">
-<meta property="og:description" content="查找特定时间点的日志1cat access.log | awk &apos;$1 &amp;gt;=&quot;[21/Jul/2014:14:37:50&quot; &amp;amp;&amp;amp; $1 &amp;lt;=&quot;[21/Jul/2014:14:38:00&quot;&apos; 禁止特定ip访问12封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP解封命令： iptables -t">
+<meta property="og:description" content="查找特定时间点的日志1cat access.log | awk &apos;$1 &amp;gt;=&quot;[21/Jul/2014:14:37:50&quot; &amp;amp;&amp;amp; $1 &amp;lt;=&quot;[21/Jul/2014:14:38:00&quot;&apos; 禁止特定ip访问12345678封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP解封命令： iptabl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-14T14:14:36.332Z">
+<meta property="og:updated_time" content="2019-05-24T07:59:32.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx日志检索常用命令">
-<meta name="twitter:description" content="查找特定时间点的日志1cat access.log | awk &apos;$1 &amp;gt;=&quot;[21/Jul/2014:14:37:50&quot; &amp;amp;&amp;amp; $1 &amp;lt;=&quot;[21/Jul/2014:14:38:00&quot;&apos; 禁止特定ip访问12封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP解封命令： iptables -t">
+<meta name="twitter:description" content="查找特定时间点的日志1cat access.log | awk &apos;$1 &amp;gt;=&quot;[21/Jul/2014:14:37:50&quot; &amp;amp;&amp;amp; $1 &amp;lt;=&quot;[21/Jul/2014:14:38:00&quot;&apos; 禁止特定ip访问12345678封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP解封命令： iptabl">
 
 
 
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  176
+                  482
                 </span>
               
 
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -449,10 +449,18 @@
 
       
         <h1 id="查找特定时间点的日志"><a href="#查找特定时间点的日志" class="headerlink" title="查找特定时间点的日志"></a>查找特定时间点的日志</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat access.log | awk <span class="string">'$1 &gt;="[21/Jul/2014:14:37:50" &amp;&amp; $1 &lt;="[21/Jul/2014:14:38:00"'</span></span><br></pre></td></tr></table></figure>
-<h1 id="禁止特定ip访问"><a href="#禁止特定ip访问" class="headerlink" title="禁止特定ip访问"></a>禁止特定ip访问</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP</span><br><span class="line">解封命令： iptables -t mangle -D PREROUTING -s 192.168.1.53 -j DROP</span><br></pre></td></tr></table></figure>
+<h1 id="禁止特定ip访问"><a href="#禁止特定ip访问" class="headerlink" title="禁止特定ip访问"></a>禁止特定ip访问</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">封掉此IP： iptables -t mangle -I PREROUTING -s 192.168.1.53 -j DROP</span><br><span class="line">解封命令： iptables -t mangle -D PREROUTING -s 192.168.1.53 -j DROP</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看mangle规则</span></span><br><span class="line"><span class="comment"># 打印出行号</span></span><br><span class="line">iptables -t mangle -L --line-numbers |grep DROP</span><br><span class="line"><span class="comment"># 通过编号删除一条规则</span></span><br><span class="line">iptables -t mangle -D PREROUTING 1</span><br></pre></td></tr></table></figure>
 <h1 id="获取IP前10"><a href="#获取IP前10" class="headerlink" title="获取IP前10"></a>获取IP前10</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;print $7&#125;'</span> access.log | sort | uniq -c | sort -n | tail</span><br></pre></td></tr></table></figure>
 <h1 id="计算文件中列的和"><a href="#计算文件中列的和" class="headerlink" title="计算文件中列的和"></a>计算文件中列的和</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@<span class="built_in">test</span>-host /tmp]<span class="comment">#  cat test.txt</span></span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line"><span class="comment">#求列的和</span></span><br><span class="line">awk <span class="string">'BEGIN&#123;sum=0&#125;&#123;sum+=$1&#125;END&#123;print sum&#125;'</span> test.txt</span><br></pre></td></tr></table></figure>
 <h1 id="检索request-time比较长的日志请求"><a href="#检索request-time比较长的日志请求" class="headerlink" title="检索request_time比较长的日志请求"></a>检索request_time比较长的日志请求</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配request_time大于1秒以上的请求日志中，并匹配hall的location匹配</span></span><br><span class="line">cat  access.log | awk <span class="string">'substr($10,2,5)&gt;1 &amp;&amp; $0~/hall/&#123;print $0&#125;'</span> &gt; lr2-response_long_access.log</span><br></pre></td></tr></table></figure>
+<h1 id="统计nginx访问日志的QPS"><a href="#统计nginx访问日志的QPS" class="headerlink" title="统计nginx访问日志的QPS"></a>统计nginx访问日志的QPS</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f access.log | awk  <span class="string">'&#123;print $3&#125;'</span> | awk <span class="string">'BEGIN&#123;key="";count=0&#125;&#123;if(key==$1)&#123;count++&#125;else&#123;printf("%s\t%d\r\n", key, count);count=1;key=$1&#125;&#125;'</span></span><br></pre></td></tr></table></figure>
+<h1 id="根据访问IP统计UV"><a href="#根据访问IP统计UV" class="headerlink" title="根据访问IP统计UV"></a>根据访问IP统计UV</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;print $1&#125;'</span>  access.log|sort | uniq -c |wc -l</span><br></pre></td></tr></table></figure>
+<h1 id="统计访问URL统计PV"><a href="#统计访问URL统计PV" class="headerlink" title="统计访问URL统计PV"></a>统计访问URL统计PV</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;print $7&#125;'</span> access.log|wc -l</span><br></pre></td></tr></table></figure>
+<h1 id="查询访问最频繁的URL"><a href="#查询访问最频繁的URL" class="headerlink" title="查询访问最频繁的URL"></a>查询访问最频繁的URL</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;print $7&#125;'</span> access.log|sort | uniq -c |sort -n -k 1 -r|more</span><br></pre></td></tr></table></figure>
+<h1 id="查询访问最频繁的IP"><a href="#查询访问最频繁的IP" class="headerlink" title="查询访问最频繁的IP"></a>查询访问最频繁的IP</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">'&#123;print $1&#125;'</span> access.log|sort | uniq -c |sort -n -k 1 -r|more</span><br></pre></td></tr></table></figure>
+<h1 id="根据时间段统计查看日志"><a href="#根据时间段统计查看日志" class="headerlink" title="根据时间段统计查看日志"></a>根据时间段统计查看日志</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat  access.log| sed -n <span class="string">'/14\/Mar\/2015:21/,/14\/Mar\/2015:22/p'</span>|more</span><br></pre></td></tr></table></figure>
+<h1 id="截取30分钟内的日志信息"><a href="#截取30分钟内的日志信息" class="headerlink" title="截取30分钟内的日志信息"></a>截取30分钟内的日志信息</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 截取三十分钟日志</span></span><br><span class="line">_befor=$(date -d <span class="string">'-30 minutes'</span> <span class="string">"+%F %T"</span>)</span><br><span class="line">_now=$(date <span class="string">"+%F %T"</span>)</span><br><span class="line">awk -F <span class="string">'\\[|\\]'</span> -v _befor=<span class="string">"<span class="variable">$&#123;_befor&#125;</span>"</span> -v _now=<span class="string">"<span class="variable">$&#123;_now&#125;</span>"</span> <span class="string">'$2 &gt; _befor &amp;&amp; $2 &lt; _now&#123;print $0&#125;'</span> /var/<span class="built_in">log</span>/nginx//access.log</span><br></pre></td></tr></table></figure>
+<h1 id="tomcat日志统计访问url排名"><a href="#tomcat日志统计访问url排名" class="headerlink" title="tomcat日志统计访问url排名"></a>tomcat日志统计访问url排名</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat   /var/lb/logs/la?/hall/localhost_access_log.2019-03-12.txt  | awk -F <span class="string">'\\[|\\]'</span> <span class="string">'$2 &gt; "12/Mar/2019:13:00:00" &amp;&amp;  $2 &lt; "12/Mar/2019:13:59:59" &amp;&amp; $0 !~ /health/&#123;gsub("\?.*$", "");print&#125; '</span> | awk <span class="string">'&#123;print $6,$7&#125;'</span> | sort | uniq -c | sort -n | tail -20</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -515,7 +523,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/nginx/" rel="tag"><i class="fa fa-tag"></i> nginx</a>
+            <a href="/tags/nginx日志检索/" rel="tag"><i class="fa fa-tag"></i> nginx日志检索</a>
           
         </div>
       
@@ -624,7 +632,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -635,7 +643,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/分类/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -646,7 +654,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -728,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查找特定时间点的日志"><span class="nav-number">1.</span> <span class="nav-text">查找特定时间点的日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#禁止特定ip访问"><span class="nav-number">2.</span> <span class="nav-text">禁止特定ip访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取IP前10"><span class="nav-number">3.</span> <span class="nav-text">获取IP前10</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算文件中列的和"><span class="nav-number">4.</span> <span class="nav-text">计算文件中列的和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#检索request-time比较长的日志请求"><span class="nav-number">5.</span> <span class="nav-text">检索request_time比较长的日志请求</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查找特定时间点的日志"><span class="nav-number">1.</span> <span class="nav-text">查找特定时间点的日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#禁止特定ip访问"><span class="nav-number">2.</span> <span class="nav-text">禁止特定ip访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取IP前10"><span class="nav-number">3.</span> <span class="nav-text">获取IP前10</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算文件中列的和"><span class="nav-number">4.</span> <span class="nav-text">计算文件中列的和</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#检索request-time比较长的日志请求"><span class="nav-number">5.</span> <span class="nav-text">检索request_time比较长的日志请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#统计nginx访问日志的QPS"><span class="nav-number">6.</span> <span class="nav-text">统计nginx访问日志的QPS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#根据访问IP统计UV"><span class="nav-number">7.</span> <span class="nav-text">根据访问IP统计UV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#统计访问URL统计PV"><span class="nav-number">8.</span> <span class="nav-text">统计访问URL统计PV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询访问最频繁的URL"><span class="nav-number">9.</span> <span class="nav-text">查询访问最频繁的URL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询访问最频繁的IP"><span class="nav-number">10.</span> <span class="nav-text">查询访问最频繁的IP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#根据时间段统计查看日志"><span class="nav-number">11.</span> <span class="nav-text">根据时间段统计查看日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#截取30分钟内的日志信息"><span class="nav-number">12.</span> <span class="nav-text">截取30分钟内的日志信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tomcat日志统计访问url排名"><span class="nav-number">13.</span> <span class="nav-text">tomcat日志统计访问url排名</span></a></li></ol></div>
             
 
           </div>
@@ -784,7 +792,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 35.9k 字</span>
+  <span class="post-count">博客全站共 43.8k 字</span>
 </div>
 
         

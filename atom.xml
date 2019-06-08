@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mrlichangming.github.io/"/>
-  <updated>2019-03-14T06:21:48.267Z</updated>
+  <updated>2019-05-20T08:31:11.238Z</updated>
   <id>https://mrlichangming.github.io/</id>
   
   <author>
@@ -17,11 +17,189 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>yum指定包下载并包括依赖包命令备忘录</title>
+    <link href="https://mrlichangming.github.io/2019/05/20/yum%E6%8C%87%E5%AE%9A%E5%8C%85%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%8C%85%E6%8B%AC%E4%BE%9D%E8%B5%96%E5%8C%85%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98%E5%BD%95/"/>
+    <id>https://mrlichangming.github.io/2019/05/20/yum指定包下载并包括依赖包命令备忘录/</id>
+    <published>2019-05-20T08:27:08.000Z</published>
+    <updated>2019-05-20T08:31:11.238Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;在linux运维工作中，难免遇到需要离线安装一些包的，就需要先下载包并解决依赖关系，将依赖包也一并下载&lt;br&gt;这时就要借助yum –downloadonly这个命令了&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="yum" scheme="https://mrlichangming.github.io/tags/yum/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kibana查询语法备忘录</title>
+    <link href="https://mrlichangming.github.io/2019/04/09/kibana%E6%9F%A5%E8%AF%A2%E8%AF%AD%E6%B3%95%E5%A4%87%E5%BF%98%E5%BD%95/"/>
+    <id>https://mrlichangming.github.io/2019/04/09/kibana查询语法备忘录/</id>
+    <published>2019-04-09T01:01:39.000Z</published>
+    <updated>2019-04-09T01:06:16.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;使用kibana查询日志 语法备忘录&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="ELK" scheme="https://mrlichangming.github.io/categories/ELK/"/>
+    
+    
+      <category term="kibana" scheme="https://mrlichangming.github.io/tags/kibana/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx的rewrite用法详解-摘抄备忘录</title>
+    <link href="https://mrlichangming.github.io/2019/03/31/nginx%E7%9A%84rewrite%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3-%E6%91%98%E6%8A%84%E5%A4%87%E5%BF%98%E5%BD%95/"/>
+    <id>https://mrlichangming.github.io/2019/03/31/nginx的rewrite用法详解-摘抄备忘录/</id>
+    <published>2019-03-31T11:12:31.000Z</published>
+    <updated>2019-03-31T11:36:42.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;备忘录: nginx的rewrite指令详解&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="nignx" scheme="https://mrlichangming.github.io/categories/nignx/"/>
+    
+    
+      <category term="nginx的rewrite指令" scheme="https://mrlichangming.github.io/tags/nginx%E7%9A%84rewrite%E6%8C%87%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx安全认证-设置用户名和密码进行web访问</title>
+    <link href="https://mrlichangming.github.io/2019/03/22/Nginx%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81-%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E8%BF%9B%E8%A1%8Cweb%E8%AE%BF%E9%97%AE/"/>
+    <id>https://mrlichangming.github.io/2019/03/22/Nginx安全认证-设置用户名和密码进行web访问/</id>
+    <published>2019-03-22T06:35:09.000Z</published>
+    <updated>2019-03-22T06:53:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;有一些服务的监控软件，默认是没有权限管理功能，比如ELK rocketmq-consle web控制台&lt;/p&gt;
+&lt;p&gt;所以使用nginx作为代理，部署基于用户认证机制登录控制台&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="nginx" scheme="https://mrlichangming.github.io/categories/nginx/"/>
+    
+    
+      <category term="nginx" scheme="https://mrlichangming.github.io/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rocketmq重点知识笔记</title>
+    <link href="https://mrlichangming.github.io/2019/03/20/rocketmq%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/"/>
+    <id>https://mrlichangming.github.io/2019/03/20/rocketmq重点知识笔记/</id>
+    <published>2019-03-20T01:46:16.000Z</published>
+    <updated>2019-03-20T09:09:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;工作中，软件架构用到了rocketmq的集群，对rocketmq不太熟悉，在出现问题的时候，没有思路去排查问题，特此从网上查阅技术文档，了解相关知识&lt;/p&gt;
+&lt;p&gt;方便在出现问题的时候，第一时间追述到问题根源&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="rocketmq笔记" scheme="https://mrlichangming.github.io/tags/rocketmq%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chrony时间同步详解</title>
+    <link href="https://mrlichangming.github.io/2019/03/19/chrony%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://mrlichangming.github.io/2019/03/19/chrony时间同步详解/</id>
+    <published>2019-03-19T03:44:37.000Z</published>
+    <updated>2019-03-19T06:20:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;时间同步服务chrony&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="chrony" scheme="https://mrlichangming.github.io/tags/chrony/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx的url匹配,location和proxy_pass以/结尾的问题</title>
+    <link href="https://mrlichangming.github.io/2019/03/17/nginx%E7%9A%84url%E5%8C%B9%E9%85%8D-location%E5%92%8Cproxy-pass%E4%BB%A5-%E7%BB%93%E5%B0%BE%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://mrlichangming.github.io/2019/03/17/nginx的url匹配-location和proxy-pass以-结尾的问题/</id>
+    <published>2019-03-17T12:18:21.000Z</published>
+    <updated>2019-03-17T12:56:31.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;工作中遇到nginx的location 和proxy_pass 有无/(根)结尾的区别 &lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="nginx" scheme="https://mrlichangming.github.io/categories/nginx/"/>
+    
+    
+      <category term="/结尾的匹配" scheme="https://mrlichangming.github.io/tags/%E7%BB%93%E5%B0%BE%E7%9A%84%E5%8C%B9%E9%85%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>查看linux性能相关命令详解</title>
+    <link href="https://mrlichangming.github.io/2019/03/15/%E6%9F%A5%E7%9C%8Blinux%E6%80%A7%E8%83%BD%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://mrlichangming.github.io/2019/03/15/查看linux性能相关命令详解/</id>
+    <published>2019-03-15T09:11:58.000Z</published>
+    <updated>2019-03-20T02:38:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;在工作中，会因为业务量比较庞大，访问qps比较高，会造成服务器负载比较高&lt;br&gt;本文描述一些常用的排查系统性能瓶颈工具&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="linux系统性能分析" scheme="https://mrlichangming.github.io/tags/linux%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
     <title>docker swarm 一些理论知识手册</title>
     <link href="https://mrlichangming.github.io/2019/03/13/docker-swarm-%E4%B8%80%E4%BA%9B%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E6%89%8B%E5%86%8C/"/>
     <id>https://mrlichangming.github.io/2019/03/13/docker-swarm-一些理论知识手册/</id>
     <published>2019-03-13T01:48:03.000Z</published>
-    <updated>2019-03-14T06:21:48.267Z</updated>
+    <updated>2019-03-17T12:16:21.000Z</updated>
     
     <summary type="html">
     
@@ -275,182 +453,6 @@
     
     
       <category term="python" scheme="https://mrlichangming.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python学习六-django模板页面和数据库模型操作</title>
-    <link href="https://mrlichangming.github.io/2018/12/21/python%E5%AD%A6%E4%B9%A0%E5%85%AD-django%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%9E%8B%E6%93%8D%E4%BD%9C/"/>
-    <id>https://mrlichangming.github.io/2018/12/21/python学习六-django模板页面和数据库模型操作/</id>
-    <published>2018-12-21T14:03:51.000Z</published>
-    <updated>2019-03-14T15:32:41.837Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;django的类视图中的模板页面加载&lt;br&gt;django的数据库模型增删改查&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="python学习之路" scheme="https://mrlichangming.github.io/categories/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="django" scheme="https://mrlichangming.github.io/tags/django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>redis学习笔记</title>
-    <link href="https://mrlichangming.github.io/2018/12/18/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://mrlichangming.github.io/2018/12/18/redis学习笔记/</id>
-    <published>2018-12-18T06:36:24.000Z</published>
-    <updated>2019-03-14T14:11:06.350Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;redis学习笔记&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="redis" scheme="https://mrlichangming.github.io/categories/redis/"/>
-    
-    
-      <category term="redis" scheme="https://mrlichangming.github.io/tags/redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker swarm使用上的心得</title>
-    <link href="https://mrlichangming.github.io/2018/12/17/docker-swarm%E4%BD%BF%E7%94%A8%E4%B8%8A%E7%9A%84%E5%BF%83%E5%BE%97/"/>
-    <id>https://mrlichangming.github.io/2018/12/17/docker-swarm使用上的心得/</id>
-    <published>2018-12-17T08:13:31.000Z</published>
-    <updated>2019-02-10T03:41:54.961Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;聊聊生产环境中运行docker swarm的那些事&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="docker" scheme="https://mrlichangming.github.io/categories/docker/"/>
-    
-    
-      <category term="docker swarm" scheme="https://mrlichangming.github.io/tags/docker-swarm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>siege压测工具使用说明</title>
-    <link href="https://mrlichangming.github.io/2018/12/16/siege%E5%8E%8B%E6%B5%8B%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
-    <id>https://mrlichangming.github.io/2018/12/16/siege压测工具使用说明/</id>
-    <published>2018-12-16T13:11:57.000Z</published>
-    <updated>2018-12-16T13:12:57.554Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;siege工具使用&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-    
-    
-      <category term="siege压测工具" scheme="https://mrlichangming.github.io/tags/siege%E5%8E%8B%E6%B5%8B%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>openresty学习知识点备忘录</title>
-    <link href="https://mrlichangming.github.io/2018/12/16/openresty%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%87%E5%BF%98%E5%BD%95/"/>
-    <id>https://mrlichangming.github.io/2018/12/16/openresty学习知识点备忘录/</id>
-    <published>2018-12-16T13:10:38.000Z</published>
-    <updated>2018-12-16T13:11:29.937Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;记录下学习openresty的一些小知识点，小命令&lt;br&gt;方便忘记的时候查看&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="openresty" scheme="https://mrlichangming.github.io/categories/openresty/"/>
-    
-    
-      <category term="openresty" scheme="https://mrlichangming.github.io/tags/openresty/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx日志切割shell脚本</title>
-    <link href="https://mrlichangming.github.io/2018/12/16/nginx%E6%97%A5%E5%BF%97%E5%88%87%E5%89%B2shell%E8%84%9A%E6%9C%AC/"/>
-    <id>https://mrlichangming.github.io/2018/12/16/nginx日志切割shell脚本/</id>
-    <published>2018-12-16T13:09:30.000Z</published>
-    <updated>2018-12-16T13:10:11.227Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;nginx日志按天进行切割，通过写shell脚本，创建以日期命名文件&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="nginx" scheme="https://mrlichangming.github.io/categories/nginx/"/>
-    
-    
-      <category term="nginx日志切割" scheme="https://mrlichangming.github.io/tags/nginx%E6%97%A5%E5%BF%97%E5%88%87%E5%89%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx根据http_useragent判断是手机端还是pc端</title>
-    <link href="https://mrlichangming.github.io/2018/12/16/nginx%E6%A0%B9%E6%8D%AEhttp-useragent%E5%88%A4%E6%96%AD%E6%98%AF%E6%89%8B%E6%9C%BA%E7%AB%AF%E8%BF%98%E6%98%AFpc%E7%AB%AF/"/>
-    <id>https://mrlichangming.github.io/2018/12/16/nginx根据http-useragent判断是手机端还是pc端/</id>
-    <published>2018-12-16T13:07:03.000Z</published>
-    <updated>2018-12-16T13:07:48.926Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;nginx的location判断用户端是手机还是pc端配置&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="nginx" scheme="https://mrlichangming.github.io/categories/nginx/"/>
-    
-    
-      <category term="nginx" scheme="https://mrlichangming.github.io/tags/nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Centos7安装配置NFS</title>
-    <link href="https://mrlichangming.github.io/2018/12/16/Centos7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AENFS/"/>
-    <id>https://mrlichangming.github.io/2018/12/16/Centos7安装配置NFS/</id>
-    <published>2018-12-16T13:05:04.000Z</published>
-    <updated>2018-12-16T13:06:27.315Z</updated>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;在生产环境中，有些目录需要共享，想让其他节点挂载此共享目录&lt;br&gt;使用场景： 日志目录，应用程序目录&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="linux运维基本技能" scheme="https://mrlichangming.github.io/categories/linux%E8%BF%90%E7%BB%B4%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/"/>
-    
-    
-      <category term="NFS服务" scheme="https://mrlichangming.github.io/tags/NFS%E6%9C%8D%E5%8A%A1/"/>
     
   </entry>
   

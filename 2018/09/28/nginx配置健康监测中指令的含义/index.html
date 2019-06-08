@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="Changming&#39;s blogs">
 <meta property="og:description" content="记录在nginx的upstream后端健康监测配置中，各指令的含义  比较常见的配置方式12345678910upstream backend1 &amp;#123;    sticky;    server 192.168.0.125:8080 max_fails=1 fail_timeout=10s weight=1;    server 192.168.0.126:8080 max_fails=1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-14T14:13:06.915Z">
+<meta property="og:updated_time" content="2019-03-25T09:47:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx配置健康监测中指令的含义">
 <meta name="twitter:description" content="记录在nginx的upstream后端健康监测配置中，各指令的含义  比较常见的配置方式12345678910upstream backend1 &amp;#123;    sticky;    server 192.168.0.125:8080 max_fails=1 fail_timeout=10s weight=1;    server 192.168.0.126:8080 max_fails=1">
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  517
+                  650
                 </span>
               
 
@@ -466,7 +466,7 @@
 <li>ajp: 向后端发送AJP协议的Cping包，通过接受Cpong包来判断后端是否存活<br>port: 指定后端服务器的检查端口.</li>
 </ul>
 </blockquote>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># TCP健康监测</span></span><br><span class="line">upstream gb-core-idc1 &#123;</span><br><span class="line">    ip_hash;</span><br><span class="line">    keepalive 30;</span><br><span class="line">    server  192.168.1.10  max_fails=1 fail_timeout=5s weight=10;  <span class="comment"># r1</span></span><br><span class="line">    server  192.168.1.11  max_fails=1 fail_timeout=5s weight=10;  <span class="comment"># r2</span></span><br><span class="line">    server  192.168.1.12  max_fails=1 fail_timeout=5s weight=10;  <span class="comment"># r3</span></span><br><span class="line">    server  192.168.1.13  max_fails=1 fail_timeout=5s weight=10;  <span class="comment"># r4</span></span><br><span class="line">    server  192.168.1.14  max_fails=1 fail_timeout=5s weight=10;  <span class="comment"># r1</span></span><br><span class="line">    server  192.168.1.15  max_fails=1 fail_timeout=5s weight=10;  <span class="comment"># r2</span></span><br><span class="line">    server  192.168.1.16  max_fails=1 fail_timeout=5s weight=10;  <span class="comment"># r3</span></span><br><span class="line">    server  192.168.1.17  max_fails=1 fail_timeout=5s weight=10;  <span class="comment"># r4</span></span><br><span class="line">    check interval=3000 rise=3 fall=3 timeout=2000 <span class="built_in">type</span>=tcp;</span><br><span class="line">    check_http_send <span class="string">"GET / HTTP/1.1\r\n\r\n"</span>;</span><br><span class="line">    check_http_expect_alive http_2xx http_3xx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -637,7 +637,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -648,7 +648,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/分类/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -659,7 +659,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/标签/index.html">
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -797,7 +797,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共 35.9k 字</span>
+  <span class="post-count">博客全站共 43.8k 字</span>
 </div>
 
         

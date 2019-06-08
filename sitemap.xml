@@ -2,30 +2,121 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://mrlichangming.github.io/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/index.html</loc>
+    <loc>https://mrlichangming.github.io/2018/09/19/nginx%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     
-    <lastmod>2019-03-14T16:07:10.141Z</lastmod>
+    <lastmod>2019-05-24T07:59:32.767Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2019/05/20/yum%E6%8C%87%E5%AE%9A%E5%8C%85%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%8C%85%E6%8B%AC%E4%BE%9D%E8%B5%96%E5%8C%85%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    
+    <lastmod>2019-05-20T08:31:11.238Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/19/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2019-05-05T01:37:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2018/11/12/openresty%E6%B7%BB%E5%8A%A0nginx-dynamic-upstream%E6%A8%A1%E5%9D%97/</loc>
+    
+    <lastmod>2019-04-17T08:11:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2019/04/09/kibana%E6%9F%A5%E8%AF%A2%E8%AF%AD%E6%B3%95%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    
+    <lastmod>2019-04-09T01:06:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/31/nginx%E7%9A%84rewrite%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3-%E6%91%98%E6%8A%84%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    
+    <lastmod>2019-03-31T11:36:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/28/nginx%E9%85%8D%E7%BD%AE%E5%81%A5%E5%BA%B7%E7%9B%91%E6%B5%8B%E4%B8%AD%E6%8C%87%E4%BB%A4%E7%9A%84%E5%90%AB%E4%B9%89/</loc>
+    
+    <lastmod>2019-03-25T09:47:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/22/Nginx%E5%AE%89%E5%85%A8%E8%AE%A4%E8%AF%81-%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E8%BF%9B%E8%A1%8Cweb%E8%AE%BF%E9%97%AE/</loc>
+    
+    <lastmod>2019-03-22T06:53:01.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://mrlichangming.github.io/2018/12/21/python%E5%AD%A6%E4%B9%A0%E5%85%AD-django%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A8%A1%E5%9E%8B%E6%93%8D%E4%BD%9C/</loc>
     
-    <lastmod>2019-03-14T15:32:41.837Z</lastmod>
+    <lastmod>2019-03-22T04:21:25.315Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/20/rocketmq%E9%87%8D%E7%82%B9%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2019-03-20T09:09:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/15/%E6%9F%A5%E7%9C%8Blinux%E6%80%A7%E8%83%BD%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2019-03-20T02:38:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/19/chrony%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2019-03-19T06:20:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/17/nginx%E7%9A%84url%E5%8C%B9%E9%85%8D-location%E5%92%8Cproxy-pass%E4%BB%A5-%E7%BB%93%E5%B0%BE%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2019-03-17T12:56:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2019/03/13/docker-swarm-%E4%B8%80%E4%BA%9B%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E6%89%8B%E5%86%8C/</loc>
+    
+    <lastmod>2019-03-17T12:16:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://mrlichangming.github.io/2018/09/28/docker-compose%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/</loc>
+    
+    <lastmod>2019-03-17T03:19:51.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://mrlichangming.github.io/2018/09/20/docker-swarm-%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     
-    <lastmod>2019-03-14T14:14:55.796Z</lastmod>
+    <lastmod>2019-03-15T03:04:45.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://mrlichangming.github.io/2018/09/19/nginx%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <loc>https://mrlichangming.github.io/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/index.html</loc>
     
-    <lastmod>2019-03-14T14:14:36.332Z</lastmod>
+    <lastmod>2019-03-14T16:07:10.141Z</lastmod>
     
   </url>
   
@@ -37,30 +128,9 @@
   </url>
   
   <url>
-    <loc>https://mrlichangming.github.io/2018/09/28/nginx%E9%85%8D%E7%BD%AE%E5%81%A5%E5%BA%B7%E7%9B%91%E6%B5%8B%E4%B8%AD%E6%8C%87%E4%BB%A4%E7%9A%84%E5%90%AB%E4%B9%89/</loc>
-    
-    <lastmod>2019-03-14T14:13:06.915Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/19/linux%E9%AB%98%E9%98%B6%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2019-03-14T14:12:48.828Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://mrlichangming.github.io/2018/10/12/docker%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2019-03-14T14:12:29.883Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://mrlichangming.github.io/2018/09/28/docker-compose%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/</loc>
-    
-    <lastmod>2019-03-14T14:12:10.811Z</lastmod>
     
   </url>
   
@@ -75,13 +145,6 @@
     <loc>https://mrlichangming.github.io/2018/12/18/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2019-03-14T14:11:06.350Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://mrlichangming.github.io/2019/03/13/docker-swarm-%E4%B8%80%E4%BA%9B%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E6%89%8B%E5%86%8C/</loc>
-    
-    <lastmod>2019-03-14T06:21:48.267Z</lastmod>
     
   </url>
   
@@ -327,13 +390,6 @@
     <loc>https://mrlichangming.github.io/2018/10/21/python%E7%9A%84json%E6%A8%A1%E5%9D%97/</loc>
     
     <lastmod>2018-11-15T10:29:43.707Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://mrlichangming.github.io/2018/11/12/openresty%E6%B7%BB%E5%8A%A0nginx-dynamic-upstream%E6%A8%A1%E5%9D%97/</loc>
-    
-    <lastmod>2018-11-12T02:57:07.590Z</lastmod>
     
   </url>
   
